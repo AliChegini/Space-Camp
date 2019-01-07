@@ -13,12 +13,16 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var apod: UIButton!
+    @IBOutlet weak var apodButton: UIButton!
+    @IBOutlet weak var marsRoverButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("We are ready!")
+        
+        //apodButton.isHidden = true
+        
         
 //        apod.titleLabel?.minimumScaleFactor = 0.5
 //        apod.titleLabel?.numberOfLines = 1

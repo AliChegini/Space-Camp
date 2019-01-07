@@ -19,8 +19,9 @@ class JSONDownloader {
         self.init(configuration: .default)
     }
     
-    
-    func jsonTask(with request: URLRequest, completionHandler completion: @escaping (Data?, SpaceCampError?) -> Void) -> URLSessionDataTask {
+    // function to download and return data to memory
+    // returned data will be consumed by functions in client class
+    func jsonDownloader(with request: URLRequest, completionHandler completion: @escaping (Data?, SpaceCampError?) -> Void) -> URLSessionDataTask {
         let task = session.dataTask(with: request) { (data, response, error) in
             
             // internet conncetion related errors

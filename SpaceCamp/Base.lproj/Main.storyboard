@@ -34,11 +34,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-o7-0YN">
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
+                                        <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="25"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Mars Rover placeholder"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        </variation>
+                                        <state key="normal" title="Mars Rover"/>
+                                        <connections>
+                                            <segue destination="ry6-iN-G9j" kind="show" id="4jf-PW-Cp2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -54,7 +55,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="FTo-9c-7VB"/>
                     <connections>
-                        <outlet property="apod" destination="ddw-o7-0YN" id="J7e-sZ-a6C"/>
+                        <outlet property="apodButton" destination="yl9-Uz-oLy" id="RIt-J1-rVg"/>
+                        <outlet property="marsRoverButton" destination="ddw-o7-0YN" id="SOg-d2-chw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,13 +70,44 @@
                     <view key="view" contentMode="scaleToFill" id="iBI-m1-4dM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ST2-me-cTi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="J8V-f2-vJW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ST2-me-cTi" firstAttribute="top" secondItem="Anw-hT-0G2" secondAttribute="top" id="CXU-cE-Hdn"/>
+                            <constraint firstItem="ST2-me-cTi" firstAttribute="leading" secondItem="Anw-hT-0G2" secondAttribute="leading" id="GVw-Og-dj4"/>
+                            <constraint firstItem="Anw-hT-0G2" firstAttribute="trailing" secondItem="ST2-me-cTi" secondAttribute="trailing" id="MCy-ZF-xkl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Anw-hT-0G2"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ST2-me-cTi" id="r99-zR-QGx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLR-Hb-O7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="99"/>
+            <point key="canvasLocation" x="2005.5999999999999" y="98.50074962518741"/>
+        </scene>
+        <!--Mars Rover Controller-->
+        <scene sceneID="GmY-OP-qTR">
+            <objects>
+                <viewController id="ry6-iN-G9j" customClass="MarsRoverController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wrZ-4w-PBs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9dw-kL-FCT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zxd-pV-VIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="866"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lpY-lz-cb7">
