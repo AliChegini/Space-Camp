@@ -34,9 +34,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-o7-0YN">
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
-                                        <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="25"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Mars Rover"/>
+                                        <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="35"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Explore Mars" backgroundImage="curiosity1"/>
                                         <connections>
                                             <segue destination="ry6-iN-G9j" kind="show" id="4jf-PW-Cp2"/>
                                         </connections>
@@ -44,7 +44,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XMt-vI-fjx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DF6-cA-j4l"/>
                             <constraint firstItem="XMt-vI-fjx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SkS-go-zIS"/>
@@ -101,13 +101,62 @@
                     <view key="view" contentMode="scaleToFill" id="wrZ-4w-PBs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-1q-xxj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="tdk-m2-gPQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAI-Up-B1X">
+                                <rect key="frame" x="40" y="597" width="295" height="40"/>
+                                <color key="backgroundColor" red="0.56555086374282837" green="0.91182029247283936" blue="0.54587912559509277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="n2i-kY-K19"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Select Rover"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Rover" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZt-5V-W00">
+                                <rect key="frame" x="20" y="334" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="X8d-6y-4J3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wId-dY-LXQ">
+                                <rect key="frame" x="0.0" y="394" width="375" height="183"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wId-dY-LXQ" firstAttribute="top" secondItem="PZt-5V-W00" secondAttribute="bottom" constant="10" id="8hj-ZB-oKc"/>
+                            <constraint firstItem="eAI-Up-B1X" firstAttribute="top" secondItem="wId-dY-LXQ" secondAttribute="bottom" constant="20" id="GcK-tz-PHw"/>
+                            <constraint firstItem="PZt-5V-W00" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="20" id="P4e-GD-kIR"/>
+                            <constraint firstItem="P0g-1q-xxj" firstAttribute="top" secondItem="9dw-kL-FCT" secondAttribute="top" id="QSr-Pc-5aP"/>
+                            <constraint firstItem="eAI-Up-B1X" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="40" id="UfC-tU-72U"/>
+                            <constraint firstItem="P0g-1q-xxj" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" id="XC8-tc-AjI"/>
+                            <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="eAI-Up-B1X" secondAttribute="trailing" constant="40" id="Xet-32-bvj"/>
+                            <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="PZt-5V-W00" secondAttribute="trailing" constant="20" id="YzE-oF-mRg"/>
+                            <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="P0g-1q-xxj" secondAttribute="trailing" id="cfL-rn-ed3"/>
+                            <constraint firstItem="PZt-5V-W00" firstAttribute="top" secondItem="P0g-1q-xxj" secondAttribute="bottom" constant="20" id="h4n-7t-yT3"/>
+                            <constraint firstItem="wId-dY-LXQ" firstAttribute="trailing" secondItem="9dw-kL-FCT" secondAttribute="trailing" id="mGh-79-bD2"/>
+                            <constraint firstItem="wId-dY-LXQ" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" id="p2j-cX-Fg4"/>
+                            <constraint firstItem="9dw-kL-FCT" firstAttribute="bottom" secondItem="eAI-Up-B1X" secondAttribute="bottom" constant="30" id="uxy-mk-8qB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9dw-kL-FCT"/>
                     </view>
+                    <connections>
+                        <outlet property="imageViewerMars" destination="P0g-1q-xxj" id="Grb-hI-1b6"/>
+                        <outlet property="label" destination="PZt-5V-W00" id="5rr-EK-1Ho"/>
+                        <outlet property="picker" destination="wId-dY-LXQ" id="orB-ST-pJ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxd-pV-VIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="866"/>
+            <point key="canvasLocation" x="2005.5999999999999" y="865.81709145427294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lpY-lz-cb7">
@@ -128,4 +177,7 @@
             <point key="canvasLocation" x="262" y="99"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="curiosity1" width="1516" height="880"/>
+    </resources>
 </document>

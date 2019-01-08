@@ -37,15 +37,15 @@ class ApodController: UIViewController {
         
         
         
-        parser.parse { (apod, error) in
-            if let apod = apod {
-                if let url = apod.url {
-                    print(url)
-                }
-            } else {
-                print("apod is nil")
-            }
-        }
+//        parser.parse { (apod, error) in
+//            if let apod = apod {
+//                if let url = apod.url {
+//                    print(url)
+//                }
+//            } else {
+//                print("apod is nil")
+//            }
+//        }
         
         
         

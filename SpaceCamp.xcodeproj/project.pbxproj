@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886421E207FD00C08F0D /* JSONDownloader.swift */; };
 		7C35886721E23EEC00C08F0D /* SpaceCampError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886621E23EEC00C08F0D /* SpaceCampError.swift */; };
+		7C35C75321E4B6C8009663EB /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35C75221E4B6C8009663EB /* Structures.swift */; };
+		7C35C75521E4DD4C009663EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C35C75421E4DD4C009663EB /* Assets.xcassets */; };
+		7C35C75721E4E10C009663EB /* ButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35C75621E4E10C009663EB /* ButtonImage.swift */; };
+		7C35C75921E518C6009663EB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35C75821E518C6009663EB /* Extension.swift */; };
 		7C35D1CB21E352B20093D13A /* NasaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */; };
 		7C35D1CD21E36F0C0093D13A /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35D1CC21E36F0C0093D13A /* JSONParser.swift */; };
 		7C35D1CF21E3CF490093D13A /* MarsRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */; };
 		7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */; };
 		7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49521DF59DE00D3B650 /* MainViewController.swift */; };
 		7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49721DF59DE00D3B650 /* Main.storyboard */; };
-		7C5AE49B21DF59DF00D3B650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49A21DF59DF00D3B650 /* Assets.xcassets */; };
 		7C5AE49E21DF59DF00D3B650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49C21DF59DF00D3B650 /* LaunchScreen.storyboard */; };
 		7C5AE4A621DF774B00D3B650 /* ApodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE4A521DF774B00D3B650 /* ApodController.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +26,10 @@
 /* Begin PBXFileReference section */
 		7C35886421E207FD00C08F0D /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		7C35886621E23EEC00C08F0D /* SpaceCampError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCampError.swift; sourceTree = "<group>"; };
+		7C35C75221E4B6C8009663EB /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
+		7C35C75421E4DD4C009663EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C35C75621E4E10C009663EB /* ButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImage.swift; sourceTree = "<group>"; };
+		7C35C75821E518C6009663EB /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAPIClient.swift; sourceTree = "<group>"; };
 		7C35D1CC21E36F0C0093D13A /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverController.swift; sourceTree = "<group>"; };
@@ -30,7 +37,6 @@
 		7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5AE49521DF59DE00D3B650 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7C5AE49821DF59DE00D3B650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7C5AE49A21DF59DF00D3B650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C5AE49D21DF59DF00D3B650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C5AE49F21DF59DF00D3B650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C5AE4A521DF774B00D3B650 /* ApodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodController.swift; sourceTree = "<group>"; };
@@ -73,9 +79,12 @@
 				7C35886421E207FD00C08F0D /* JSONDownloader.swift */,
 				7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */,
 				7C35D1CC21E36F0C0093D13A /* JSONParser.swift */,
+				7C35C75221E4B6C8009663EB /* Structures.swift */,
 				7C35886621E23EEC00C08F0D /* SpaceCampError.swift */,
+				7C35C75621E4E10C009663EB /* ButtonImage.swift */,
+				7C35C75821E518C6009663EB /* Extension.swift */,
+				7C35C75421E4DD4C009663EB /* Assets.xcassets */,
 				7C5AE49721DF59DE00D3B650 /* Main.storyboard */,
-				7C5AE49A21DF59DF00D3B650 /* Assets.xcassets */,
 				7C5AE49C21DF59DF00D3B650 /* LaunchScreen.storyboard */,
 				7C5AE49F21DF59DF00D3B650 /* Info.plist */,
 			);
@@ -141,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5AE49E21DF59DF00D3B650 /* LaunchScreen.storyboard in Resources */,
-				7C5AE49B21DF59DF00D3B650 /* Assets.xcassets in Resources */,
+				7C35C75521E4DD4C009663EB /* Assets.xcassets in Resources */,
 				7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,7 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C35D1CB21E352B20093D13A /* NasaAPIClient.swift in Sources */,
+				7C35C75721E4E10C009663EB /* ButtonImage.swift in Sources */,
+				7C35C75321E4B6C8009663EB /* Structures.swift in Sources */,
 				7C35D1CF21E3CF490093D13A /* MarsRoverController.swift in Sources */,
+				7C35C75921E518C6009663EB /* Extension.swift in Sources */,
 				7C35886721E23EEC00C08F0D /* SpaceCampError.swift in Sources */,
 				7C35D1CD21E36F0C0093D13A /* JSONParser.swift in Sources */,
 				7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */,

@@ -10,6 +10,7 @@
 // API Key : auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
 
 import UIKit
+import Foundation
 
 class MainViewController: UIViewController {
 
@@ -21,7 +22,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         print("We are ready!")
         
-        //apodButton.isHidden = true
+        //apodButton.isEnabled = false
+        
+        marsRoverButton.setBackgroundImage(ButtonImage.generateRandomImage(), for: .normal)
+        
+        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+        
         
         
 //        apod.titleLabel?.minimumScaleFactor = 0.5
@@ -31,6 +37,13 @@ class MainViewController: UIViewController {
         
     }
 
+    
+    @objc func changeImage() {
+        UIView.transition(with: marsRoverButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
+            self.marsRoverButton.setBackgroundImage(ButtonImage.generateRandomImage(), for: .normal)
+        }, completion: nil)
+    }
+    
 
 }
 
