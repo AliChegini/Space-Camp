@@ -12,7 +12,7 @@ import Foundation
 class ApodController: UIViewController {
     
     let parser = JSONParser()
-    let client = NasaAPIClient()
+    //let client = NasaAPIClient()
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -23,32 +23,6 @@ class ApodController: UIViewController {
         super.viewDidLoad()
         
         // APOD is not always responding fast, workaround, disable/hidden the button if API is not responding in the main view, if it is responding quickly do the work in main view
-        
-        
-        client.getImage(stringUrl: "https://apod.nasa.gov/apod/image/1901/Geminids46P_jcc_1080.jpg", completionHandler: { (data, error) in
-            if let data = data {
-                DispatchQueue.main.async {
-                    print("data is \(data)")
-                    self.imageView.image = UIImage(data: data)
-                    
-                }
-            }
-        })
-        
-        
-        
-//        parser.parse { (apod, error) in
-//            if let apod = apod {
-//                if let url = apod.url {
-//                    print(url)
-//                }
-//            } else {
-//                print("apod is nil")
-//            }
-//        }
-        
-        
-        
         
         
         

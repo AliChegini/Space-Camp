@@ -23,20 +23,22 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-Uz-oLy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
-                                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="23"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="24"/>
                                         <state key="normal" title="Astronomy Picture of the Day">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="aYh-6C-p2C" kind="show" identifier="apodSegue" id="BwN-Oy-zBj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-o7-0YN">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-o7-0YN">
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="35"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Explore Mars" backgroundImage="curiosity1"/>
+                                        <state key="normal" title="Explore Mars" backgroundImage="curiosity1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="ry6-iN-G9j" kind="show" id="4jf-PW-Cp2"/>
                                         </connections>
@@ -44,7 +46,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XMt-vI-fjx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DF6-cA-j4l"/>
                             <constraint firstItem="XMt-vI-fjx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SkS-go-zIS"/>
@@ -72,10 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ST2-me-cTi">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="J8V-f2-vJW"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,6 +82,7 @@
                             <constraint firstItem="ST2-me-cTi" firstAttribute="top" secondItem="Anw-hT-0G2" secondAttribute="top" id="CXU-cE-Hdn"/>
                             <constraint firstItem="ST2-me-cTi" firstAttribute="leading" secondItem="Anw-hT-0G2" secondAttribute="leading" id="GVw-Og-dj4"/>
                             <constraint firstItem="Anw-hT-0G2" firstAttribute="trailing" secondItem="ST2-me-cTi" secondAttribute="trailing" id="MCy-ZF-xkl"/>
+                            <constraint firstItem="Anw-hT-0G2" firstAttribute="bottom" secondItem="ST2-me-cTi" secondAttribute="bottom" id="cSF-B6-dx7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Anw-hT-0G2"/>
                     </view>
@@ -103,48 +103,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-1q-xxj">
-                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="tdk-m2-gPQ"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="375" height="234.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAI-Up-B1X">
-                                <rect key="frame" x="40" y="597" width="295" height="40"/>
-                                <color key="backgroundColor" red="0.56555086374282837" green="0.91182029247283936" blue="0.54587912559509277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="50" y="577" width="275" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="n2i-kY-K19"/>
+                                    <constraint firstAttribute="height" constant="50" id="n2i-kY-K19"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Select Rover"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Load Mission Manifest"/>
+                                <connections>
+                                    <segue destination="nuH-GO-5QF" kind="show" identifier="manifestSegue" id="GGY-N6-uSe"/>
+                                </connections>
                             </button>
+                            <pickerView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="wId-dY-LXQ">
+                                <rect key="frame" x="0.0" y="378.5" width="375" height="178.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Rover" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZt-5V-W00">
-                                <rect key="frame" x="20" y="334" width="335" height="50"/>
+                                <rect key="frame" x="20" y="308.5" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="X8d-6y-4J3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wId-dY-LXQ">
-                                <rect key="frame" x="0.0" y="394" width="375" height="183"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wId-dY-LXQ" firstAttribute="top" secondItem="PZt-5V-W00" secondAttribute="bottom" constant="10" id="8hj-ZB-oKc"/>
                             <constraint firstItem="eAI-Up-B1X" firstAttribute="top" secondItem="wId-dY-LXQ" secondAttribute="bottom" constant="20" id="GcK-tz-PHw"/>
                             <constraint firstItem="PZt-5V-W00" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="20" id="P4e-GD-kIR"/>
                             <constraint firstItem="P0g-1q-xxj" firstAttribute="top" secondItem="9dw-kL-FCT" secondAttribute="top" id="QSr-Pc-5aP"/>
-                            <constraint firstItem="eAI-Up-B1X" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="40" id="UfC-tU-72U"/>
+                            <constraint firstItem="eAI-Up-B1X" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="50" id="UfC-tU-72U"/>
                             <constraint firstItem="P0g-1q-xxj" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" id="XC8-tc-AjI"/>
-                            <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="eAI-Up-B1X" secondAttribute="trailing" constant="40" id="Xet-32-bvj"/>
+                            <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="eAI-Up-B1X" secondAttribute="trailing" constant="50" id="Xet-32-bvj"/>
                             <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="PZt-5V-W00" secondAttribute="trailing" constant="20" id="YzE-oF-mRg"/>
                             <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="P0g-1q-xxj" secondAttribute="trailing" id="cfL-rn-ed3"/>
-                            <constraint firstItem="PZt-5V-W00" firstAttribute="top" secondItem="P0g-1q-xxj" secondAttribute="bottom" constant="20" id="h4n-7t-yT3"/>
+                            <constraint firstItem="PZt-5V-W00" firstAttribute="top" secondItem="P0g-1q-xxj" secondAttribute="bottom" constant="10" id="h4n-7t-yT3"/>
+                            <constraint firstItem="wId-dY-LXQ" firstAttribute="top" secondItem="PZt-5V-W00" secondAttribute="bottom" constant="20" id="ljh-fQ-P7t"/>
                             <constraint firstItem="wId-dY-LXQ" firstAttribute="trailing" secondItem="9dw-kL-FCT" secondAttribute="trailing" id="mGh-79-bD2"/>
                             <constraint firstItem="wId-dY-LXQ" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" id="p2j-cX-Fg4"/>
-                            <constraint firstItem="9dw-kL-FCT" firstAttribute="bottom" secondItem="eAI-Up-B1X" secondAttribute="bottom" constant="30" id="uxy-mk-8qB"/>
+                            <constraint firstItem="PZt-5V-W00" firstAttribute="centerY" secondItem="wrZ-4w-PBs" secondAttribute="centerY" id="qrV-1w-8iD"/>
+                            <constraint firstItem="9dw-kL-FCT" firstAttribute="bottom" secondItem="eAI-Up-B1X" secondAttribute="bottom" constant="40" id="uxy-mk-8qB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9dw-kL-FCT"/>
                     </view>
@@ -157,6 +160,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxd-pV-VIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2005.5999999999999" y="865.81709145427294"/>
+        </scene>
+        <!--Manifest Controller-->
+        <scene sceneID="WUU-b8-wa2">
+            <objects>
+                <viewController id="nuH-GO-5QF" customClass="ManifestController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eMs-5P-b4d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Sae-BX-zTn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VF4-PW-N4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2950" y="866"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lpY-lz-cb7">
@@ -178,6 +196,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="curiosity1" width="1516" height="880"/>
+        <image name="curiosity1" width="1900" height="2533"/>
     </resources>
 </document>
