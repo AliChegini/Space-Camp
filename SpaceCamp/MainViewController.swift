@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
                     if let data = data {
                         DispatchQueue.main.async {
                             // change apodButton background image with nice animation
-                            UIView.transition(with: self.apodButton, duration: 1.5, options: .transitionCurlUp, animations: {
+                            UIView.transition(with: self.apodButton, duration: 2.0, options: .transitionCurlUp, animations: {
                                 self.apodButton.setBackgroundImage(UIImage(data: data), for: .normal)
                             }, completion: nil)
                             // since API health is ok enable the button
@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
 
     
     @objc func changeImage() {
-        UIView.transition(with: marsRoverButton, duration: 1.0, options: .transitionFlipFromTop, animations: {
+        UIView.transition(with: marsRoverButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
             self.marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
         }, completion: nil)
     }

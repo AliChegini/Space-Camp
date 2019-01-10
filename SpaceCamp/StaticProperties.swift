@@ -17,6 +17,13 @@ enum Rovers: String {
     case Spirit
 }
 
+// enum for rovers cost
+enum RoversCost: String {
+    case Curiosity = "2.5 billion USD"
+    case Opportunity = "400 Million USD"
+    case Spirit = "400 million USD"
+}
+
 // struct to hold all the static properties for hard coded values
 struct StaticProperties {
     static let arrayOfRoverNames: [Rovers] = [.Curiosity, .Opportunity, .Spirit]

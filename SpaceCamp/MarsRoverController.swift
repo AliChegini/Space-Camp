@@ -15,6 +15,7 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var imageViewerMars: UIImageView!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var button: UIButton!
     
     
     override func viewDidLoad() {
@@ -25,8 +26,10 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         // mars rover link
         // https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2019-01-01&api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
+        // hide the button until user rotate the wheel
+        button.isHidden = true
         
-    
+        
         // TODO: make a class photo seperator to iterate over the returned images and keep one for each camera
         
         
@@ -58,6 +61,8 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // show the button
+        button.isHidden = false
         switch StaticProperties.arrayOfRoverNames[row] {
         case Rovers.Curiosity:
             UIView.transition(with: imageViewerMars, duration: 0.4, options: .transitionFlipFromBottom, animations: {
