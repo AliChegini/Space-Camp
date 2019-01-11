@@ -27,6 +27,8 @@ class ManifestController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        datePicker.timeZone = TimeZone(abbreviation: "GMT")
+        
         guard let roverName = roverName else {
             return
         }
@@ -68,7 +70,25 @@ class ManifestController: UIViewController {
             }
         }
         
+        
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "photoExplorerSegue" {
+            if let photoExplorerController = segue.destination as? PhotoExplorerController {
+                print("we are here")
+                photoExplorerController.roverName = name.text
+                photoExplorerController.date = convertDateToString(date: datePicker.date)
+            }
+        }
+    }
+    
+    
+    @IBAction func userPickedDate(_ sender: UIDatePicker) {
+        print("from action method \(convertDateToString(date: sender.date))")
+    }
+    
     
     
     // function to convert String to Date
@@ -80,13 +100,19 @@ class ManifestController: UIViewController {
         guard let date = dateFormatter.date(from: string) else {
             return nil
         }
-        
         return date
     }
     
-
+    // function to convert Date to String
+    // it takes an Date -> String
+    func convertDateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let string = dateFormatter.string(from: date)
+        
+        return string
+    }
+    
 
 }
-
-// link for curiosity manifest
-// https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0

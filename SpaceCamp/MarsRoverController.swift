@@ -24,8 +24,6 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         picker.delegate = self
         picker.dataSource = self
         
-        // mars rover link
-        // https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2019-01-01&api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
         // hide the button until user rotate the wheel
         button.isHidden = true
         

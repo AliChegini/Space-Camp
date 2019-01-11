@@ -65,8 +65,3 @@ class MainViewController: UIViewController {
     
 
 }
-
-//        apod.titleLabel?.minimumScaleFactor = 0.5
-//        apod.titleLabel?.numberOfLines = 1
-//        apod.titleLabel?.baselineAdjustment = .alignCenters
-//        apod.titleLabel?.adjustsFontSizeToFitWidth = true

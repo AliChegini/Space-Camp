@@ -119,11 +119,11 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleAspectFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="141" translatesAutoresizingMaskIntoConstraints="NO" id="wId-dY-LXQ">
-                                <rect key="frame" x="0.0" y="402" width="375" height="170"/>
+                                <rect key="frame" x="0.0" y="421" width="375" height="151"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Mars Rover" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZt-5V-W00">
-                                <rect key="frame" x="10" y="308.5" width="355" height="50"/>
+                                <rect key="frame" x="5" y="308.5" width="365" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="X8d-6y-4J3"/>
                                 </constraints>
@@ -131,8 +131,8 @@
                                 <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mars rover is a motor vehicle that propels itself across the surface of the planet Mars upon arrival" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUw-tG-i84">
-                                <rect key="frame" x="10" y="358.5" width="355" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mars rover is a camera-equipped motor vehicle that propels itself across the surface of the planet Mars upon arrival" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUw-tG-i84">
+                                <rect key="frame" x="10" y="358.5" width="355" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -142,13 +142,13 @@
                         <constraints>
                             <constraint firstItem="eAI-Up-B1X" firstAttribute="top" secondItem="wId-dY-LXQ" secondAttribute="bottom" constant="5" id="GcK-tz-PHw"/>
                             <constraint firstItem="wId-dY-LXQ" firstAttribute="top" secondItem="YUw-tG-i84" secondAttribute="bottom" constant="5" id="IHO-1D-FO6"/>
-                            <constraint firstItem="PZt-5V-W00" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="10" id="P4e-GD-kIR"/>
+                            <constraint firstItem="PZt-5V-W00" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="5" id="P4e-GD-kIR"/>
                             <constraint firstItem="P0g-1q-xxj" firstAttribute="top" secondItem="9dw-kL-FCT" secondAttribute="top" id="QSr-Pc-5aP"/>
                             <constraint firstItem="eAI-Up-B1X" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="50" id="UfC-tU-72U"/>
                             <constraint firstItem="YUw-tG-i84" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" constant="10" id="Vgn-Tm-IFI"/>
                             <constraint firstItem="P0g-1q-xxj" firstAttribute="leading" secondItem="9dw-kL-FCT" secondAttribute="leading" id="XC8-tc-AjI"/>
                             <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="eAI-Up-B1X" secondAttribute="trailing" constant="50" id="Xet-32-bvj"/>
-                            <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="PZt-5V-W00" secondAttribute="trailing" constant="10" id="YzE-oF-mRg"/>
+                            <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="PZt-5V-W00" secondAttribute="trailing" constant="5" id="YzE-oF-mRg"/>
                             <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="P0g-1q-xxj" secondAttribute="trailing" id="cfL-rn-ed3"/>
                             <constraint firstItem="PZt-5V-W00" firstAttribute="top" secondItem="P0g-1q-xxj" secondAttribute="bottom" constant="10" id="h4n-7t-yT3"/>
                             <constraint firstItem="9dw-kL-FCT" firstAttribute="trailing" secondItem="YUw-tG-i84" secondAttribute="trailing" constant="10" id="lK6-yk-47K"/>
@@ -180,43 +180,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-eS-btp">
-                                <rect key="frame" x="10" y="84" width="355" height="214.5"/>
+                                <rect key="frame" x="15" y="84" width="345" height="214.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3hp-g4-sQo">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="214.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="214.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxR-Ys-bzR">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landing Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky4-RF-RkH">
-                                                <rect key="frame" x="0.0" y="36" width="177.5" height="35.5"/>
-                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landed on Mars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky4-RF-RkH">
+                                                <rect key="frame" x="0.0" y="36" width="172.5" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whr-jd-gwr">
-                                                <rect key="frame" x="0.0" y="71.5" width="177.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="71.5" width="172.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Photo Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lew-Ow-m3r">
-                                                <rect key="frame" x="0.0" y="107.5" width="177.5" height="35.5"/>
-                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="107.5" width="172.5" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11j-0P-klB">
-                                                <rect key="frame" x="0.0" y="143" width="177.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="143" width="172.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rover's Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNO-TH-hue">
-                                                <rect key="frame" x="0.0" y="179" width="177.5" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="179" width="172.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -224,41 +224,41 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1XT-t1-yne">
-                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="214.5"/>
+                                        <rect key="frame" x="172.5" y="0.0" width="172.5" height="214.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEN-3w-YfS">
-                                                <rect key="frame" x="83.5" y="0.0" width="10.5" height="36"/>
+                                                <rect key="frame" x="81" y="0.0" width="10.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc8-cw-3d1">
-                                                <rect key="frame" x="83.5" y="36" width="10.5" height="35.5"/>
+                                                <rect key="frame" x="81" y="36" width="10.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-9y-euO">
-                                                <rect key="frame" x="83.5" y="71.5" width="10.5" height="36"/>
+                                                <rect key="frame" x="81" y="71.5" width="10.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAz-I3-dv1">
-                                                <rect key="frame" x="83.5" y="107.5" width="10.5" height="35.5"/>
+                                                <rect key="frame" x="81" y="107.5" width="10.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4q-zM-zpm">
-                                                <rect key="frame" x="83.5" y="143" width="10.5" height="36"/>
+                                                <rect key="frame" x="81" y="143" width="10.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-1I-TmW">
-                                                <rect key="frame" x="83.5" y="179" width="10.5" height="35.5"/>
-                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
+                                                <rect key="frame" x="81.5" y="179" width="9.5" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -271,6 +271,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="568790484.011549">
                                     <!--2019-01-10 05:21:24 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="userPickedDate:" destination="nuH-GO-5QF" eventType="valueChanged" id="6C5-yu-Oyt"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTR-Eh-Lyb">
                                 <rect key="frame" x="40" y="577" width="295" height="50"/>
@@ -278,9 +281,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eDY-kd-ZLF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Request Photos of this Date"/>
+                                <connections>
+                                    <segue destination="cKG-75-gRf" kind="show" identifier="photoExplorerSegue" id="BWt-TK-JjN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rover Name ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBe-Jg-hIL">
                                 <rect key="frame" x="20" y="318.5" width="335" height="30"/>
@@ -293,9 +299,9 @@
                         <constraints>
                             <constraint firstItem="Txa-eS-btp" firstAttribute="top" secondItem="Sae-BX-zTn" secondAttribute="top" constant="20" id="7s1-vt-lG4"/>
                             <constraint firstItem="Uxd-eR-eJB" firstAttribute="trailing" secondItem="Sae-BX-zTn" secondAttribute="trailing" id="Aab-cW-SbL"/>
-                            <constraint firstItem="Sae-BX-zTn" firstAttribute="trailing" secondItem="Txa-eS-btp" secondAttribute="trailing" constant="10" id="Gh2-z2-RyV"/>
+                            <constraint firstItem="Sae-BX-zTn" firstAttribute="trailing" secondItem="Txa-eS-btp" secondAttribute="trailing" constant="15" id="Gh2-z2-RyV"/>
                             <constraint firstItem="MBe-Jg-hIL" firstAttribute="leading" secondItem="Sae-BX-zTn" secondAttribute="leading" constant="20" id="Iab-8E-d5J"/>
-                            <constraint firstItem="Txa-eS-btp" firstAttribute="leading" secondItem="Sae-BX-zTn" secondAttribute="leading" constant="10" id="Kvu-bo-uYV"/>
+                            <constraint firstItem="Txa-eS-btp" firstAttribute="leading" secondItem="Sae-BX-zTn" secondAttribute="leading" constant="15" id="Kvu-bo-uYV"/>
                             <constraint firstItem="nTR-Eh-Lyb" firstAttribute="top" secondItem="Uxd-eR-eJB" secondAttribute="bottom" constant="30" id="Ph6-lu-ikz"/>
                             <constraint firstItem="Sae-BX-zTn" firstAttribute="trailing" secondItem="nTR-Eh-Lyb" secondAttribute="trailing" constant="40" id="U8T-5a-3qj"/>
                             <constraint firstItem="Uxd-eR-eJB" firstAttribute="leading" secondItem="Sae-BX-zTn" secondAttribute="leading" id="UPa-lP-vEP"/>
@@ -322,6 +328,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VF4-PW-N4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2949.5999999999999" y="865.81709145427294"/>
+        </scene>
+        <!--Photo Explorer Controller-->
+        <scene sceneID="aaf-cX-aS5">
+            <objects>
+                <collectionViewController id="cKG-75-gRf" customClass="PhotoExplorerController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XsB-7Z-ziy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QFd-Qw-yUQ">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="zXa-14-3Lh">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="cKG-75-gRf" id="sVO-Vl-sD1"/>
+                            <outlet property="delegate" destination="cKG-75-gRf" id="jJf-cb-N8C"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e79-vq-uhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3961" y="868"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lpY-lz-cb7">

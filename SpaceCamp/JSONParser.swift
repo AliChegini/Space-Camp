@@ -30,7 +30,9 @@ class JSONParser {
     
     // function to parse json response and prepare ready to use Manifest Object
     func parseManifest(for rover: String, completionHandler completion: @escaping (RoverManifest?, SpaceCampError?) -> Void) {
-        let urlString = "\(client.baseManifestUrl)\(rover)\(client.apiKeyWithSymbols)"
+        // Example URL: https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
+        // Constructing a url to retrieve Manifest Object
+        let urlString = "\(client.baseManifestUrl)\(rover)?\(client.apiKeyWithPrefix)"
         client.getData(from: urlString) { (data, error) in
             let decoder = JSONDecoder()
             guard let data = data else {
@@ -45,24 +47,23 @@ class JSONParser {
     }
     
     
-    
-    
-    // function to parse json response and prepare read to use MarsRover object
-//    func parseRover(completionHandler completion: @escaping (MarsRoverPhotos?, SpaceCampError?) -> Void) {
-//        client.getRover { (data, error) in
-//            let decoder = JSONDecoder()
-//            guard let data = data else {
-//                completion(nil, SpaceCampError.invalidData)
-//                return
-//            }
-//
-//            if let response = try? decoder.decode(MarsRoverPhotos.self, from: data) {
-//                //print(response)
-//                completion(response, nil)
-//            }
-//        }
-//    }
-    
+    // function to parse json response and prepare ready to use MarsRoverPhotos Object
+    func parsePhotos(roverName: String, date: String, completionHandler completion: @escaping (MarsRoverPhotos?, SpaceCampError?) -> Void) {
+        // URL example : https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2019-01-01&api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
+        // Constructing a url to retrieve MarsRover photos
+        let urlString = "\(client.baseMarsRoverUrl)\(roverName)\(client.earthDateWithPrefix)\(date)&\(client.apiKeyWithPrefix)"
+        client.getData(from: urlString) { (data, error) in
+            let decoder = JSONDecoder()
+            guard let data = data else {
+                completion(nil, SpaceCampError.invalidData)
+                return
+            }
+            
+            if let readyPhotos = try? decoder.decode(MarsRoverPhotos.self, from: data) {
+                completion(readyPhotos, nil)
+            }
+        }
+    }
     
     
     

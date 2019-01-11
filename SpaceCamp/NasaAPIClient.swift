@@ -14,14 +14,11 @@ class NasaAPIClient {
     
     fileprivate let apiKey = "auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0"
     
-    let apiKeyWithSymbols = "?api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0"
-    
+    let apiKeyWithPrefix = "api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0"
     let apodUrl = "https://api.nasa.gov/planetary/apod?api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0"
-    
-    let marsRoverUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2019-01-01&api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0"
-    
     let baseManifestUrl = "https://api.nasa.gov/mars-photos/api/v1/manifests/"
-
+    let baseMarsRoverUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
+    let earthDateWithPrefix = "/photos?earth_date="
     
     // function to retrieve data from a string url
     func getData(from stringUrl: String, completionHandler completion: @escaping (Data?, SpaceCampError?) -> Void) {
@@ -40,8 +37,5 @@ class NasaAPIClient {
     }
     
 }
-
-
-
 
 
