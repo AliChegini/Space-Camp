@@ -315,6 +315,7 @@
                         <viewLayoutGuide key="safeArea" id="Sae-BX-zTn"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="nTR-Eh-Lyb" id="lfE-t2-ASX"/>
                         <outlet property="cost" destination="Pcy-1I-TmW" id="LuC-Si-ReR"/>
                         <outlet property="datePicker" destination="Uxd-eR-eJB" id="p9V-xp-W0j"/>
                         <outlet property="landingDate" destination="Uc8-cw-3d1" id="KCb-Cs-C7r"/>

@@ -21,7 +21,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("We are ready!")
+        
+        navigationItem.title = "Home"
         
         // Disableing apod button to check for API health
         apodButton.isEnabled = false

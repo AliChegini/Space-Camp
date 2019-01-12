@@ -22,10 +22,20 @@ class ManifestController: UIViewController {
     @IBOutlet weak var cost: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var button: UIButton!
+    let activityIndicator = UIActivityIndicatorView()
     
+    var arrayOfUrls: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // hide the button til user pick a date
+        button.isHidden = true
+        startActivityIndicator()
+        
+        
         
         datePicker.timeZone = TimeZone(abbreviation: "GMT")
         
@@ -66,10 +76,11 @@ class ManifestController: UIViewController {
                         }
                         
                     }
+                    // stop activity indicator after populating labels
+                    self.stopActivityIndicator()
                 }
             }
         }
-        
         
     }
     
@@ -78,14 +89,43 @@ class ManifestController: UIViewController {
         if segue.identifier == "photoExplorerSegue" {
             if let photoExplorerController = segue.destination as? PhotoExplorerController {
                 print("we are here")
-                photoExplorerController.roverName = name.text
-                photoExplorerController.date = convertDateToString(date: datePicker.date)
+//                photoExplorerController.roverName = name.text
+//                photoExplorerController.date = convertDateToString(date: datePicker.date)
+                photoExplorerController.array = arrayOfUrls
             }
         }
     }
     
     
+    
+    
+    
+    
+    
+    
     @IBAction func userPickedDate(_ sender: UIDatePicker) {
+        startActivityIndicator()
+        if let name = name.text {
+            // fetching Photos Object to send via segue
+            parser.parsePhotos(roverName: name, date: convertDateToString(date: sender.date)) { (data, error) in
+                if let data = data {
+                    for element in data.photos {
+                        if let url = element.img_src {
+                            self.arrayOfUrls.append(url)
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        self.button.isHidden = false
+                        self.stopActivityIndicator()
+                    }
+                    
+                }
+                
+                
+            }
+        }
+        
+        
         print("from action method \(convertDateToString(date: sender.date))")
     }
     
@@ -115,4 +155,23 @@ class ManifestController: UIViewController {
     }
     
 
+}
+
+
+extension UIViewController {
+    func startActivityIndicator() {
+        let alert = UIAlertController(title: nil, message: "Fetching Data...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func stopActivityIndicator() {
+        dismiss(animated: true, completion: nil)
+    }
 }
