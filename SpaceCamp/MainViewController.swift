@@ -18,9 +18,28 @@ class MainViewController: UIViewController {
     @IBOutlet weak var marsRoverButton: UIButton!
     
     let parser = JSONParser()
+    let separator = PhotoSeparator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        separator.prepareSemiReadyArray(roverName: "curiosity", date: "2019-01-11") { (data, error) in
+            if let data = data {
+                for item in data {
+                    print(item.cameraName)
+                }
+            }
+        }
+        
+        
+        
+//        separator.separatePhotos(roverName: "curiosity", date: "2019-01-11") { (data, error) in
+//            if let data = data {
+//                print(data.count)
+//            }
+//        }
+        
+        
         
         navigationItem.title = "Home"
         

@@ -27,7 +27,7 @@ enum RoversCost: String {
 // struct to hold all the static properties for hard coded values
 struct StaticProperties {
     static let arrayOfRoverNames: [Rovers] = [.Curiosity, .Opportunity, .Spirit]
-    
+    static let numberOfPhotosForEachCamera = 5
     
 }
 

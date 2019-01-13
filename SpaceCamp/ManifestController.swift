@@ -27,6 +27,8 @@ class ManifestController: UIViewController {
     
     var arrayOfUrls: [String] = []
     
+    let separator = PhotoSeparator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,16 +91,12 @@ class ManifestController: UIViewController {
         if segue.identifier == "photoExplorerSegue" {
             if let photoExplorerController = segue.destination as? PhotoExplorerController {
                 print("we are here")
-//                photoExplorerController.roverName = name.text
-//                photoExplorerController.date = convertDateToString(date: datePicker.date)
+                photoExplorerController.roverName = name.text
+                photoExplorerController.date = convertDateToString(date: datePicker.date)
                 photoExplorerController.array = arrayOfUrls
             }
         }
     }
-    
-    
-    
-    
     
     
     
@@ -118,10 +116,10 @@ class ManifestController: UIViewController {
                         self.button.isHidden = false
                         self.stopActivityIndicator()
                     }
-                    
+
                 }
-                
-                
+
+
             }
         }
         
