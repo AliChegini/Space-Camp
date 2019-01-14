@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navigationBarAppereances = UINavigationBar.appearance()
         navigationBarAppereances.tintColor = UIColor.orange
+        navigationBarAppereances.isTranslucent = false
         
         return true
     }

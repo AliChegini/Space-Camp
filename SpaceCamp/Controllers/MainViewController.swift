@@ -18,32 +18,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var marsRoverButton: UIButton!
     
     let parser = JSONParser()
-    let separator = PhotoSeparator()
+    
+    // apodObject to send via segue to ApodController
+    var apodObject: Apod?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        separator.prepareSemiReadyArray(roverName: "curiosity", date: "2019-01-11") { (data, error) in
-            if let data = data {
-                for item in data {
-                    print(item.cameraName)
-                }
-            }
-        }
-        
-        
-        
-//        separator.separatePhotos(roverName: "curiosity", date: "2019-01-11") { (data, error) in
-//            if let data = data {
-//                print(data.count)
-//            }
-//        }
-        
-        
-        
         navigationItem.title = "Home"
         
-        // Disableing apod button to check for API health
+        // Disableing apod button until API respond
         apodButton.isEnabled = false
         // set a random image for rover button to start with
         marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
@@ -53,9 +37,10 @@ class MainViewController: UIViewController {
                 print("apod is nil")
                 return
             }
+            self.apodObject = apod
             
             if let url = apod.url {
-                // now by having a url, we can retrieve image to show
+                // by having a url, we can retrieve image to show
                 self.parser.client.getData(from: url) { (data, error) in
                     if let data = data {
                         DispatchQueue.main.async {
@@ -83,5 +68,17 @@ class MainViewController: UIViewController {
         }, completion: nil)
     }
     
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "apodSegue" {
+            if let apodController = segue.destination as? ApodController {
+                if let apodObject = apodObject {
+                    apodController.apod = apodObject
+                }
+            }
+        }
+    }
+    
+    
+    
 }

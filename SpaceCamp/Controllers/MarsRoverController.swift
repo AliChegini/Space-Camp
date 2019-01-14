@@ -27,11 +27,8 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // hide the button until user rotate the wheel
         button.isHidden = true
         
-        
-        // TODO: make a class photo seperator to iterate over the returned images and keep one for each camera
-        
-        
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "manifestSegue" {

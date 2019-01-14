@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XMt-vI-fjx">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-Uz-oLy">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-Uz-oLy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="24"/>
@@ -32,7 +32,7 @@
                                             <segue destination="aYh-6C-p2C" kind="show" identifier="apodSegue" id="BwN-Oy-zBj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-o7-0YN">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ddw-o7-0YN">
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="35"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,20 +74,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ST2-me-cTi">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="239.5"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-bV-yyl">
+                                <rect key="frame" x="20" y="313.5" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wQb-N9-Yi9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ST2-me-cTi" firstAttribute="top" secondItem="Anw-hT-0G2" secondAttribute="top" id="CXU-cE-Hdn"/>
                             <constraint firstItem="ST2-me-cTi" firstAttribute="leading" secondItem="Anw-hT-0G2" secondAttribute="leading" id="GVw-Og-dj4"/>
+                            <constraint firstItem="nV5-bV-yyl" firstAttribute="leading" secondItem="Anw-hT-0G2" secondAttribute="leading" constant="20" id="JJj-AB-CXQ"/>
                             <constraint firstItem="Anw-hT-0G2" firstAttribute="trailing" secondItem="ST2-me-cTi" secondAttribute="trailing" id="MCy-ZF-xkl"/>
-                            <constraint firstItem="Anw-hT-0G2" firstAttribute="bottom" secondItem="ST2-me-cTi" secondAttribute="bottom" id="cSF-B6-dx7"/>
+                            <constraint firstItem="nV5-bV-yyl" firstAttribute="top" secondItem="ST2-me-cTi" secondAttribute="bottom" constant="10" id="XQ4-2Q-wTS"/>
+                            <constraint firstItem="Anw-hT-0G2" firstAttribute="trailing" secondItem="nV5-bV-yyl" secondAttribute="trailing" constant="20" id="d1D-VO-3qr"/>
+                            <constraint firstItem="nV5-bV-yyl" firstAttribute="centerY" secondItem="iBI-m1-4dM" secondAttribute="centerY" id="qvL-AM-DuH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Anw-hT-0G2"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="ST2-me-cTi" id="r99-zR-QGx"/>
+                        <outlet property="label" destination="nV5-bV-yyl" id="Gn8-gV-Zhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLR-Hb-O7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,7 +115,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-1q-xxj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-1q-xxj">
                                 <rect key="frame" x="0.0" y="64" width="375" height="234.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAI-Up-B1X">
@@ -334,11 +347,11 @@
         <scene sceneID="aaf-cX-aS5">
             <objects>
                 <collectionViewController id="cKG-75-gRf" customClass="PhotoExplorerController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XsB-7Z-ziy">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="XsB-7Z-ziy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QFd-Qw-yUQ">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="FWl-3A-nHb">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>

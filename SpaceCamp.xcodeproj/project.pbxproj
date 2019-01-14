@@ -18,6 +18,8 @@
 		7C36B32621E6373E0060CD79 /* ManifestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32521E6373E0060CD79 /* ManifestController.swift */; };
 		7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32721E661460060CD79 /* StaticProperties.swift */; };
 		7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */; };
+		7C386B2621ECB100007B6D84 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2521ECB100007B6D84 /* Extensions.swift */; };
+		7C386B2E21ECF160007B6D84 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2D21ECF160007B6D84 /* PhotoCell.swift */; };
 		7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */; };
 		7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49521DF59DE00D3B650 /* MainViewController.swift */; };
 		7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49721DF59DE00D3B650 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		7C36B32521E6373E0060CD79 /* ManifestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestController.swift; sourceTree = "<group>"; };
 		7C36B32721E661460060CD79 /* StaticProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticProperties.swift; sourceTree = "<group>"; };
 		7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSeparator.swift; sourceTree = "<group>"; };
+		7C386B2521ECB100007B6D84 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7C386B2D21ECF160007B6D84 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		7C5AE49021DF59DE00D3B650 /* SpaceCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5AE49521DF59DE00D3B650 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C386B2721ECB17E007B6D84 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C5AE4A521DF774B00D3B650 /* ApodController.swift */,
+				7C5AE49521DF59DE00D3B650 /* MainViewController.swift */,
+				7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */,
+				7C36B32521E6373E0060CD79 /* ManifestController.swift */,
+				7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7C386B2821ECB1C7007B6D84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */,
+				7C35C75621E4E10C009663EB /* StaticImages.swift */,
+				7C36B32721E661460060CD79 /* StaticProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C386B2921ECB221007B6D84 /* Networking and Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				7C35886421E207FD00C08F0D /* JSONDownloader.swift */,
+				7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */,
+				7C35D1CC21E36F0C0093D13A /* JSONParser.swift */,
+				7C35C75221E4B6C8009663EB /* JSONStructures.swift */,
+				7C35886621E23EEC00C08F0D /* SpaceCampError.swift */,
+			);
+			path = "Networking and Parsing";
+			sourceTree = "<group>";
+		};
+		7C386B2A21ECB3C0007B6D84 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7C386B2521ECB100007B6D84 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7C386B2F21ED2385007B6D84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C386B2D21ECF160007B6D84 /* PhotoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7C5AE48721DF59DE00D3B650 = {
 			isa = PBXGroup;
 			children = (
@@ -79,19 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */,
-				7C5AE4A521DF774B00D3B650 /* ApodController.swift */,
-				7C5AE49521DF59DE00D3B650 /* MainViewController.swift */,
-				7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */,
-				7C36B32521E6373E0060CD79 /* ManifestController.swift */,
-				7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */,
-				7C35886421E207FD00C08F0D /* JSONDownloader.swift */,
-				7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */,
-				7C35D1CC21E36F0C0093D13A /* JSONParser.swift */,
-				7C35C75221E4B6C8009663EB /* JSONStructures.swift */,
-				7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */,
-				7C35886621E23EEC00C08F0D /* SpaceCampError.swift */,
-				7C35C75621E4E10C009663EB /* StaticImages.swift */,
-				7C36B32721E661460060CD79 /* StaticProperties.swift */,
+				7C386B2721ECB17E007B6D84 /* Controllers */,
+				7C386B2921ECB221007B6D84 /* Networking and Parsing */,
+				7C386B2821ECB1C7007B6D84 /* Model */,
+				7C386B2F21ED2385007B6D84 /* View */,
+				7C386B2A21ECB3C0007B6D84 /* Helpers */,
 				7C5AE49721DF59DE00D3B650 /* Main.storyboard */,
 				7C35C75421E4DD4C009663EB /* Assets.xcassets */,
 				7C5AE49C21DF59DF00D3B650 /* LaunchScreen.storyboard */,
@@ -175,12 +221,14 @@
 				7C35C75721E4E10C009663EB /* StaticImages.swift in Sources */,
 				7C35C75321E4B6C8009663EB /* JSONStructures.swift in Sources */,
 				7C35D1CF21E3CF490093D13A /* MarsRoverController.swift in Sources */,
+				7C386B2E21ECF160007B6D84 /* PhotoCell.swift in Sources */,
 				7C35886721E23EEC00C08F0D /* SpaceCampError.swift in Sources */,
 				7C637F4721E87C890011AB87 /* PhotoExplorerController.swift in Sources */,
 				7C36B32621E6373E0060CD79 /* ManifestController.swift in Sources */,
 				7C35D1CD21E36F0C0093D13A /* JSONParser.swift in Sources */,
 				7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */,
 				7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */,
+				7C386B2621ECB100007B6D84 /* Extensions.swift in Sources */,
 				7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */,
 				7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */,
 				7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */,
