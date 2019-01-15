@@ -31,11 +31,8 @@ extension UIViewController {
         
         return string
     }
-}
-
-
-
-extension UIViewController {
+    
+    
     // function to start activity indicator and block user interactions
     func startActivityIndicator() {
         let alert = UIAlertController(title: nil, message: "Fetching Data...", preferredStyle: .alert)
@@ -53,6 +50,7 @@ extension UIViewController {
     func stopActivityIndicator() {
         dismiss(animated: true, completion: nil)
     }
+    
 }
 
 
@@ -60,9 +58,10 @@ extension UIViewController {
 extension PhotoExplorerController {
     // function to setup cell
     func configureCell(cell: PhotoCell, indexPath: IndexPath) -> UICollectionViewCell {
-        // check if the image is available in cache
-        if let imageFromCache = imageCache.object(forKey: finalArray[indexPath.row].url as AnyObject) as? UIImage {
-            cell.imageView.image = imageFromCache
+        // check if the photoObject is available in cache
+        if let photoObjectFromCache = cachedPhotoObject.object(forKey: finalArray[indexPath.row].url as AnyObject) as? CachePhotoObject {
+            cell.imageView.image = photoObjectFromCache.image
+            cell.cameraLabel.text = photoObjectFromCache.camera
             return cell
         }
         // if image is not found in cache, fire off getData
@@ -72,12 +71,13 @@ extension PhotoExplorerController {
                     guard let imageToCache = UIImage(data: data) else {
                         return
                     }
-                    self.imageCache.setObject(imageToCache, forKey: self.finalArray[indexPath.row].url as AnyObject)
+                    let cachedPhotoObject = CachePhotoObject(image: imageToCache, camera: self.finalArray[indexPath.row].cameraName)
+                    self.cachedPhotoObject.setObject(cachedPhotoObject as AnyObject, forKey: self.finalArray[indexPath.row].url as AnyObject)
                     // Animating cells while loading
                     UIView.transition(with: cell.imageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        cell.imageView.image = imageToCache
+                        cell.imageView.image = cachedPhotoObject.image
+                        cell.cameraLabel.text = cachedPhotoObject.camera
                     }, completion: nil)
-                    cell.cameraLabel.text = self.finalArray[indexPath.row].cameraName
                 }
             }
         }

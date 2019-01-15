@@ -35,7 +35,8 @@ class PhotoCell: UICollectionViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.numberOfLines = 1
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     
@@ -47,7 +48,7 @@ class PhotoCell: UICollectionViewCell {
         
         // auto layout constraint for imageView
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[v0]-15-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-15-[v0]-10-[v1]-10-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView, "v1":cameraLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-15-[v0]-10-[v1]-15-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView, "v1":cameraLabel]))
         
         // auto layout constraint for separatorLine
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": separatorView]))

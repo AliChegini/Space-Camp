@@ -8,12 +8,13 @@
 
 import UIKit
 
-// SemiReady means Images are not retrieved yet, but url of images are ready
+
 struct ReadyPhotoObject {
     let url: String
     let dateStamp: String
     let cameraName: String
 }
+
 
 // class to separate photos based on camera names
 class PhotoSeparator {

@@ -77,11 +77,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="239.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-bV-yyl">
-                                <rect key="frame" x="20" y="313.5" width="335" height="40"/>
+                                <rect key="frame" x="10" y="313.5" width="355" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wQb-N9-Yi9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -90,10 +90,10 @@
                         <constraints>
                             <constraint firstItem="ST2-me-cTi" firstAttribute="top" secondItem="Anw-hT-0G2" secondAttribute="top" id="CXU-cE-Hdn"/>
                             <constraint firstItem="ST2-me-cTi" firstAttribute="leading" secondItem="Anw-hT-0G2" secondAttribute="leading" id="GVw-Og-dj4"/>
-                            <constraint firstItem="nV5-bV-yyl" firstAttribute="leading" secondItem="Anw-hT-0G2" secondAttribute="leading" constant="20" id="JJj-AB-CXQ"/>
+                            <constraint firstItem="nV5-bV-yyl" firstAttribute="leading" secondItem="Anw-hT-0G2" secondAttribute="leading" constant="10" id="JJj-AB-CXQ"/>
                             <constraint firstItem="Anw-hT-0G2" firstAttribute="trailing" secondItem="ST2-me-cTi" secondAttribute="trailing" id="MCy-ZF-xkl"/>
                             <constraint firstItem="nV5-bV-yyl" firstAttribute="top" secondItem="ST2-me-cTi" secondAttribute="bottom" constant="10" id="XQ4-2Q-wTS"/>
-                            <constraint firstItem="Anw-hT-0G2" firstAttribute="trailing" secondItem="nV5-bV-yyl" secondAttribute="trailing" constant="20" id="d1D-VO-3qr"/>
+                            <constraint firstItem="Anw-hT-0G2" firstAttribute="trailing" secondItem="nV5-bV-yyl" secondAttribute="trailing" constant="10" id="d1D-VO-3qr"/>
                             <constraint firstItem="nV5-bV-yyl" firstAttribute="centerY" secondItem="iBI-m1-4dM" secondAttribute="centerY" id="qvL-AM-DuH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Anw-hT-0G2"/>
@@ -372,10 +372,53 @@
                             <outlet property="delegate" destination="cKG-75-gRf" id="jJf-cb-N8C"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="Cip-T7-nD6" kind="show" identifier="showPhotoSegue" id="Y2S-oq-c1B"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e79-vq-uhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3961" y="868"/>
+            <point key="canvasLocation" x="3946" y="866"/>
+        </scene>
+        <!--Photo Page Controller-->
+        <scene sceneID="e1A-48-K3i">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Cip-T7-nD6" customClass="PhotoPageController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACy-td-iyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4866" y="868"/>
+        </scene>
+        <!--Photo Viewer Controller-->
+        <scene sceneID="DhM-vZ-eax">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewerController" id="Me6-0z-Q5d" customClass="PhotoViewerController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f4m-D4-XQN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cxQ-lh-dpj">
+                                <rect key="frame" x="0.0" y="193" width="375" height="281"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cxQ-lh-dpj" secondAttribute="height" multiplier="4:3" id="uSa-9i-MLD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cxQ-lh-dpj" firstAttribute="leading" secondItem="rkh-Xf-Pyk" secondAttribute="leading" id="74S-ce-CCY"/>
+                            <constraint firstItem="cxQ-lh-dpj" firstAttribute="centerY" secondItem="f4m-D4-XQN" secondAttribute="centerY" id="Fhi-PX-5kY"/>
+                            <constraint firstItem="rkh-Xf-Pyk" firstAttribute="trailing" secondItem="cxQ-lh-dpj" secondAttribute="trailing" id="LwZ-hl-gBl"/>
+                            <constraint firstItem="cxQ-lh-dpj" firstAttribute="centerX" secondItem="f4m-D4-XQN" secondAttribute="centerX" id="UFY-Z9-NWl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rkh-Xf-Pyk"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="cxQ-lh-dpj" id="qCu-Gc-5Oo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHb-4R-OVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5702" y="866"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lpY-lz-cb7">

@@ -14,17 +14,17 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     let separator = PhotoSeparator()
     let parser = JSONParser()
     
-    let imageCache = NSCache<AnyObject, AnyObject>()
+    let cachedPhotoObject = NSCache<AnyObject, AnyObject>()
     
     var roverName: String?
     var date: String?
     var finalArray: [ReadyPhotoObject] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         startActivityIndicator()
+        
+        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
         
         if let roverName = roverName, let date = date {
             separator.prepareReadyArray(roverName: roverName, date: date) { (data, error) in
@@ -32,17 +32,28 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                     for item in data {
                         self.finalArray.append(item)
                     }
+                    self.finalArray.sort { $0.cameraName < $1.cameraName }
+                    
                     // reloading collectionView from main thread
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
-                    self.stopActivityIndicator()
                 }
+                self.stopActivityIndicator()
             }
         }
         
-        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhotoSegue" {
+            if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell), let pageViewController = segue.destination as? PhotoPageController {
+                if let cachedObject = cachedPhotoObject.object(forKey: finalArray[indexPath.row].url as AnyObject) as? CachePhotoObject {
+                    print(cachedObject)
+                    pageViewController.photo = cachedObject
+                }
+            }
+        }
     }
     
     
@@ -61,14 +72,24 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // values are used to maintain aspect ratio of 16 to 9
+        // values are used to maintain aspect ratio of 4 to 3
         // refer to PhotoCell class for padding from top , bottom, left and right
-        let height = (view.frame.width - 15 - 15) * 9 / 16
-        return CGSize(width: view.frame.width, height: height + 15 + 10 + 20 + 10)
+        let height = (view.frame.width - 15 - 15) * 3 / 4
+        return CGSize(width: view.frame.width, height: height + 15 + 10 + 20 + 15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // getting the cell using indexPath
+        guard let cell = collectionView.cellForItem(at: indexPath) else {
+            return
+        }
+        // perform segue and having cell as sender,
+        // cell info will be used in prepareForSegue method
+        performSegue(withIdentifier: "showPhotoSegue", sender: cell)
     }
     
 }

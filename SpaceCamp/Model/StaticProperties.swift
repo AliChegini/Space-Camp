@@ -6,8 +6,7 @@
 //  Copyright © 2019 Ali C. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 
 // enum for rover names
@@ -29,5 +28,13 @@ struct StaticProperties {
     static let arrayOfRoverNames: [Rovers] = [.Curiosity, .Opportunity, .Spirit]
     static let numberOfPhotosForEachCamera = 5
     
+}
+
+
+// photo Object to keep in cache
+// This object will be used to setup cells in collection view
+struct CachePhotoObject {
+    let image: UIImage
+    let camera: String
 }
 
