@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C350DE721EF947500E62F72 /* PhotoZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C350DE621EF947500E62F72 /* PhotoZoomController.swift */; };
 		7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886421E207FD00C08F0D /* JSONDownloader.swift */; };
 		7C35886721E23EEC00C08F0D /* SpaceCampError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886621E23EEC00C08F0D /* SpaceCampError.swift */; };
 		7C35C75321E4B6C8009663EB /* JSONStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35C75221E4B6C8009663EB /* JSONStructures.swift */; };
@@ -25,12 +26,11 @@
 		7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49721DF59DE00D3B650 /* Main.storyboard */; };
 		7C5AE49E21DF59DF00D3B650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49C21DF59DF00D3B650 /* LaunchScreen.storyboard */; };
 		7C5AE4A621DF774B00D3B650 /* ApodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE4A521DF774B00D3B650 /* ApodController.swift */; };
-		7C5B1AF321EE601700FA95D8 /* PhotoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B1AF221EE601700FA95D8 /* PhotoPageController.swift */; };
-		7C5B1AF521EE617000FA95D8 /* PhotoViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B1AF421EE617000FA95D8 /* PhotoViewerController.swift */; };
 		7C637F4721E87C890011AB87 /* PhotoExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C350DE621EF947500E62F72 /* PhotoZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomController.swift; sourceTree = "<group>"; };
 		7C35886421E207FD00C08F0D /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		7C35886621E23EEC00C08F0D /* SpaceCampError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCampError.swift; sourceTree = "<group>"; };
 		7C35C75221E4B6C8009663EB /* JSONStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStructures.swift; sourceTree = "<group>"; };
@@ -51,8 +51,6 @@
 		7C5AE49D21DF59DF00D3B650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C5AE49F21DF59DF00D3B650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C5AE4A521DF774B00D3B650 /* ApodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodController.swift; sourceTree = "<group>"; };
-		7C5B1AF221EE601700FA95D8 /* PhotoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageController.swift; sourceTree = "<group>"; };
-		7C5B1AF421EE617000FA95D8 /* PhotoViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerController.swift; sourceTree = "<group>"; };
 		7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoExplorerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,8 +73,7 @@
 				7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */,
 				7C36B32521E6373E0060CD79 /* ManifestController.swift */,
 				7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */,
-				7C5B1AF221EE601700FA95D8 /* PhotoPageController.swift */,
-				7C5B1AF421EE617000FA95D8 /* PhotoViewerController.swift */,
+				7C350DE621EF947500E62F72 /* PhotoZoomController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -232,12 +229,11 @@
 				7C637F4721E87C890011AB87 /* PhotoExplorerController.swift in Sources */,
 				7C36B32621E6373E0060CD79 /* ManifestController.swift in Sources */,
 				7C35D1CD21E36F0C0093D13A /* JSONParser.swift in Sources */,
+				7C350DE721EF947500E62F72 /* PhotoZoomController.swift in Sources */,
 				7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */,
 				7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */,
-				7C5B1AF321EE601700FA95D8 /* PhotoPageController.swift in Sources */,
 				7C386B2621ECB100007B6D84 /* Extensions.swift in Sources */,
 				7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */,
-				7C5B1AF521EE617000FA95D8 /* PhotoViewerController.swift in Sources */,
 				7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */,
 				7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */,
 				7C5AE4A621DF774B00D3B650 /* ApodController.swift in Sources */,

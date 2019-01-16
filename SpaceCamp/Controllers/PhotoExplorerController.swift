@@ -32,14 +32,20 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                     for item in data {
                         self.finalArray.append(item)
                     }
+                    
                     self.finalArray.sort { $0.cameraName < $1.cameraName }
                     
                     // reloading collectionView from main thread
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.stopActivityIndicator()
+                        
+                        if self.finalArray.count == 0 {
+                            print("final array count is \(self.finalArray.count)")
+                        }
                     }
                 }
-                self.stopActivityIndicator()
+                
             }
         }
         
@@ -47,10 +53,9 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
-            if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell), let pageViewController = segue.destination as? PhotoPageController {
+            if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell), let photoZoomController = segue.destination as? PhotoZoomController {
                 if let cachedObject = cachedPhotoObject.object(forKey: finalArray[indexPath.row].url as AnyObject) as? CachePhotoObject {
-                    print(cachedObject)
-                    pageViewController.photo = cachedObject
+                    photoZoomController.photo = cachedObject
                 }
             }
         }
@@ -74,7 +79,7 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // values are used to maintain aspect ratio of 4 to 3
         // refer to PhotoCell class for padding from top , bottom, left and right
-        let height = (view.frame.width - 15 - 15) * 3 / 4
+        let height = (view.frame.width - 10 - 10) * 3 / 4
         return CGSize(width: view.frame.width, height: height + 15 + 10 + 20 + 15)
     }
     

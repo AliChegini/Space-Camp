@@ -28,6 +28,7 @@ class PhotoSeparator {
             if let data = data {
                 // final array to be returned at completion
                 var array: [ReadyPhotoObject] = []
+                
                 for element in data.photos {
                     if let cameraName = element.camera?.full_name, let date = element.earth_date, let url = element.img_src {
                         // get the count for each camera

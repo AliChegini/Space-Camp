@@ -51,7 +51,7 @@ class JSONParser {
     func parsePhotos(roverName: String, date: String, completionHandler completion: @escaping (MarsRoverPhotos?, SpaceCampError?) -> Void) {
         // URL example : https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2019-01-01&api_key=auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
         // Constructing a url to retrieve MarsRover photos
-        let urlString = "\(client.baseMarsRoverUrl)\(roverName)\(client.earthDateWithPrefix)\(date)&\(client.apiKeyWithPrefix)"
+        let urlString = "\(client.baseMarsRoverUrl)\(roverName)\(client.earthDateWithPrefix)\(date)&page=1&\(client.apiKeyWithPrefix)"
         client.getData(from: urlString) { (data, error) in
             let decoder = JSONDecoder()
             guard let data = data else {
@@ -65,9 +65,5 @@ class JSONParser {
         }
     }
     
-    
-    
 }
-
-
 

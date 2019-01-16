@@ -28,6 +28,8 @@ class ManifestController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        button.layer.cornerRadius = 10
+        
         // block user interactions by starting activity indicator
         // until manifest data gets loaded
         startActivityIndicator()

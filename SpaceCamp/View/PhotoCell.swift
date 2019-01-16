@@ -47,7 +47,7 @@ class PhotoCell: UICollectionViewCell {
         addSubview(cameraLabel)
         
         // auto layout constraint for imageView
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[v0]-15-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0]-10-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-15-[v0]-10-[v1]-15-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView, "v1":cameraLabel]))
         
         // auto layout constraint for separatorLine
@@ -55,7 +55,7 @@ class PhotoCell: UICollectionViewCell {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(1)]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": separatorView]))
         
         // auto layout constraint for label
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[v0]-15-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": cameraLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0]-10-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": cameraLabel]))
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(20)]", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": cameraLabel]))
         

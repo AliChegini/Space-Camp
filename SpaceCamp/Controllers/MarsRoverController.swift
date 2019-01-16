@@ -27,6 +27,8 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // hide the button until user rotate the wheel
         button.isHidden = true
         
+        button.layer.cornerRadius = 10
+        
     }
     
     

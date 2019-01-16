@@ -19,8 +19,9 @@ class MainViewController: UIViewController {
     
     let parser = JSONParser()
     
-    // apodObject to send via segue to ApodController
-    var apodObject: Apod?
+    // will be used to send via segue to ApodController
+    let cachedApodObject = NSCache<AnyObject, AnyObject>()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +33,14 @@ class MainViewController: UIViewController {
         // set a random image for rover button to start with
         marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
         
+        // parse APOD object if API is responding
         parser.parseApod { (apod, error) in
             guard let apod = apod else {
                 print("apod is nil")
                 return
             }
-            self.apodObject = apod
             
-            if let url = apod.url {
+            if let url = apod.url, let explanation = apod.explanation, let title = apod.title, let hdUrl = apod.hdurl {
                 // by having a url, we can retrieve image to show
                 self.parser.client.getData(from: url) { (data, error) in
                     if let data = data {
@@ -51,6 +52,13 @@ class MainViewController: UIViewController {
                             // since API health is ok enable the button
                             self.apodButton.isEnabled = true
                         }
+                        guard let imageToCache = UIImage(data: data) else {
+                            return
+                        }
+                        
+                        let apodObjectToCache = CacheApodObject(image: imageToCache, title: title, explanation: explanation, hdUrl: hdUrl)
+                        self.cachedApodObject.setObject(apodObjectToCache as AnyObject, forKey: "APOD" as AnyObject)
+                        
                     }
                 }
             }
@@ -72,8 +80,8 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "apodSegue" {
             if let apodController = segue.destination as? ApodController {
-                if let apodObject = apodObject {
-                    apodController.apod = apodObject
+                if let cachedObject = cachedApodObject.object(forKey: "APOD" as AnyObject) as? CacheApodObject {
+                    apodController.apod = cachedObject
                 }
             }
         }

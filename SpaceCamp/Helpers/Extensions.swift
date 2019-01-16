@@ -51,6 +51,20 @@ extension UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    func showNoPhotoAlert() {
+        let alert = UIAlertController(title: "No Photos", message: "Unfortunately Mars Rover did not send any photos on your chosen date! Please try another date", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 }
 
 

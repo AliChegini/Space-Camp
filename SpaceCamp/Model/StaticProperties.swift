@@ -38,3 +38,13 @@ struct CachePhotoObject {
     let camera: String
 }
 
+
+// APOD Object to keep in cache
+// This object will be passed from main view to Apod Controller
+struct CacheApodObject {
+    let image: UIImage
+    let title: String
+    let explanation: String
+    let hdUrl: String
+}
+
