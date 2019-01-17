@@ -16,6 +16,11 @@
 		7C35D1CB21E352B20093D13A /* NasaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */; };
 		7C35D1CD21E36F0C0093D13A /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35D1CC21E36F0C0093D13A /* JSONParser.swift */; };
 		7C35D1CF21E3CF490093D13A /* MarsRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */; };
+		7C35DA6C21F0980E00964CF2 /* ApodZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35DA6B21F0980E00964CF2 /* ApodZoomController.swift */; };
+		7C35DA6E21F0A11600964CF2 /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35DA6D21F0A11600964CF2 /* DeveloperController.swift */; };
+		7C35DA7421F0B78800964CF2 /* ChangeRover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C35DA7121F0B78800964CF2 /* ChangeRover.mp3 */; };
+		7C35DA7521F0B78800964CF2 /* AppLaunch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C35DA7221F0B78800964CF2 /* AppLaunch.mp3 */; };
+		7C35DA7721F0FA3900964CF2 /* PianoIntro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C35DA7621F0FA3900964CF2 /* PianoIntro.mp3 */; };
 		7C36B32621E6373E0060CD79 /* ManifestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32521E6373E0060CD79 /* ManifestController.swift */; };
 		7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32721E661460060CD79 /* StaticProperties.swift */; };
 		7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */; };
@@ -39,6 +44,11 @@
 		7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAPIClient.swift; sourceTree = "<group>"; };
 		7C35D1CC21E36F0C0093D13A /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverController.swift; sourceTree = "<group>"; };
+		7C35DA6B21F0980E00964CF2 /* ApodZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodZoomController.swift; sourceTree = "<group>"; };
+		7C35DA6D21F0A11600964CF2 /* DeveloperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperController.swift; sourceTree = "<group>"; };
+		7C35DA7121F0B78800964CF2 /* ChangeRover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ChangeRover.mp3; sourceTree = "<group>"; };
+		7C35DA7221F0B78800964CF2 /* AppLaunch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AppLaunch.mp3; sourceTree = "<group>"; };
+		7C35DA7621F0FA3900964CF2 /* PianoIntro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PianoIntro.mp3; sourceTree = "<group>"; };
 		7C36B32521E6373E0060CD79 /* ManifestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestController.swift; sourceTree = "<group>"; };
 		7C36B32721E661460060CD79 /* StaticProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticProperties.swift; sourceTree = "<group>"; };
 		7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSeparator.swift; sourceTree = "<group>"; };
@@ -65,10 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C35DA6F21F0B6A000964CF2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7C35DA7221F0B78800964CF2 /* AppLaunch.mp3 */,
+				7C35DA7121F0B78800964CF2 /* ChangeRover.mp3 */,
+				7C35DA7621F0FA3900964CF2 /* PianoIntro.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		7C386B2721ECB17E007B6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				7C5AE4A521DF774B00D3B650 /* ApodController.swift */,
+				7C35DA6B21F0980E00964CF2 /* ApodZoomController.swift */,
+				7C35DA6D21F0A11600964CF2 /* DeveloperController.swift */,
 				7C5AE49521DF59DE00D3B650 /* MainViewController.swift */,
 				7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */,
 				7C36B32521E6373E0060CD79 /* ManifestController.swift */,
@@ -141,6 +163,7 @@
 				7C386B2821ECB1C7007B6D84 /* Model */,
 				7C386B2F21ED2385007B6D84 /* View */,
 				7C386B2A21ECB3C0007B6D84 /* Helpers */,
+				7C35DA6F21F0B6A000964CF2 /* Sounds */,
 				7C5AE49721DF59DE00D3B650 /* Main.storyboard */,
 				7C35C75421E4DD4C009663EB /* Assets.xcassets */,
 				7C5AE49C21DF59DF00D3B650 /* LaunchScreen.storyboard */,
@@ -210,6 +233,9 @@
 				7C5AE49E21DF59DF00D3B650 /* LaunchScreen.storyboard in Resources */,
 				7C35C75521E4DD4C009663EB /* Assets.xcassets in Resources */,
 				7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */,
+				7C35DA7721F0FA3900964CF2 /* PianoIntro.mp3 in Resources */,
+				7C35DA7421F0B78800964CF2 /* ChangeRover.mp3 in Resources */,
+				7C35DA7521F0B78800964CF2 /* AppLaunch.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +249,7 @@
 				7C35D1CB21E352B20093D13A /* NasaAPIClient.swift in Sources */,
 				7C35C75721E4E10C009663EB /* StaticImages.swift in Sources */,
 				7C35C75321E4B6C8009663EB /* JSONStructures.swift in Sources */,
+				7C35DA6E21F0A11600964CF2 /* DeveloperController.swift in Sources */,
 				7C35D1CF21E3CF490093D13A /* MarsRoverController.swift in Sources */,
 				7C386B2E21ECF160007B6D84 /* PhotoCell.swift in Sources */,
 				7C35886721E23EEC00C08F0D /* SpaceCampError.swift in Sources */,
@@ -236,6 +263,7 @@
 				7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */,
 				7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */,
 				7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */,
+				7C35DA6C21F0980E00964CF2 /* ApodZoomController.swift in Sources */,
 				7C5AE4A621DF774B00D3B650 /* ApodController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

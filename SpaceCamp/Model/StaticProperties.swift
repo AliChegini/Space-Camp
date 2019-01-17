@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 
 // enum for rover names
@@ -27,6 +28,13 @@ enum RoversCost: String {
 struct StaticProperties {
     static let arrayOfRoverNames: [Rovers] = [.Curiosity, .Opportunity, .Spirit]
     static let numberOfPhotosForEachCamera = 5
+    
+    static let developerSoundName = "PianoIntro"
+    static let appLaunchSoundName = "AppLaunch"
+    static let changeRoverSoundName = "ChangeRover"
+    static var developerSoundID: SystemSoundID = 1
+    static var appLaunchSoundID : SystemSoundID = 2
+    static var changeRoverSoundID: SystemSoundID = 3
     
 }
 

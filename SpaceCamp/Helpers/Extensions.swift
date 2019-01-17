@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 extension UIViewController {
     // function to convert String to Date
@@ -47,13 +48,13 @@ extension UIViewController {
     }
     
     // function to stop activity indicator and allow user interactions
-    func stopActivityIndicator() {
-        dismiss(animated: true, completion: nil)
+    func stopActivityIndicator(completion: @escaping () -> Void) {
+        dismiss(animated: true, completion: completion)
     }
     
     
     func showNoPhotoAlert() {
-        let alert = UIAlertController(title: "No Photos", message: "Unfortunately Mars Rover did not send any photos on your chosen date! Please try another date", preferredStyle: .alert)
+        let alert = UIAlertController(title: "No Photos", message: "Unfortunately Mars Rover did not take any photos on your chosen date! Please try another date", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
             self.dismiss(animated: true, completion: nil)
@@ -100,4 +101,21 @@ extension PhotoExplorerController {
     }
 }
 
+
+// helper to play sounds
+extension UIViewController {
+    func loadSound(track name: String, id: inout SystemSoundID ) {
+        if let stringFileURL = Bundle.main.path(forResource: name, ofType: "mp3") {
+            let url = URL(fileURLWithPath: stringFileURL)
+            AudioServicesCreateSystemSoundID(url as CFURL, &id)
+        } else {
+            print("failed to play sound")
+        }
+    }
+    
+    func playSound(track name: String, id: inout SystemSoundID) {
+        loadSound(track: name, id: &id)
+        AudioServicesPlaySystemSound(id)
+    }
+}
 

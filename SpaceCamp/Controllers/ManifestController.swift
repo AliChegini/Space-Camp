@@ -74,7 +74,9 @@ class ManifestController: UIViewController {
                         
                     }
                     // stop activity indicator after populating labels
-                    self.stopActivityIndicator()
+                    self.stopActivityIndicator(completion: {
+                        
+                    })
                 }
             }
         }

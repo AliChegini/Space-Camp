@@ -11,6 +11,7 @@
 
 import UIKit
 import Foundation
+import AudioToolbox
 
 class MainViewController: UIViewController {
 
@@ -21,12 +22,15 @@ class MainViewController: UIViewController {
     
     // will be used to send via segue to ApodController
     let cachedApodObject = NSCache<AnyObject, AnyObject>()
-    
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Home"
+        
+        print(kAudioQueueParam_Volume)
+        playSound(track: StaticProperties.appLaunchSoundName, id: &StaticProperties.appLaunchSoundID)
         
         // Disableing apod button until API respond
         apodButton.isEnabled = false
@@ -65,7 +69,7 @@ class MainViewController: UIViewController {
         }
         
         
-        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
         
     }
 
@@ -73,11 +77,15 @@ class MainViewController: UIViewController {
     @objc func changeImage() {
         UIView.transition(with: marsRoverButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
             self.marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
+            print(self.timer)
         }, completion: nil)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // invalidate timer when leaving the view
+        timer.invalidate()
+        
         if segue.identifier == "apodSegue" {
             if let apodController = segue.destination as? ApodController {
                 if let cachedObject = cachedApodObject.object(forKey: "APOD" as AnyObject) as? CacheApodObject {
@@ -85,6 +93,11 @@ class MainViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // validating timer coming back to this view
+        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
     }
     
     

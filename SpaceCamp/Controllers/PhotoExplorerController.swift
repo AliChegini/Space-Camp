@@ -22,6 +22,7 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Make a PostCard", style: .plain, target: self, action: nil)
         startActivityIndicator()
         
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
@@ -38,11 +39,14 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                     // reloading collectionView from main thread
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                        self.stopActivityIndicator()
-                        
-                        if self.finalArray.count == 0 {
-                            print("final array count is \(self.finalArray.count)")
+                        self.stopActivityIndicator {
+                            if self.finalArray.count == 0 {
+                                print("final array count is \(self.finalArray.count)")
+                                self.showNoPhotoAlert()
+                            }
+                            
                         }
+                        
                     }
                 }
                 

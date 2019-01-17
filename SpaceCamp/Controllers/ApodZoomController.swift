@@ -1,17 +1,16 @@
 //
-//  PhotoZoomController.swift
+//  ApodZoomController.swift
 //  SpaceCamp
 //
-//  Created by Ehsan on 16/01/2019.
+//  Created by Ehsan on 17/01/2019.
 //  Copyright © 2019 Ali C. All rights reserved.
 //
 
 import UIKit
 
-class PhotoZoomController: UIViewController, UIScrollViewDelegate {
+class ApodZoomController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
@@ -20,19 +19,21 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
     
     
-    var photo: CachePhotoObject!
+    
+    
+    var hdPhoto: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollView.delegate = self
-
-        imageView.image = photo.image
+        imageView.image = hdPhoto
         imageView.sizeToFit()
-        scrollView.contentSize = imageView.bounds.size
+        scrollView.contentSize = view.bounds.size
         updateZoomScale()
         updateConstraintsForSize(view.bounds.size)
         view.backgroundColor = UIColor.black
+        
     }
     
     var minZoomScale: CGFloat {
@@ -47,7 +48,7 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-
+    
     func updateZoomScale() {
         scrollView.minimumZoomScale = minZoomScale
         scrollView.maximumZoomScale = 1.5
@@ -80,5 +81,7 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
+    
+    
     
 }

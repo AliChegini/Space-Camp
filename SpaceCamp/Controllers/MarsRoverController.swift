@@ -58,23 +58,24 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        playSound(track: StaticProperties.changeRoverSoundName, id: &StaticProperties.changeRoverSoundID)
         // show the button
         button.isHidden = false
         switch StaticProperties.arrayOfRoverNames[row] {
         case Rovers.Curiosity:
-            UIView.transition(with: imageViewerMars, duration: 0.4, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: imageViewerMars, duration: 0.6, options: .transitionFlipFromBottom, animations: {
                 self.imageViewerMars.image = UIImage(imageLiteralResourceName: "curiosity3")
             }, completion: nil)
             label.text = Rovers.Curiosity.rawValue
             
         case Rovers.Opportunity:
-            UIView.transition(with: imageViewerMars, duration: 0.4, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: imageViewerMars, duration: 0.6, options: .transitionFlipFromBottom, animations: {
                 self.imageViewerMars.image = UIImage(imageLiteralResourceName: "opp1")
             }, completion: nil)
             label.text = Rovers.Opportunity.rawValue
             
         case Rovers.Spirit:
-            UIView.transition(with: imageViewerMars, duration: 0.4, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: imageViewerMars, duration: 0.6, options: .transitionFlipFromBottom, animations: {
                 self.imageViewerMars.image = UIImage(imageLiteralResourceName: "sp1")
             }, completion: nil)
             label.text = Rovers.Spirit.rawValue
