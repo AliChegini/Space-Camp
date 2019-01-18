@@ -70,14 +70,14 @@
             <objects>
                 <viewController id="uEy-r6-2q5" customClass="DeveloperController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LST-mq-FOU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdU-IL-RnY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="936"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="836"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW3-ah-k4u">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="asL-D1-tpj">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
@@ -95,13 +95,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-kU-kew">
-                                                <rect key="frame" x="20" y="410" width="335" height="230"/>
+                                                <rect key="frame" x="40" y="410" width="315" height="230"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="230" id="ujp-YH-Pdx"/>
                                                 </constraints>
-                                                <mutableString key="text">Technical Competences:  ● Languages -&gt; Swift, Python, HTML, CSS ● Version Control -&gt; Git ● Architecture -&gt; MVC ● Operating Systems -&gt; iOS, macOS ● IDE -&gt; Xcode ● Test Framework -&gt; XCTest ● Cloud Computing -&gt; AWS, Heroku ● Topic of Interest -&gt; Server-Side Swift</mutableString>
+                                                <mutableString key="text">Technical Competences:  ● Languages: Swift, Python, HTML, CSS ● Operating Systems: iOS, macOS ● Architecture: Model View Controller ● IDE: Xcode ● Test Framework: XCTest ● Version Control: Git ● Cloud Computing: AWS, Heroku ● Future Agenda: Server-Side Swift</mutableString>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treehouse" translatesAutoresizingMaskIntoConstraints="NO" id="fQC-8f-toQ">
@@ -111,7 +111,7 @@
                                                     <constraint firstAttribute="height" constant="80" id="bja-l9-0pT"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technical University of Denmark Master of Computer Science and Engineering" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enj-0v-xkC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technical University of Denmark Master of Computer Science and Engineering" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enj-0v-xkC">
                                                 <rect key="frame" x="120" y="690" width="235" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="v3x-BF-Slc"/>
@@ -166,10 +166,10 @@
                                             <constraint firstItem="G8u-qz-Udv" firstAttribute="top" secondItem="fPq-jv-5ww" secondAttribute="bottom" constant="10" id="fXr-4p-WpM"/>
                                             <constraint firstAttribute="trailing" secondItem="fPq-jv-5ww" secondAttribute="trailing" constant="20" id="fcF-Fm-1lC"/>
                                             <constraint firstItem="asL-D1-tpj" firstAttribute="top" secondItem="eW3-ah-k4u" secondAttribute="top" id="ffz-lN-3kw"/>
-                                            <constraint firstItem="hbb-kU-kew" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="jSK-22-f0D"/>
+                                            <constraint firstItem="hbb-kU-kew" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="40" id="jSK-22-f0D"/>
                                             <constraint firstItem="SNe-gz-R5u" firstAttribute="top" secondItem="enj-0v-xkC" secondAttribute="bottom" constant="20" id="n1L-RI-Npn"/>
                                             <constraint firstItem="G8u-qz-Udv" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="oNW-UL-79v"/>
-                                            <constraint firstAttribute="height" constant="1000" id="soL-F6-wnG"/>
+                                            <constraint firstAttribute="height" constant="900" id="soL-F6-wnG"/>
                                             <constraint firstItem="fQC-8f-toQ" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="ykI-dN-FJ6"/>
                                         </constraints>
                                     </view>
@@ -192,7 +192,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jmf-Hy-yG7"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="imageView" destination="asL-D1-tpj" id="u8M-0P-ocE"/>
                         <outlet property="techLabel" destination="hbb-kU-kew" id="NEk-Du-f1u"/>
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ie5-KV-wbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2949.5999999999999" y="-726.83658170914543"/>
+            <point key="canvasLocation" x="2950" y="-760"/>
         </scene>
         <!--Apod Controller-->
         <scene sceneID="W51-wx-fge">
@@ -469,38 +469,38 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1XT-t1-yne">
                                         <rect key="frame" x="172.5" y="0.0" width="172.5" height="214.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEN-3w-YfS">
-                                                <rect key="frame" x="45.5" y="0.0" width="82" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEN-3w-YfS">
+                                                <rect key="frame" x="19.5" y="0.0" width="134" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc8-cw-3d1">
-                                                <rect key="frame" x="45.5" y="36" width="82" height="35.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc8-cw-3d1">
+                                                <rect key="frame" x="19.5" y="36" width="134" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-9y-euO">
-                                                <rect key="frame" x="45.5" y="71.5" width="82" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-9y-euO">
+                                                <rect key="frame" x="19.5" y="71.5" width="134" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAz-I3-dv1">
-                                                <rect key="frame" x="45.5" y="107.5" width="82" height="35.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAz-I3-dv1">
+                                                <rect key="frame" x="19.5" y="107.5" width="134" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4q-zM-zpm">
-                                                <rect key="frame" x="45.5" y="143" width="82" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4q-zM-zpm">
+                                                <rect key="frame" x="19.5" y="143" width="134" height="36"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-1I-TmW">
-                                                <rect key="frame" x="49.5" y="179" width="73.5" height="35.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-1I-TmW">
+                                                <rect key="frame" x="26" y="179" width="120.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -619,10 +619,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZ9-Kn-Iod">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="562"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Otj-KZ-gLM">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="562"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -634,13 +634,26 @@
                                     <constraint firstItem="Otj-KZ-gLM" firstAttribute="top" secondItem="lZ9-Kn-Iod" secondAttribute="top" id="qLW-lx-LT9"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ir1-oU-qPG">
+                                <rect key="frame" x="60" y="592" width="255" height="45"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Jfp-Y5-HRj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Make A PostCard"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="V3D-1x-2FL" firstAttribute="bottom" secondItem="Ir1-oU-qPG" secondAttribute="bottom" constant="30" id="263-2u-CaZ"/>
+                            <constraint firstItem="V3D-1x-2FL" firstAttribute="trailing" secondItem="Ir1-oU-qPG" secondAttribute="trailing" constant="60" id="Hpp-87-l6z"/>
                             <constraint firstItem="lZ9-Kn-Iod" firstAttribute="top" secondItem="V3D-1x-2FL" secondAttribute="top" id="QRZ-Aq-pd5"/>
+                            <constraint firstItem="Ir1-oU-qPG" firstAttribute="top" secondItem="lZ9-Kn-Iod" secondAttribute="bottom" constant="10" id="eR3-OL-Zit"/>
                             <constraint firstItem="lZ9-Kn-Iod" firstAttribute="leading" secondItem="V3D-1x-2FL" secondAttribute="leading" id="i7y-CF-5cU"/>
+                            <constraint firstItem="Ir1-oU-qPG" firstAttribute="leading" secondItem="V3D-1x-2FL" secondAttribute="leading" constant="60" id="sCi-bT-RrM"/>
                             <constraint firstItem="V3D-1x-2FL" firstAttribute="trailing" secondItem="lZ9-Kn-Iod" secondAttribute="trailing" id="yPH-HJ-lAt"/>
-                            <constraint firstItem="V3D-1x-2FL" firstAttribute="bottom" secondItem="lZ9-Kn-Iod" secondAttribute="bottom" id="zm3-ug-qCO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V3D-1x-2FL"/>
                     </view>
@@ -650,6 +663,7 @@
                         <outlet property="imageViewLeadingConstraint" destination="VMK-gE-fH0" id="6TR-gb-exJ"/>
                         <outlet property="imageViewTopConstraint" destination="qLW-lx-LT9" id="CPE-Pk-6AE"/>
                         <outlet property="imageViewTrailingConstraint" destination="J3J-bt-Y66" id="gRt-9J-Dzw"/>
+                        <outlet property="postCardButton" destination="Ir1-oU-qPG" id="Djc-6i-okn"/>
                         <outlet property="scrollView" destination="lZ9-Kn-Iod" id="EEh-O1-CzK"/>
                     </connections>
                 </viewController>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class JSONDownloader {
     let session: URLSession
@@ -28,11 +29,15 @@ class JSONDownloader {
             if let error = error as? URLError {
                 switch error.code {
                 case .notConnectedToInternet:
-                    // alert the user
-                    print("Not Connceted to Internet")
+                    // alert the user about no conection
+                    let alert = UIAlertController(title: "No Internet Connection", message: "You are not connected to internet! \nPlease  check your connection and try again...", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    alert.presentInOwnWindow(animated: true, completion: nil)
                 case .networkConnectionLost:
-                    // Alert the user
-                    print("Network Connection Lost")
+                    // alert the user about conection lost
+                    let alert = UIAlertController(title: "Lost Connection", message: "You have lost your internet connection! \nPlease  check your connection and try again...", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    alert.presentInOwnWindow(animated: true, completion: nil)
                 default:
                     break
                 }

@@ -13,6 +13,7 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var postCardButton: UIButton!
     
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
@@ -20,14 +21,22 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
     
     
-    var photo: CachePhotoObject!
+    var photo: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollView.delegate = self
+        
+        postCardButton.layer.cornerRadius = 10
+        
+        guard let photo = photo else {
+            print("photo object is empty")
+            return
+        }
+        
 
-        imageView.image = photo.image
+        imageView.image = photo
         imageView.sizeToFit()
         scrollView.contentSize = imageView.bounds.size
         updateZoomScale()

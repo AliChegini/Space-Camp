@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 class DeveloperController: UIViewController {
 
@@ -15,17 +15,31 @@ class DeveloperController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var techLabel: UILabel!
     
+    var sound: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "About Developer"
         
-        playSound(track: StaticProperties.developerSoundName, id: &StaticProperties.developerSoundID)
+        let path = Bundle.main.path(forResource: "PianoIntro", ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            sound = try AVAudioPlayer(contentsOf: url)
+            sound?.setVolume(0.1, fadeDuration: 0)
+            sound?.play()
+        } catch {
+            print("could not load file")
+        }
+        
+        
+        
+        //playSound(track: StaticProperties.developerSoundName, id: &StaticProperties.developerSoundID)
         
         imageView.center.x = self.view.frame.width + 200
         titleLabel.center.x = self.view.frame.width + 200
-        techLabel.center.x = self.view.frame.width + 200
+        techLabel.center.x = self.view.frame.width * 2
         
         UIView.animate(withDuration: 5.0, delay: 0.2, usingSpringWithDamping: 4.0, initialSpringVelocity: 5, options: .curveLinear, animations: {
             self.imageView.center.x = self.view.frame.width / 2

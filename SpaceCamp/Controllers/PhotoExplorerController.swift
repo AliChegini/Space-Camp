@@ -22,14 +22,14 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Make a PostCard", style: .plain, target: self, action: nil)
-        startActivityIndicator()
+        
         
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
         
         if let roverName = roverName, let date = date {
             separator.prepareReadyArray(roverName: roverName, date: date) { (data, error) in
                 if let data = data {
+                    self.startActivityIndicator()
                     for item in data {
                         self.finalArray.append(item)
                     }
@@ -40,27 +40,24 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                         self.stopActivityIndicator {
+                            // if finalArray count is zero alert the user
                             if self.finalArray.count == 0 {
-                                print("final array count is \(self.finalArray.count)")
                                 self.showNoPhotoAlert()
                             }
-                            
                         }
-                        
                     }
                 }
-                
             }
         }
+        
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
             if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell), let photoZoomController = segue.destination as? PhotoZoomController {
-                if let cachedObject = cachedPhotoObject.object(forKey: finalArray[indexPath.row].url as AnyObject) as? CachePhotoObject {
-                    photoZoomController.photo = cachedObject
-                }
+                photoZoomController.photo = cell.imageView.image
+                
             }
         }
     }
@@ -93,12 +90,17 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // getting the cell using indexPath
-        guard let cell = collectionView.cellForItem(at: indexPath) else {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell else {
             return
         }
-        // perform segue and having cell as sender,
-        // cell info will be used in prepareForSegue method
-        performSegue(withIdentifier: "showPhotoSegue", sender: cell)
+        
+        // check if the cell is populated with fetched data(image and label)
+        // placeholder image named "satellite" is been used to populate cells while loading data
+        if cell.imageView.image != UIImage(imageLiteralResourceName: "satellite") && cell.cameraLabel.text != "Receiving Picture and Camera Name" {
+            // perform segue and having cell as sender,
+            // cell info will be used in prepareForSegue method
+            performSegue(withIdentifier: "showPhotoSegue", sender: cell)
+        }
     }
     
 }

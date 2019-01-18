@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -17,6 +18,7 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
     
+    var sound: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,24 +60,38 @@ class MarsRoverController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        playSound(track: StaticProperties.changeRoverSoundName, id: &StaticProperties.changeRoverSoundID)
+        //playSound(track: StaticProperties.changeRoverSoundName, id: &StaticProperties.changeRoverSoundID)
+        
+        let path = Bundle.main.path(forResource: "ChangeRover", ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            sound = try AVAudioPlayer(contentsOf: url)
+            sound?.setVolume(0.3, fadeDuration: 0)
+            sound?.play()
+        } catch {
+            print("could not load file")
+        }
+        
+    
+        
         // show the button
         button.isHidden = false
         switch StaticProperties.arrayOfRoverNames[row] {
         case Rovers.Curiosity:
-            UIView.transition(with: imageViewerMars, duration: 0.6, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: imageViewerMars, duration: 0.7, options: .transitionFlipFromBottom, animations: {
                 self.imageViewerMars.image = UIImage(imageLiteralResourceName: "curiosity3")
             }, completion: nil)
             label.text = Rovers.Curiosity.rawValue
             
         case Rovers.Opportunity:
-            UIView.transition(with: imageViewerMars, duration: 0.6, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: imageViewerMars, duration: 0.7, options: .transitionFlipFromBottom, animations: {
                 self.imageViewerMars.image = UIImage(imageLiteralResourceName: "opp1")
             }, completion: nil)
             label.text = Rovers.Opportunity.rawValue
             
         case Rovers.Spirit:
-            UIView.transition(with: imageViewerMars, duration: 0.6, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: imageViewerMars, duration: 0.7, options: .transitionFlipFromBottom, animations: {
                 self.imageViewerMars.image = UIImage(imageLiteralResourceName: "sp1")
             }, completion: nil)
             label.text = Rovers.Spirit.rawValue

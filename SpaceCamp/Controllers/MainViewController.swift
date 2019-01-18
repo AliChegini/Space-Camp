@@ -11,7 +11,8 @@
 
 import UIKit
 import Foundation
-import AudioToolbox
+//import AudioToolbox
+import AVFoundation
 
 class MainViewController: UIViewController {
 
@@ -24,13 +25,31 @@ class MainViewController: UIViewController {
     let cachedApodObject = NSCache<AnyObject, AnyObject>()
     var timer = Timer()
     
+    
+    var sound: AVAudioPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Home"
         
-        print(kAudioQueueParam_Volume)
-        playSound(track: StaticProperties.appLaunchSoundName, id: &StaticProperties.appLaunchSoundID)
+        
+        let path = Bundle.main.path(forResource: "AppLaunch", ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            sound = try AVAudioPlayer(contentsOf: url)
+            sound?.setVolume(0.1, fadeDuration: 0)
+            sound?.play()
+        } catch {
+            print("could not load file")
+        }
+        
+        
+        
+        
+        
+        //playSound(track: StaticProperties.appLaunchSoundName, id: &StaticProperties.appLaunchSoundID)
         
         // Disableing apod button until API respond
         apodButton.isEnabled = false
@@ -77,7 +96,6 @@ class MainViewController: UIViewController {
     @objc func changeImage() {
         UIView.transition(with: marsRoverButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
             self.marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
-            print(self.timer)
         }, completion: nil)
     }
     

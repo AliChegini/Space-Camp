@@ -30,10 +30,6 @@ class ManifestController: UIViewController {
         
         button.layer.cornerRadius = 10
         
-        // block user interactions by starting activity indicator
-        // until manifest data gets loaded
-        startActivityIndicator()
-        
         datePicker.timeZone = TimeZone(abbreviation: "GMT")
         
         guard let roverName = roverName else {
@@ -41,6 +37,10 @@ class ManifestController: UIViewController {
         }
         
         parser.parseManifest(for: roverName) { (data, error) in
+            // block user interactions by starting activity indicator
+            // until manifest data gets loaded
+            self.startActivityIndicator()
+            
             if let data = data {
                 // Unwapping all the properties from manifest and populating labels
                 if let launchDateUnwrapped = data.photo_manifest.launch_date, let landingDateUnwrapped = data.photo_manifest.landing_date, let missionDateUnwrapped = data.photo_manifest.status, let lastPhotoDateUnwrapped = data.photo_manifest.max_date, let totalPhotosUnwrapped = data.photo_manifest.total_photos, let nameUnwrapped = data.photo_manifest.name {

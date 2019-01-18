@@ -21,7 +21,7 @@ class PhotoSeparator {
     private let parser = JSONParser()
     
     // asynch function to extract unwrapped properties and separate x photos of each camera
-    // returns [ReadyPhotoObject]
+    // returns [ReadyPhotoObject] at completion
     func prepareReadyArray(roverName: String, date: String, completionHandler completion: @escaping ([ReadyPhotoObject]?, SpaceCampError?) -> Void) {
         
         parser.parsePhotos(roverName: roverName, date: date) { (data, error) in
@@ -36,8 +36,9 @@ class PhotoSeparator {
                         
                         // 5 photos per camera is enough
                         if count < StaticProperties.numberOfPhotosForEachCamera {
+                            let readyPhotoObject = ReadyPhotoObject(url: url, dateStamp: date, cameraName: cameraName)
                             // populating the dictionary with unwrapped properties
-                            array.append(ReadyPhotoObject(url: url, dateStamp: date, cameraName: cameraName))
+                            array.append(readyPhotoObject)
                         }
                     }
                 }

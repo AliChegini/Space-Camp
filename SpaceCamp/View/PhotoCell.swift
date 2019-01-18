@@ -37,6 +37,7 @@ class PhotoCell: UICollectionViewCell {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
+        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
         return label
     }()
     

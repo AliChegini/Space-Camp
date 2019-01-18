@@ -62,6 +62,19 @@ extension UIViewController {
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    
+    // No Internet conncetion Alert
+    func showNotConnectedToInternet() {
+        let alert = UIAlertController(title: "No Internet Conncetion", message: "You are not connected to Internet, Please check your connection and try again...", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
         
     }
     
@@ -73,6 +86,9 @@ extension UIViewController {
 extension PhotoExplorerController {
     // function to setup cell
     func configureCell(cell: PhotoCell, indexPath: IndexPath) -> UICollectionViewCell {
+        cell.imageView.image = UIImage(imageLiteralResourceName: "satellite")
+        cell.cameraLabel.text = "Receiving Picture and Camera Name"
+        
         // check if the photoObject is available in cache
         if let photoObjectFromCache = cachedPhotoObject.object(forKey: finalArray[indexPath.row].url as AnyObject) as? CachePhotoObject {
             cell.imageView.image = photoObjectFromCache.image
@@ -119,3 +135,11 @@ extension UIViewController {
     }
 }
 
+
+// extension to alert the user for connection related errors from JSONDownloader
+extension UIAlertController {
+    func presentInOwnWindow(animated: Bool, completion: (() -> Void)?) {
+        guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else { return }
+        rootVC.present(self, animated: animated, completion: completion)
+    }
+}
