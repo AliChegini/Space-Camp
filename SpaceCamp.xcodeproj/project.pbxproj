@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C34353D21F3764700C601FE /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34353C21F3764700C601FE /* AlertExtension.swift */; };
+		7C34353F21F376C100C601FE /* CellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34353E21F376C100C601FE /* CellExtension.swift */; };
 		7C350DE721EF947500E62F72 /* PhotoZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C350DE621EF947500E62F72 /* PhotoZoomController.swift */; };
 		7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886421E207FD00C08F0D /* JSONDownloader.swift */; };
 		7C35886721E23EEC00C08F0D /* SpaceCampError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886621E23EEC00C08F0D /* SpaceCampError.swift */; };
@@ -24,17 +26,20 @@
 		7C36B32621E6373E0060CD79 /* ManifestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32521E6373E0060CD79 /* ManifestController.swift */; };
 		7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32721E661460060CD79 /* StaticProperties.swift */; };
 		7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */; };
-		7C386B2621ECB100007B6D84 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2521ECB100007B6D84 /* Extensions.swift */; };
+		7C386B2621ECB100007B6D84 /* GeneralExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2521ECB100007B6D84 /* GeneralExtension.swift */; };
 		7C386B2E21ECF160007B6D84 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2D21ECF160007B6D84 /* PhotoCell.swift */; };
 		7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */; };
 		7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49521DF59DE00D3B650 /* MainViewController.swift */; };
 		7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49721DF59DE00D3B650 /* Main.storyboard */; };
 		7C5AE49E21DF59DF00D3B650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49C21DF59DF00D3B650 /* LaunchScreen.storyboard */; };
 		7C5AE4A621DF774B00D3B650 /* ApodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE4A521DF774B00D3B650 /* ApodController.swift */; };
+		7C5C56FC21F299EF00D64A55 /* PostCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C56FB21F299EF00D64A55 /* PostCardController.swift */; };
 		7C637F4721E87C890011AB87 /* PhotoExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C34353C21F3764700C601FE /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
+		7C34353E21F376C100C601FE /* CellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExtension.swift; sourceTree = "<group>"; };
 		7C350DE621EF947500E62F72 /* PhotoZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomController.swift; sourceTree = "<group>"; };
 		7C35886421E207FD00C08F0D /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		7C35886621E23EEC00C08F0D /* SpaceCampError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCampError.swift; sourceTree = "<group>"; };
@@ -52,7 +57,7 @@
 		7C36B32521E6373E0060CD79 /* ManifestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestController.swift; sourceTree = "<group>"; };
 		7C36B32721E661460060CD79 /* StaticProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticProperties.swift; sourceTree = "<group>"; };
 		7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSeparator.swift; sourceTree = "<group>"; };
-		7C386B2521ECB100007B6D84 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7C386B2521ECB100007B6D84 /* GeneralExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtension.swift; sourceTree = "<group>"; };
 		7C386B2D21ECF160007B6D84 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		7C5AE49021DF59DE00D3B650 /* SpaceCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		7C5AE49D21DF59DF00D3B650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C5AE49F21DF59DF00D3B650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C5AE4A521DF774B00D3B650 /* ApodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodController.swift; sourceTree = "<group>"; };
+		7C5C56FB21F299EF00D64A55 /* PostCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardController.swift; sourceTree = "<group>"; };
 		7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoExplorerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,14 +94,15 @@
 		7C386B2721ECB17E007B6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7C5AE4A521DF774B00D3B650 /* ApodController.swift */,
-				7C35DA6B21F0980E00964CF2 /* ApodZoomController.swift */,
 				7C35DA6D21F0A11600964CF2 /* DeveloperController.swift */,
+				7C35DA6B21F0980E00964CF2 /* ApodZoomController.swift */,
+				7C5AE4A521DF774B00D3B650 /* ApodController.swift */,
 				7C5AE49521DF59DE00D3B650 /* MainViewController.swift */,
 				7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */,
 				7C36B32521E6373E0060CD79 /* ManifestController.swift */,
 				7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */,
 				7C350DE621EF947500E62F72 /* PhotoZoomController.swift */,
+				7C5C56FB21F299EF00D64A55 /* PostCardController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -125,7 +132,9 @@
 		7C386B2A21ECB3C0007B6D84 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7C386B2521ECB100007B6D84 /* Extensions.swift */,
+				7C34353C21F3764700C601FE /* AlertExtension.swift */,
+				7C34353E21F376C100C601FE /* CellExtension.swift */,
+				7C386B2521ECB100007B6D84 /* GeneralExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -259,12 +268,15 @@
 				7C350DE721EF947500E62F72 /* PhotoZoomController.swift in Sources */,
 				7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */,
 				7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */,
-				7C386B2621ECB100007B6D84 /* Extensions.swift in Sources */,
+				7C34353F21F376C100C601FE /* CellExtension.swift in Sources */,
+				7C34353D21F3764700C601FE /* AlertExtension.swift in Sources */,
+				7C386B2621ECB100007B6D84 /* GeneralExtension.swift in Sources */,
 				7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */,
 				7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */,
 				7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */,
 				7C35DA6C21F0980E00964CF2 /* ApodZoomController.swift in Sources */,
 				7C5AE4A621DF774B00D3B650 /* ApodController.swift in Sources */,
+				7C5C56FC21F299EF00D64A55 /* PostCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

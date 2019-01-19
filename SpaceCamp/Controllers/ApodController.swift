@@ -31,13 +31,14 @@ class ApodController: UIViewController {
         // hide Zoom button until hd image gets loaded
         zoomButton.isHidden = true
         
-        zoomButton.layer.cornerRadius = 10
-        developerButton.layer.cornerRadius = 10
+        zoomButton.roundButton()
+        developerButton.roundButton()
         
         imageView.image = apod.image
         label.text = apod.title
         textField.text = apod.explanation
         
+        // check if hd image is cached don't fire get data
         parser.client.getData(from: apod.hdUrl) { (data, error) in
             if let data = data {
                 guard let hdImage = UIImage(data: data) else {
@@ -47,6 +48,7 @@ class ApodController: UIViewController {
                 DispatchQueue.main.async {
                     self.zoomButton.isHidden = false
                 }
+                // TODO: remebr to cach the hd image here and send/ show from the cache
                 
                 self.highQualityImage = hdImage
                 
@@ -63,8 +65,5 @@ class ApodController: UIViewController {
         }
     }
     
-    
-    
-    
-    
+
 }

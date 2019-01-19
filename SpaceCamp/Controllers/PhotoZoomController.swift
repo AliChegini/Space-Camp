@@ -28,7 +28,7 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
         
-        postCardButton.layer.cornerRadius = 10
+        postCardButton.roundButton()
         
         guard let photo = photo else {
             print("photo object is empty")
@@ -43,6 +43,16 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
         updateConstraintsForSize(view.bounds.size)
         view.backgroundColor = UIColor.black
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "postCardSegue" {
+            if let navController = segue.destination as? UINavigationController, let postCardController = navController.topViewController as?  PostCardController {
+                postCardController.postCardImage = photo
+            }
+        }
+    }
+    
     
     var minZoomScale: CGFloat {
         let viewSize = view.bounds.size

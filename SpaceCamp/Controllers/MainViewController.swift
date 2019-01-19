@@ -46,15 +46,15 @@ class MainViewController: UIViewController {
         }
         
         
-        
-        
-        
         //playSound(track: StaticProperties.appLaunchSoundName, id: &StaticProperties.appLaunchSoundID)
         
         // Disableing apod button until API respond
         apodButton.isEnabled = false
         // set a random image for rover button to start with
         marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
+        
+        // TODO: think about putting this in view did appear so if one call is not successfull,
+        // attempt again by loading the view, and check if it is cached don't fire get data
         
         // parse APOD object if API is responding
         parser.parseApod { (apod, error) in
@@ -87,8 +87,6 @@ class MainViewController: UIViewController {
             }
         }
         
-        
-//        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
         
     }
 

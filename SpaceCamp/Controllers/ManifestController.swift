@@ -28,7 +28,8 @@ class ManifestController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button.layer.cornerRadius = 10
+        button.roundButton()
+        button.isHidden = true
         
         datePicker.timeZone = TimeZone(abbreviation: "GMT")
         
@@ -72,11 +73,13 @@ class ManifestController: UIViewController {
                             break
                         }
                         
-                    }
-                    // stop activity indicator after populating labels
-                    self.stopActivityIndicator(completion: {
+                        // stop activity indicator after populating labels
+                        self.stopActivityIndicator(completion: {
+                            self.button.isHidden = false
+                        })
                         
-                    })
+                    }
+                    
                 }
             }
         }

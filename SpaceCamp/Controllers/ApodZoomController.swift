@@ -19,9 +19,8 @@ class ApodZoomController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
     
     
-    
-    
     var hdPhoto: UIImage!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

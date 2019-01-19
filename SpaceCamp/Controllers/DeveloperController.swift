@@ -37,9 +37,9 @@ class DeveloperController: UIViewController {
         
         //playSound(track: StaticProperties.developerSoundName, id: &StaticProperties.developerSoundID)
         
-        imageView.center.x = self.view.frame.width + 200
-        titleLabel.center.x = self.view.frame.width + 200
-        techLabel.center.x = self.view.frame.width * 2
+        imageView.center.x = self.view.frame.width + self.view.frame.width
+        titleLabel.center.x = self.view.frame.width + self.view.frame.width
+        techLabel.center.x = self.view.frame.width  + self.view.frame.width
         
         UIView.animate(withDuration: 5.0, delay: 0.2, usingSpringWithDamping: 4.0, initialSpringVelocity: 5, options: .curveLinear, animations: {
             self.imageView.center.x = self.view.frame.width / 2
