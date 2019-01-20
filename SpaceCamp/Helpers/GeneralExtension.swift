@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 extension UIViewController {
     // function to convert String to Date
@@ -34,6 +35,26 @@ extension UIViewController {
     }
     
 }
+
+// helper to play sounds
+extension UIViewController {
+    func playSound(track name: String, with player: inout AVAudioPlayer, volume: Float) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("Could not find soundtrack")
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.setVolume(volume, fadeDuration: 0)
+            player.play()
+        } catch {
+            print("could not load file")
+        }
+    }
+}
+
 
 
 

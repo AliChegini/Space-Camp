@@ -15,20 +15,29 @@ class DeveloperController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var techLabel: UILabel!
     
-    var sound: AVAudioPlayer?
+    var player: AVAudioPlayer?
+    
+    var timer = Timer()
+    
+    // closure dedicated to myself(Developer)
+    // typealias ImageFunction = () -> UIImage
+    // func myNextImage() -> ImageFunction
+    let aliNextImage = StaticImages.myNextImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "About Developer"
-        
-        let path = Bundle.main.path(forResource: "PianoIntro", ofType: "mp3")!
+
+        guard let path = Bundle.main.path(forResource: "PianoIntro", ofType: "mp3") else {
+            return
+        }
         let url = URL(fileURLWithPath: path)
-        
+
         do {
-            sound = try AVAudioPlayer(contentsOf: url)
-            sound?.setVolume(0.1, fadeDuration: 0)
-            sound?.play()
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.setVolume(0.8, fadeDuration: 0)
+            player?.play()
         } catch {
             print("could not load file")
         }
@@ -45,7 +54,7 @@ class DeveloperController: UIViewController {
             self.imageView.center.x = self.view.frame.width / 2
         }, completion: nil)
         
-        UIView.animate(withDuration: 4.0, delay: 1.2, usingSpringWithDamping: 4.0, initialSpringVelocity: 10, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 4.0, delay: 1.2, usingSpringWithDamping: 4.0, initialSpringVelocity: 7, options: .curveLinear, animations: {
             self.titleLabel.center.x = self.view.frame.width / 2
         }, completion: nil)
         
@@ -54,5 +63,19 @@ class DeveloperController: UIViewController {
         }, completion: nil)
         
     }
+    
+    
+    @objc func changeImage() {
+        UIView.transition(with: imageView, duration: 0.6, options: .transitionFlipFromLeft, animations: {
+            self.imageView.image = self.aliNextImage()
+        }, completion: nil)
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // validating timer coming back to this view
+        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+    }
+    
     
 }

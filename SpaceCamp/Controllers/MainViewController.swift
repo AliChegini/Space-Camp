@@ -25,6 +25,8 @@ class MainViewController: UIViewController {
     let cachedApodObject = NSCache<AnyObject, AnyObject>()
     var timer = Timer()
     
+    // closure for landing pictures
+    let nextLandingImage = StaticImages.nextLandingImage()
     
     var sound: AVAudioPlayer?
     
@@ -46,13 +48,9 @@ class MainViewController: UIViewController {
         }
         
         
-        //playSound(track: StaticProperties.appLaunchSoundName, id: &StaticProperties.appLaunchSoundID)
-        
         // Disableing apod button until API respond
-        apodButton.isEnabled = false
-        // set a random image for rover button to start with
-        marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
-        
+        apodButton.isHidden = true
+    
         // TODO: think about putting this in view did appear so if one call is not successfull,
         // attempt again by loading the view, and check if it is cached don't fire get data
         
@@ -73,7 +71,7 @@ class MainViewController: UIViewController {
                                 self.apodButton.setBackgroundImage(UIImage(data: data), for: .normal)
                             }, completion: nil)
                             // since API health is ok enable the button
-                            self.apodButton.isEnabled = true
+                            self.apodButton.isHidden = false
                         }
                         guard let imageToCache = UIImage(data: data) else {
                             return
@@ -92,8 +90,8 @@ class MainViewController: UIViewController {
 
     
     @objc func changeImage() {
-        UIView.transition(with: marsRoverButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
-            self.marsRoverButton.setBackgroundImage(StaticImages.generateRandomImage(), for: .normal)
+        UIView.transition(with: marsRoverButton, duration: 0.5, options: .transitionFlipFromBottom, animations: {
+            self.marsRoverButton.setBackgroundImage(self.nextLandingImage(), for: .normal)
         }, completion: nil)
     }
     
@@ -113,7 +111,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // validating timer coming back to this view
-        timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
     }
     
     

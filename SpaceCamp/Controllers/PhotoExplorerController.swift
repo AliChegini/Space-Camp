@@ -18,18 +18,20 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     
     var roverName: String?
     var date: String?
+    
     var finalArray: [ReadyPhotoObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
+        
         
         if let roverName = roverName, let date = date {
             separator.prepareReadyArray(roverName: roverName, date: date) { (data, error) in
                 if let data = data {
                     self.startActivityIndicator()
+                    
                     for item in data {
                         self.finalArray.append(item)
                     }
@@ -39,13 +41,15 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                     // reloading collectionView from main thread
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                        self.stopActivityIndicator {
-                            // if finalArray count is zero alert the user
-                            if self.finalArray.count == 0 {
-                                self.showNoPhotoAlert()
-                            }
+                    }
+                    
+                    self.stopActivityIndicator {
+                        // if finalArray count is zero alert the user
+                        if self.finalArray.count == 0 {
+                            self.showNoPhotoAlert()
                         }
                     }
+                    
                 }
             }
         }

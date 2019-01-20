@@ -12,6 +12,7 @@ import Foundation
 class ApodController: UIViewController {
     let parser = JSONParser()
     
+    // TODO change the force unwrap here
     var apod: CacheApodObject!
     
     

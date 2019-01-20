@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let navigationBarAppereances = UINavigationBar.appearance()
-        navigationBarAppereances.tintColor = UIColor.orange
+        navigationBarAppereances.tintColor = UIColor.red
         navigationBarAppereances.isTranslucent = false
         
         return true

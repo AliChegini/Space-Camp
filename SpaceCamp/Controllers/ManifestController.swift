@@ -28,6 +28,8 @@ class ManifestController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startActivityIndicator()
+        
         button.roundButton()
         button.isHidden = true
         
@@ -38,10 +40,6 @@ class ManifestController: UIViewController {
         }
         
         parser.parseManifest(for: roverName) { (data, error) in
-            // block user interactions by starting activity indicator
-            // until manifest data gets loaded
-            self.startActivityIndicator()
-            
             if let data = data {
                 // Unwapping all the properties from manifest and populating labels
                 if let launchDateUnwrapped = data.photo_manifest.launch_date, let landingDateUnwrapped = data.photo_manifest.landing_date, let missionDateUnwrapped = data.photo_manifest.status, let lastPhotoDateUnwrapped = data.photo_manifest.max_date, let totalPhotosUnwrapped = data.photo_manifest.total_photos, let nameUnwrapped = data.photo_manifest.name {
@@ -73,11 +71,15 @@ class ManifestController: UIViewController {
                             break
                         }
                         
-                        // stop activity indicator after populating labels
-                        self.stopActivityIndicator(completion: {
+                    }
+                    
+                    
+                    
+                    // stop activity indicator after populating labels
+                    self.stopActivityIndicator {
+                        UIView.transition(with: self.button, duration: 0.3, options: .transitionFlipFromTop, animations: {
                             self.button.isHidden = false
-                        })
-                        
+                        }, completion: nil)
                     }
                     
                 }

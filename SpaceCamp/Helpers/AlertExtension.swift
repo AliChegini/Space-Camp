@@ -28,16 +28,17 @@ extension UIViewController {
         dismiss(animated: true, completion: completion)
     }
     
-    
+    // alert for no photos
     func showNoPhotoAlert() {
-        let alert = UIAlertController(title: "No Photos", message: "Unfortunately Mars Rover did not take any photos on your chosen date! Please try another date", preferredStyle: .alert)
+        let alert = UIAlertController(title: "No Photos for this Date", message: "Mars Rover did not take any photos on your chosen date\nPlease try another date", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
         
         alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true)
     }
     
     
