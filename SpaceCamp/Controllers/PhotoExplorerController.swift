@@ -14,7 +14,7 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     let separator = PhotoSeparator()
     let parser = JSONParser()
     
-    let cachedPhotoObject = NSCache<AnyObject, AnyObject>()
+    let cache = NSCache<AnyObject, AnyObject>()
     
     var roverName: String?
     var date: String?
@@ -26,12 +26,22 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
         
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
         
-        
         if let roverName = roverName, let date = date {
+            // start activity indicator
+            startActivityIndicator()
+            // timer to keep track of activity indicator for slow connection users
+            // progress bar should not block user for more than 15 seconds
+            Timer.scheduledTimer(withTimeInterval: 15, repeats: false) { timer in
+                if StaticProperties.isActivityIndicatorOn == true {
+                    self.stopActivityIndicator {
+                        // show time out feedback
+                        self.timeOutFeedback()
+                    }
+                }
+            }
+            
             separator.prepareReadyArray(roverName: roverName, date: date) { (data, error) in
                 if let data = data {
-                    self.startActivityIndicator()
-                    
                     for item in data {
                         self.finalArray.append(item)
                     }
@@ -41,12 +51,11 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                     // reloading collectionView from main thread
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                    }
-                    
-                    self.stopActivityIndicator {
-                        // if finalArray count is zero alert the user
-                        if self.finalArray.count == 0 {
-                            self.showNoPhotoAlert()
+                        self.stopActivityIndicator {
+                            // if finalArray count is zero alert the user
+                            if self.finalArray.count == 0 {
+                                self.showNoPhotoAlert()
+                            }
                         }
                     }
                     
@@ -61,7 +70,7 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
         if segue.identifier == "showPhotoSegue" {
             if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell), let photoZoomController = segue.destination as? PhotoZoomController {
                 photoZoomController.photo = cell.imageView.image
-                
+                // TODO: think about a way to send other infos like camera name and rover name and date for the poster
             }
         }
     }

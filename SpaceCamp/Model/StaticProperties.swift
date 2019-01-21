@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AudioToolbox
 
 
 // enum for rover names
@@ -29,30 +28,15 @@ struct StaticProperties {
     static let arrayOfRoverNames: [Rovers] = [.Curiosity, .Opportunity, .Spirit]
     static let numberOfPhotosForEachCamera = 5
     
+    // sound track names
     static let developerSoundName = "PianoIntro"
     static let appLaunchSoundName = "AppLaunch"
     static let changeRoverSoundName = "ChangeRover"
-    static var developerSoundID: SystemSoundID = 1
-    static var appLaunchSoundID : SystemSoundID = 2
-    static var changeRoverSoundID: SystemSoundID = 3
     
-}
-
-
-// photo Object to keep in cache
-// This object will be used to setup cells in collection view
-struct CachePhotoObject {
-    let image: UIImage
-    let camera: String
-}
-
-
-// APOD Object to keep in cache
-// This object will be passed from main view to Apod Controller
-struct CacheApodObject {
-    let image: UIImage
-    let title: String
-    let explanation: String
-    let hdUrl: String
+    static var isActivityIndicatorOn: Bool = false
+    
+    // will be used to cache different objects whenevr needed
+    static var cacheObject = NSCache<AnyObject, AnyObject>()
+    
 }
 

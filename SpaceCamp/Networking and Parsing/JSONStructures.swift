@@ -14,6 +14,7 @@ struct Apod: Decodable {
     let url: String?
     let hdurl: String?
     let explanation: String?
+    let media_type: String?
 }
 
 
@@ -40,11 +41,6 @@ struct MarsRoverPhotos: Decodable {
 
 // ---- Structs for Mission Manifests
 
-struct RoverManifest: Decodable {
-    let photo_manifest: Manifest
-}
-
-
 // struct to hold a manifest object
 struct Manifest: Decodable {
     let name: String?
@@ -55,5 +51,8 @@ struct Manifest: Decodable {
     let total_photos: Int?
 }
 
+struct RoverManifest: Decodable {
+    let photo_manifest: Manifest
+}
 
 

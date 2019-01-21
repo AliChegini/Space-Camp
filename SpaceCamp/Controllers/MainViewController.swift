@@ -6,12 +6,11 @@
 //  Copyright © 2019 Ali C. All rights reserved.
 //
 
-
 // API Key : auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
 
 import UIKit
 import Foundation
-//import AudioToolbox
+import StoreKit
 import AVFoundation
 
 class MainViewController: UIViewController {
@@ -21,99 +20,105 @@ class MainViewController: UIViewController {
     
     let parser = JSONParser()
     
-    // will be used to send via segue to ApodController
-    let cachedApodObject = NSCache<AnyObject, AnyObject>()
-    var timer = Timer()
+    // timer to chnage landing images
+    var landingImagesTimer = Timer()
     
     // closure for landing pictures
     let nextLandingImage = StaticImages.nextLandingImage()
     
-    var sound: AVAudioPlayer?
+    var player: AVAudioPlayer?
+    
+    // this object will be used to send via segue
+    // it will get its value from the cache
+    var readyApod : ReadyToUseApodObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Home"
         
+        // global timer to count 180 seconds to ask review from user
+        Timer.scheduledTimer(withTimeInterval: 180, repeats: false) { timer in
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            }
+        }
         
         let path = Bundle.main.path(forResource: "AppLaunch", ofType: "mp3")!
         let url = URL(fileURLWithPath: path)
         
         do {
-            sound = try AVAudioPlayer(contentsOf: url)
-            sound?.setVolume(0.1, fadeDuration: 0)
-            sound?.play()
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.setVolume(0.3, fadeDuration: 0)
+            player?.play()
         } catch {
             print("could not load file")
         }
         
-        
-        // Disableing apod button until API respond
+        // hiding apod button until API respond
         apodButton.isHidden = true
-    
-        // TODO: think about putting this in view did appear so if one call is not successfull,
-        // attempt again by loading the view, and check if it is cached don't fire get data
         
-        // parse APOD object if API is responding
-        parser.parseApod { (apod, error) in
-            guard let apod = apod else {
-                print("apod is nil")
-                return
-            }
-            
-            if let url = apod.url, let explanation = apod.explanation, let title = apod.title, let hdUrl = apod.hdurl {
-                // by having a url, we can retrieve image to show
-                self.parser.client.getData(from: url) { (data, error) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            // change apodButton background image with nice animation
-                            UIView.transition(with: self.apodButton, duration: 2.0, options: .transitionCurlUp, animations: {
-                                self.apodButton.setBackgroundImage(UIImage(data: data), for: .normal)
-                            }, completion: nil)
-                            // since API health is ok enable the button
-                            self.apodButton.isHidden = false
+        // check the cache if APOD object is available use it
+        if let readyToUseApodObject = StaticProperties.cacheObject.object(forKey: "APOD" as AnyObject) as? ReadyToUseApodObject {
+            readyApod = readyToUseApodObject
+            apodButton.isHidden = false
+        } else {
+            // if APOD object is not cached fire networking call
+            parser.parseApod { (apod, error) in
+                guard let apod = apod else {
+                    print("APOD API is not responding")
+                    return
+                }
+                // unwrapping all the optionals
+                if let url = apod.url, let explanation = apod.explanation, let title = apod.title, let hdUrl = apod.hdurl, let media_type = apod.media_type {
+                    // by having a url, retrieve the image to cache and show in APOD controller
+                    self.parser.client.getData(from: url) { (data, error) in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                // since API health is ok enable the button
+                                UIView.transition(with: self.apodButton, duration: 0.7, options: .transitionCrossDissolve, animations: {
+                                    self.apodButton.isHidden = false
+                                }, completion: nil)
+                            }
+                            guard let imageToCache = UIImage(data: data) else {
+                                return
+                            }
+                            
+                            let readyToUseApodObject = ReadyToUseApodObject(image: imageToCache, title: title, explanation: explanation, hdUrl: hdUrl, media_type: media_type)
+                            self.readyApod = readyToUseApodObject
+                            StaticProperties.cacheObject.setObject(readyToUseApodObject as AnyObject, forKey: "APOD" as AnyObject)
                         }
-                        guard let imageToCache = UIImage(data: data) else {
-                            return
-                        }
-                        
-                        let apodObjectToCache = CacheApodObject(image: imageToCache, title: title, explanation: explanation, hdUrl: hdUrl)
-                        self.cachedApodObject.setObject(apodObjectToCache as AnyObject, forKey: "APOD" as AnyObject)
-                        
                     }
                 }
             }
         }
         
-        
     }
 
     
     @objc func changeImage() {
-        UIView.transition(with: marsRoverButton, duration: 0.5, options: .transitionFlipFromBottom, animations: {
+        UIView.transition(with: marsRoverButton, duration: 0.7, options: .transitionFlipFromBottom, animations: {
             self.marsRoverButton.setBackgroundImage(self.nextLandingImage(), for: .normal)
         }, completion: nil)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // invalidate timer when leaving the view
-        timer.invalidate()
-        
         if segue.identifier == "apodSegue" {
-            if let apodController = segue.destination as? ApodController {
-                if let cachedObject = cachedApodObject.object(forKey: "APOD" as AnyObject) as? CacheApodObject {
-                    apodController.apod = cachedObject
-                }
+            if let apodController = segue.destination as? ApodController, let readyApodUnwrapped = readyApod {
+                apodController.readyApod = readyApodUnwrapped
             }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         // validating timer coming back to this view
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+        landingImagesTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        // invalidate timer when leaving the view
+        landingImagesTimer.invalidate()
+    }
     
 }

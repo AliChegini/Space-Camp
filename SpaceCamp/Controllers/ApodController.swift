@@ -12,17 +12,14 @@ import Foundation
 class ApodController: UIViewController {
     let parser = JSONParser()
     
-    // TODO change the force unwrap here
-    var apod: CacheApodObject!
-    
+    var readyApod: ReadyToUseApodObject?
+    var highQualityImage: UIImage?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var zoomButton: UIButton!
-    @IBOutlet weak var developerButton: UIButton!
     
-    var highQualityImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,28 +28,31 @@ class ApodController: UIViewController {
         
         // hide Zoom button until hd image gets loaded
         zoomButton.isHidden = true
-        
         zoomButton.roundButton()
-        developerButton.roundButton()
         
-        imageView.image = apod.image
-        label.text = apod.title
-        textField.text = apod.explanation
+        guard let readyApod = readyApod else {
+            return
+        }
         
-        // check if hd image is cached don't fire get data
-        parser.client.getData(from: apod.hdUrl) { (data, error) in
+        imageView.image = readyApod.image
+        label.text = readyApod.title
+        textField.text = readyApod.explanation
+        
+        
+        // if hd image is not cached fire off networking call
+        parser.client.getData(from: readyApod.hdUrl) { (data, error) in
             if let data = data {
                 guard let hdImage = UIImage(data: data) else {
                     return
                 }
                 
-                DispatchQueue.main.async {
-                    self.zoomButton.isHidden = false
-                }
-                // TODO: remebr to cach the hd image here and send/ show from the cache
-                
                 self.highQualityImage = hdImage
                 
+                DispatchQueue.main.async {
+                    UIView.transition(with: self.zoomButton, duration: 0.6, options: .transitionFlipFromBottom, animations: {
+                        self.zoomButton.isHidden = false
+                    }, completion: nil)
+                }
             }
         }
         
@@ -66,5 +66,4 @@ class ApodController: UIViewController {
         }
     }
     
-
 }

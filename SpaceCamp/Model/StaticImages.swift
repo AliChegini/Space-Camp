@@ -11,7 +11,7 @@ import UIKit
 
 
 class StaticImages {
-    private static let landingPageImages = ["SpLanding1", "CurLanding2", "CurLanding1", "OppLanding1", "OppLanding2"]
+    private static let landingPageImages = ["SpLanding1", "CurLanding2", "CurLanding", "OppLanding1", "OppLanding2"]
     
     private static let developerImages = ["pic1", "pic2", "pic3"]
     
@@ -23,9 +23,8 @@ class StaticImages {
         
         func decrement() -> UIImage {
             localCounter -= 1
-            print(localCounter)
             if localCounter < 0 {
-                // minus one to account for 0 index
+                // reset the counter and minus one to account for 0 index
                 localCounter = landingPageImages.count - 1
             }
             return UIImage(imageLiteralResourceName: landingPageImages[localCounter])

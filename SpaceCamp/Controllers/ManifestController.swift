@@ -29,6 +29,16 @@ class ManifestController: UIViewController {
         super.viewDidLoad()
         
         startActivityIndicator()
+        // timer to keep track of activity indicator for slow connection users
+        // progress bar should not block user for more than 15 seconds
+        Timer.scheduledTimer(withTimeInterval: 15, repeats: false) { timer in
+            if StaticProperties.isActivityIndicatorOn == true {
+                self.stopActivityIndicator {
+                    // show time out feedback
+                    self.timeOutFeedback()
+                }
+            }
+        }
         
         button.roundButton()
         button.isHidden = true
@@ -71,15 +81,13 @@ class ManifestController: UIViewController {
                             break
                         }
                         
-                    }
-                    
-                    
-                    
-                    // stop activity indicator after populating labels
-                    self.stopActivityIndicator {
-                        UIView.transition(with: self.button, duration: 0.3, options: .transitionFlipFromTop, animations: {
-                            self.button.isHidden = false
-                        }, completion: nil)
+                        // stop activity indicator after populating labels
+                        self.stopActivityIndicator {
+                            UIView.transition(with: self.button, duration: 0.3, options: .transitionFlipFromTop, animations: {
+                                self.button.isHidden = false
+                            }, completion: nil)
+                        }
+                        
                     }
                     
                 }

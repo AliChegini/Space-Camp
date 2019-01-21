@@ -50,6 +50,7 @@ class JSONDownloader {
             
             if httpResponse.statusCode == 200 {
                 if let data = data {
+                    //print(httpResponse.allHeaderFields.debugDescription)
                     completion(data, nil)
                 } else {
                     completion(nil, .invalidData)

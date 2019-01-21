@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageUI
+import AVFoundation
+import StoreKit
 
 class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
 
@@ -16,8 +18,8 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var resultLabel: UILabel!
     
+    var player: AVAudioPlayer?
     
     var postCardImage: UIImage!
     
@@ -30,7 +32,6 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
         downloadButton.isHidden = true
         emailButton.isHidden = true
         emailField.isHidden = true
-        resultLabel.isHidden = true
         
         emailButton.roundButton()
         downloadButton.roundButton()
@@ -38,6 +39,17 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let path = Bundle.main.path(forResource: "PhotoSentDownloaded", ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.setVolume(0.9, fadeDuration: 0)
+        } catch {
+            print("could not load file")
+        }
+        
         
         
     }
@@ -49,9 +61,21 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     
     
     @IBAction func downloadAction(_ sender: UIButton) {
-        
+        //UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image), nil)
     }
     
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if error != nil {
+            // we got back an error!
+            let err = UIAlertController(title: "Error", message: "Unable to save!", preferredStyle: .alert)
+            err.addAction(UIAlertAction(title: "OK", style: .default))
+            present(err, animated: true)
+        } else {
+            player?.play()
+            downloadFeedback()
+        }
+    }
     
     @IBAction func sendToEmail(_ sender: UIButton) {
         if let email = emailField.text {
@@ -79,14 +103,26 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let newText = postCardField.text {
-            imageView.image = textOverImage(text: newText, image: postCardImage, at: CGPoint(x: 40, y: 40))
+            UIView.transition(with: imageView, duration: 0.6, options: .transitionFlipFromBottom, animations: {
+                self.imageView.image = self.textOverImage(text: newText, image: self.postCardImage, at: CGPoint(x: 40, y: 40))
+            }, completion: nil)
         }
         
-        self.view.endEditing(true)
 
-        downloadButton.isHidden = false
-        emailButton.isHidden = false
-        emailField.isHidden = false
+        UIView.transition(with: downloadButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
+            self.downloadButton.isHidden = false
+        }, completion: nil)
+        
+        UIView.transition(with: emailButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
+            self.emailButton.isHidden = false
+        }, completion: nil)
+        
+        UIView.transition(with: emailField, duration: 1.0, options: .transitionFlipFromBottom, animations: {
+            self.emailField.isHidden = false
+        }, completion: nil)
+        
+    
+        self.view.endEditing(true)
         
         return false
     }
@@ -121,7 +157,6 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
         
     }
     
-    // Think about removing this feautre
     
     // function to send email
     func sendEmail(to address: String) {
@@ -129,18 +164,31 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients([address])
-            mail.setSubject("PostCard from SpaceCamp")
-            mail.setMessageBody("Warm wishes from SpaceCamp.\nHere is your PostCard. If you enjoy the app please give it five star in AppStore. Have a lovaely day.", isHTML: true)
-            // TODO: attatch the image later and think about removing this option. User may get paranoid and delete the app
-            //mail.addAttachmentData(<#T##attachment: Data##Data#>, mimeType: <#T##String#>, fileName: <#T##String#>)
+            mail.setSubject("Mars Rover PostCard from SpaceCamp")
+            mail.setMessageBody("Warm wishes from SpaceCamp.\nHere is your Mars Rover PostCard. If you enjoy the app please give it five star rate in App Store. Have a lovely day...", isHTML: true)
+            
+            guard let image = imageView.image else {
+                return
+            }
+            
+            guard let imageData = image.jpegData(compressionQuality: 1.0) else {
+                return
+            }
+            
+            mail.addAttachmentData(imageData, mimeType: "image/jpeg", fileName: "MarsRoverPostCard")
             
             present(mail, animated: true)
+        } else {
+            // alert the user he can't send email
+            showUnableToSendEmailAlert()
         }
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        resultLabel.isHidden = false
-        resultLabel.text = "Your Postcard has been successfully sent"
+        player?.play()
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
         controller.dismiss(animated: true)
     }
     

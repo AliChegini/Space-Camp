@@ -77,5 +77,10 @@ class DeveloperController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
+        player?.stop()
+    }
+    
     
 }
