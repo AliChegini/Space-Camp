@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C2A2A5221F5F15C005B3040 /* PhotoSentDownloaded.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A2A5121F5F15C005B3040 /* PhotoSentDownloaded.mp3 */; };
+		7C2A2A5221F5F15C005B3040 /* Beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A2A5121F5F15C005B3040 /* Beep.mp3 */; };
 		7C2A2A5421F63D87005B3040 /* CachedStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A2A5321F63D87005B3040 /* CachedStructures.swift */; };
+		7C3262A121F7468300A2CA2A /* Curiosity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C3262A021F7468300A2CA2A /* Curiosity.mp3 */; };
+		7C3262A421F748C100A2CA2A /* Spirit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C3262A221F748C100A2CA2A /* Spirit.mp3 */; };
+		7C3262A521F748C100A2CA2A /* Opportunity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C3262A321F748C100A2CA2A /* Opportunity.mp3 */; };
 		7C34353D21F3764700C601FE /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34353C21F3764700C601FE /* AlertExtension.swift */; };
 		7C34353F21F376C100C601FE /* CellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34353E21F376C100C601FE /* CellExtension.swift */; };
 		7C350DE721EF947500E62F72 /* PhotoZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C350DE621EF947500E62F72 /* PhotoZoomController.swift */; };
@@ -40,8 +43,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C2A2A5121F5F15C005B3040 /* PhotoSentDownloaded.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PhotoSentDownloaded.mp3; sourceTree = "<group>"; };
+		7C2A2A5121F5F15C005B3040 /* Beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep.mp3; sourceTree = "<group>"; };
 		7C2A2A5321F63D87005B3040 /* CachedStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedStructures.swift; sourceTree = "<group>"; };
+		7C3262A021F7468300A2CA2A /* Curiosity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Curiosity.mp3; sourceTree = "<group>"; };
+		7C3262A221F748C100A2CA2A /* Spirit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Spirit.mp3; sourceTree = "<group>"; };
+		7C3262A321F748C100A2CA2A /* Opportunity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Opportunity.mp3; sourceTree = "<group>"; };
 		7C34353C21F3764700C601FE /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		7C34353E21F376C100C601FE /* CellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExtension.swift; sourceTree = "<group>"; };
 		7C350DE621EF947500E62F72 /* PhotoZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomController.swift; sourceTree = "<group>"; };
@@ -89,7 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				7C35DA7221F0B78800964CF2 /* AppLaunch.mp3 */,
-				7C2A2A5121F5F15C005B3040 /* PhotoSentDownloaded.mp3 */,
+				7C2A2A5121F5F15C005B3040 /* Beep.mp3 */,
+				7C3262A321F748C100A2CA2A /* Opportunity.mp3 */,
+				7C3262A221F748C100A2CA2A /* Spirit.mp3 */,
+				7C3262A021F7468300A2CA2A /* Curiosity.mp3 */,
 				7C35DA7121F0B78800964CF2 /* ChangeRover.mp3 */,
 				7C35DA7621F0FA3900964CF2 /* PianoIntro.mp3 */,
 			);
@@ -248,9 +257,12 @@
 				7C5AE49E21DF59DF00D3B650 /* LaunchScreen.storyboard in Resources */,
 				7C35C75521E4DD4C009663EB /* Assets.xcassets in Resources */,
 				7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */,
-				7C2A2A5221F5F15C005B3040 /* PhotoSentDownloaded.mp3 in Resources */,
+				7C2A2A5221F5F15C005B3040 /* Beep.mp3 in Resources */,
+				7C3262A421F748C100A2CA2A /* Spirit.mp3 in Resources */,
 				7C35DA7721F0FA3900964CF2 /* PianoIntro.mp3 in Resources */,
+				7C3262A521F748C100A2CA2A /* Opportunity.mp3 in Resources */,
 				7C35DA7421F0B78800964CF2 /* ChangeRover.mp3 in Resources */,
+				7C3262A121F7468300A2CA2A /* Curiosity.mp3 in Resources */,
 				7C35DA7521F0B78800964CF2 /* AppLaunch.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

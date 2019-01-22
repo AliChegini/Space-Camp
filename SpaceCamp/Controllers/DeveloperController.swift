@@ -8,14 +8,18 @@
 
 import UIKit
 import AVFoundation
+import StoreKit
 
 class DeveloperController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var techLabel: UILabel!
+    @IBOutlet weak var button: UIButton!
     
-    var player: AVAudioPlayer?
+    var mainPlayer: AVAudioPlayer?
+    var buttonPlayer: AVAudioPlayer?
     
     var timer = Timer()
     
@@ -28,27 +32,28 @@ class DeveloperController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "About Developer"
-
-        guard let path = Bundle.main.path(forResource: "PianoIntro", ofType: "mp3") else {
+        button.roundButton()
+        
+    
+        guard let path = Bundle.main.path(forResource: StaticProperties.developerSound, ofType: "mp3") else {
             return
         }
         let url = URL(fileURLWithPath: path)
 
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.setVolume(0.8, fadeDuration: 0)
-            player?.play()
+            mainPlayer = try AVAudioPlayer(contentsOf: url)
+            mainPlayer?.setVolume(0.8, fadeDuration: 0)
+            mainPlayer?.play()
         } catch {
-            print("could not load file")
+            print("could not play sound")
         }
         
         
-        
-        //playSound(track: StaticProperties.developerSoundName, id: &StaticProperties.developerSoundID)
-        
         imageView.center.x = self.view.frame.width + self.view.frame.width
         titleLabel.center.x = self.view.frame.width + self.view.frame.width
-        techLabel.center.x = self.view.frame.width  + self.view.frame.width
+        detailLabel.center.x = self.view.frame.width + self.view.frame.width
+        button.center.x = self.view.frame.width + self.view.frame.width
+        
         
         UIView.animate(withDuration: 5.0, delay: 0.2, usingSpringWithDamping: 4.0, initialSpringVelocity: 5, options: .curveLinear, animations: {
             self.imageView.center.x = self.view.frame.width / 2
@@ -59,10 +64,34 @@ class DeveloperController: UIViewController {
         }, completion: nil)
         
         UIView.animate(withDuration: 3.0, delay: 2.2, usingSpringWithDamping: 1.0, initialSpringVelocity: 3, options: .curveLinear, animations: {
-            self.techLabel.center.x = self.view.frame.width / 2
+            self.detailLabel.center.x = self.view.frame.width / 2
+            self.button.center.x = self.view.frame.width / 2
         }, completion: nil)
         
     }
+    
+    
+    @IBAction func rateMyApp(_ sender: UIButton) {
+        
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
+        
+        guard let path = Bundle.main.path(forResource: StaticProperties.beepSound, ofType: "mp3") else {
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            buttonPlayer = try AVAudioPlayer(contentsOf: url)
+            buttonPlayer?.setVolume(0.8, fadeDuration: 0)
+            buttonPlayer?.play()
+        } catch {
+            print("could not play sound")
+        }
+        
+    }
+    
     
     
     @objc func changeImage() {
@@ -79,7 +108,7 @@ class DeveloperController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         timer.invalidate()
-        player?.stop()
+        mainPlayer?.stop()
     }
     
     

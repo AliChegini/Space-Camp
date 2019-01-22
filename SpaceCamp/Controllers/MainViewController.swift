@@ -37,22 +37,24 @@ class MainViewController: UIViewController {
         
         navigationItem.title = "Home"
         
-        // global timer to count 180 seconds to ask review from user
-        Timer.scheduledTimer(withTimeInterval: 180, repeats: false) { timer in
+        // global timer to count 240 seconds to ask review from user
+        Timer.scheduledTimer(withTimeInterval: StaticProperties.secondsToWaitForReview, repeats: false) { timer in
             if #available(iOS 10.3, *) {
                 SKStoreReviewController.requestReview()
             }
         }
         
-        let path = Bundle.main.path(forResource: "AppLaunch", ofType: "mp3")!
+        guard let path = Bundle.main.path(forResource: StaticProperties.appLaunchSound, ofType: "mp3") else {
+            return
+        }
         let url = URL(fileURLWithPath: path)
         
         do {
             player = try AVAudioPlayer(contentsOf: url)
-            player?.setVolume(0.3, fadeDuration: 0)
+            player?.setVolume(0.4, fadeDuration: 0)
             player?.play()
         } catch {
-            print("could not load file")
+            print("could not play sound")
         }
         
         // hiding apod button until API respond
@@ -64,7 +66,20 @@ class MainViewController: UIViewController {
             apodButton.isHidden = false
         } else {
             // if APOD object is not cached fire networking call
-            parser.parseApod { (apod, error) in
+            parser.parseApod { apod, error in
+                if let error = error {
+                    DispatchQueue.main.sync {
+                        switch error {
+                        case .notConnectedToInternet:
+                            self.notConnectedToInternetAlert()
+                        case .networkConnectionLost:
+                            self.timeOutFeedback()
+                        default:
+                            break
+                        }
+                    }
+                }
+                
                 guard let apod = apod else {
                     print("APOD API is not responding")
                     return

@@ -25,6 +25,10 @@ class PhotoSeparator {
     func prepareReadyArray(roverName: String, date: String, completionHandler completion: @escaping ([ReadyPhotoObject]?, SpaceCampError?) -> Void) {
         
         parser.parsePhotos(roverName: roverName, date: date) { (data, error) in
+            if let error = error {
+                completion(nil, error)
+            }
+            
             if let data = data {
                 // final array to be returned at completion
                 var array: [ReadyPhotoObject] = []

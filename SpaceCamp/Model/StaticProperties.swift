@@ -29,13 +29,17 @@ struct StaticProperties {
     static let numberOfPhotosForEachCamera = 5
     
     // sound track names
-    static let developerSoundName = "PianoIntro"
-    static let appLaunchSoundName = "AppLaunch"
-    static let changeRoverSoundName = "ChangeRover"
+    static let developerSound = "PianoIntro"
+    static let appLaunchSound = "AppLaunch"
+    static let beepSound = "Beep"
+    static let opportunityRoverSound = "Opportunity"
+    static let curiosityRoverSound = "Curiosity"
+    static let spiritRoverSound = "Spirit"
+    static let secondsToWaitForReview = 240.0
     
     static var isActivityIndicatorOn: Bool = false
     
-    // will be used to cache different objects whenevr needed
+    // will be used to cache apod object if available
     static var cacheObject = NSCache<AnyObject, AnyObject>()
     
 }

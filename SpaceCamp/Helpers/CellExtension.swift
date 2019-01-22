@@ -18,9 +18,10 @@ extension PhotoExplorerController {
         
         // check if the photoObject is available in cache
         if let readyToUseRoverPhotoObject = cache.object(forKey: finalArray[indexPath.row].url as AnyObject) as? ReadyToUseRoverPhotoObject {
-            print("loading cells from cache")
             cell.imageView.image = readyToUseRoverPhotoObject.image
             cell.cameraLabel.text = readyToUseRoverPhotoObject.camera
+            cell.rover = readyToUseRoverPhotoObject.rover
+            cell.date = readyToUseRoverPhotoObject.date
             
             return cell
         } else {
@@ -39,11 +40,12 @@ extension PhotoExplorerController {
                     self.cache.setObject(readyToUseRoverPhotoObject as AnyObject, forKey: self.finalArray[indexPath.row].url as AnyObject)
                     
                     DispatchQueue.main.async {
-                        print("loading cells from network")
                         // Animating cells while loading
-                        UIView.transition(with: cell.imageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        UIView.transition(with: cell.imageView, duration: 0.2, options: .transitionCrossDissolve, animations: {
                             cell.imageView.image = readyToUseRoverPhotoObject.image
                             cell.cameraLabel.text = readyToUseRoverPhotoObject.camera
+                            cell.rover = readyToUseRoverPhotoObject.rover
+                            cell.date = readyToUseRoverPhotoObject.date
                         }, completion: nil)
                     }
                 }

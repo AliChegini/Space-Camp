@@ -48,11 +48,34 @@ class ManifestController: UIViewController {
         guard let roverName = roverName else {
             return
         }
-        
-        parser.parseManifest(for: roverName) { (data, error) in
+        // network call 
+        parser.parseManifest(for: roverName) { data, error in
+            if let error = error {
+                print(error)
+                switch error {
+                case .notConnectedToInternet:
+                    print("Inside .notConnectedToInternet case ---")
+                    if StaticProperties.isActivityIndicatorOn == true {
+                        print("isActivityIndicatorOn \(StaticProperties.isActivityIndicatorOn)")
+                        DispatchQueue.main.async {
+                            self.stopActivityIndicator {
+                                print("Activity indicator is stopped")
+                                //self.notConnectedToInternetAlert()
+                            }
+                        }
+                    }
+//                    case .networkConnectionLost:
+                    //self.timeOutFeedback()
+                default:
+                    break
+                }
+                
+            }
+            
             if let data = data {
                 // Unwapping all the properties from manifest and populating labels
                 if let launchDateUnwrapped = data.photo_manifest.launch_date, let landingDateUnwrapped = data.photo_manifest.landing_date, let missionDateUnwrapped = data.photo_manifest.status, let lastPhotoDateUnwrapped = data.photo_manifest.max_date, let totalPhotosUnwrapped = data.photo_manifest.total_photos, let nameUnwrapped = data.photo_manifest.name {
+                    
                     DispatchQueue.main.async {
                         self.launchDate.text = launchDateUnwrapped
                         self.landingDate.text = landingDateUnwrapped

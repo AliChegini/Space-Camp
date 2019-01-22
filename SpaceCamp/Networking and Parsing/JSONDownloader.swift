@@ -29,15 +29,9 @@ class JSONDownloader {
             if let error = error as? URLError {
                 switch error.code {
                 case .notConnectedToInternet:
-                    // alert the user about no conection
-                    let alert = UIAlertController(title: "No Internet Connection", message: "You are not connected to internet! \nPlease  check your connection and try again...", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    alert.presentInOwnWindow(animated: true, completion: nil)
+                    completion(nil, SpaceCampError.notConnectedToInternet)
                 case .networkConnectionLost:
-                    // alert the user about conection lost
-                    let alert = UIAlertController(title: "Lost Connection", message: "You have lost your internet connection! \nPlease  check your connection and try again...", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    alert.presentInOwnWindow(animated: true, completion: nil)
+                    completion(nil, SpaceCampError.networkConnectionLost)
                 default:
                     break
                 }

@@ -21,7 +21,7 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     
     var player: AVAudioPlayer?
     
-    var postCardImage: UIImage!
+    var photoObject: ReadyToUseRoverPhotoObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +40,18 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        let path = Bundle.main.path(forResource: "PhotoSentDownloaded", ofType: "mp3")!
+        // play sound
+        guard let path = Bundle.main.path(forResource: StaticProperties.beepSound, ofType: "mp3") else {
+            return
+        }
         let url = URL(fileURLWithPath: path)
         
         do {
             player = try AVAudioPlayer(contentsOf: url)
-            player?.setVolume(0.9, fadeDuration: 0)
+            player?.setVolume(0.4, fadeDuration: 0)
         } catch {
-            print("could not load file")
+            print("could not play sound")
         }
-        
         
         
     }
@@ -61,19 +63,18 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     
     
     @IBAction func downloadAction(_ sender: UIButton) {
-        //UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil, nil)
         UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image), nil)
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if error != nil {
-            // we got back an error!
-            let err = UIAlertController(title: "Error", message: "Unable to save!", preferredStyle: .alert)
+            // if get back an error!
+            let err = UIAlertController(title: "Error", message: "You have not granted permission to save. You can change this in your Setting", preferredStyle: .alert)
             err.addAction(UIAlertAction(title: "OK", style: .default))
             present(err, animated: true)
         } else {
-            player?.play()
             downloadFeedback()
+            player?.play()
         }
     }
     
@@ -100,27 +101,27 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     }
     
 
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let newText = postCardField.text {
-            UIView.transition(with: imageView, duration: 0.6, options: .transitionFlipFromBottom, animations: {
-                self.imageView.image = self.textOverImage(text: newText, image: self.postCardImage, at: CGPoint(x: 40, y: 40))
-            }, completion: nil)
+            if let unwrappedPhotoObject = self.photoObject {
+                UIView.transition(with: imageView, duration: 0.6, options: .transitionFlipFromBottom, animations: {
+                    self.imageView.image = self.textOverImage(text: newText, image: unwrappedPhotoObject.image, at: CGPoint(x: 40, y: 40))
+                }, completion: nil)
+                
+                UIView.transition(with: downloadButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
+                    self.downloadButton.isHidden = false
+                }, completion: nil)
+                
+                UIView.transition(with: emailButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
+                    self.emailButton.isHidden = false
+                }, completion: nil)
+                
+                UIView.transition(with: emailField, duration: 1.0, options: .transitionFlipFromBottom, animations: {
+                    self.emailField.isHidden = false
+                }, completion: nil)
+                
+            }
         }
-        
-
-        UIView.transition(with: downloadButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
-            self.downloadButton.isHidden = false
-        }, completion: nil)
-        
-        UIView.transition(with: emailButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
-            self.emailButton.isHidden = false
-        }, completion: nil)
-        
-        UIView.transition(with: emailField, duration: 1.0, options: .transitionFlipFromBottom, animations: {
-            self.emailField.isHidden = false
-        }, completion: nil)
-        
     
         self.view.endEditing(true)
         
@@ -130,8 +131,8 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     
     // function to write text over image
     func textOverImage(text: String, image: UIImage, at point: CGPoint) -> UIImage {
-        let textColor = UIColor.red
-        guard let textFont = UIFont(name: "Rockwell", size: (image.size.width/20.0)) else {
+        let textColor = UIColor.white
+        guard let textFont = UIFont(name: "Noteworthy", size: (image.size.width/20.0)) else {
             return UIImage()
         }
         
@@ -146,15 +147,21 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
         image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
         
         let rect = CGRect(origin: point, size: image.size)
-        text.draw(in: rect, withAttributes: textFontAttributes)
         
+        guard let unwrappedPhotoObject = photoObject else {
+            return UIImage()
+        }
+        
+        // construct final text by including rover name, date, camera name
+        let finalText = "\(text)\n\n\(unwrappedPhotoObject.date)\nMars Rover: \(unwrappedPhotoObject.rover.capitalized)\n\(unwrappedPhotoObject.camera)\nSpaceCamp"
+        
+        finalText.draw(in: rect, withAttributes: textFontAttributes)
         guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else {
             return UIImage()
         }
         UIGraphicsEndImageContext()
         
         return newImage
-        
     }
     
     
@@ -165,7 +172,7 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
             mail.mailComposeDelegate = self
             mail.setToRecipients([address])
             mail.setSubject("Mars Rover PostCard from SpaceCamp")
-            mail.setMessageBody("Warm wishes from SpaceCamp.\nHere is your Mars Rover PostCard. If you enjoy the app please give it five star rate in App Store. Have a lovely day...", isHTML: true)
+            mail.setMessageBody("Warm wishes from SpaceCamp.\nHere is your Mars Rover PostCard. If you enjoy the app please give it five star in App Store. Have a lovely day...", isHTML: true)
             
             guard let image = imageView.image else {
                 return
@@ -185,11 +192,22 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        player?.play()
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
+        switch result.rawValue {
+        case MFMailComposeResult.cancelled.rawValue:
+            controller.dismiss(animated: true)
+            cancelEmailFeedback()
+        case MFMailComposeResult.failed.rawValue:
+            controller.dismiss(animated: true)
+            failEmailFeedback()
+        case MFMailComposeResult.sent.rawValue:
+            controller.dismiss(animated: true)
+            player?.play()
+            successEmailFeedback()
+        default:
+            controller.dismiss(animated: true)
+            failEmailFeedback()
+            break
         }
-        controller.dismiss(animated: true)
     }
     
     

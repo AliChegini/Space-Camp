@@ -24,30 +24,18 @@ extension UIViewController {
         
         alert.view.addSubview(loadingIndicator)
         
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true)
     }
     
     
     // function to stop activity indicator and allow user interactions
     func stopActivityIndicator(completion: @escaping () -> Void) {
+        print("Stop Activity indicator gets called -----------------------")
         StaticProperties.isActivityIndicatorOn = false
-        dismiss(animated: true, completion: completion)
+        dismiss(animated: true)
     }
     
-    
-    // function to provide feedback for timeout
-    func timeOutFeedback() {
-        let alert = UIAlertController(title: "Something Went Wrong", message: "You might have a slow connection, or API might not be responding at the moment. Please wait for a while and try again...", preferredStyle: .alert)
 
-        let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-            self.dismiss(animated: true)
-            self.navigationController?.popViewController(animated: true)
-        }
-        
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
     
     // function to alert for no photos
     func showNoPhotoAlert() {
@@ -78,21 +66,49 @@ extension UIViewController {
     
     // function to provide feedback after download
     func downloadFeedback() {
-        let alert = UIAlertController(title: nil, message: "You have downloaded the PostCard successfully", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: "PostCard has been successfully downloaded to your phone", preferredStyle: .alert)
         
         present(alert, animated: true, completion: nil)
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
             self.dismiss(animated: true)
-            // if for user review
-            if #available(iOS 10.3, *) {
-                SKStoreReviewController.requestReview()
-            }
+        }
+    }
+    
+    // function to provide feedback after success email
+    func successEmailFeedback() {
+        let alert = UIAlertController(title: nil, message: "Email has been sent successfully", preferredStyle: .alert)
+        
+        present(alert, animated: true, completion: nil)
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+            self.dismiss(animated: true)
+        }
+    }
+    
+    
+    // function to provide feedback after cancel email case
+    func cancelEmailFeedback() {
+        let alert = UIAlertController(title: nil, message: "Email was cancelled", preferredStyle: .alert)
+        
+        present(alert, animated: true, completion: nil)
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+            self.dismiss(animated: true)
+        }
+    }
+    
+    
+    // function to provide feedback after fail email case
+    func failEmailFeedback() {
+        let alert = UIAlertController(title: "Error", message: "Failed to send the email. Please try again", preferredStyle: .alert)
+        
+        present(alert, animated: true, completion: nil)
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+            self.dismiss(animated: true)
         }
     }
     
     
     // No Internet conncetion Alert
-    func showNotConnectedToInternet() {
+    func notConnectedToInternetAlert() {
         let alert = UIAlertController(title: "No Internet Conncetion", message: "You are not connected to Internet, Please check your connection and try again...", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
@@ -103,4 +119,20 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
+    
+    
+    // function to provide feedback for timeout
+    func timeOutFeedback() {
+        let alert = UIAlertController(title: "Something Went Wrong", message: "You might have a slow connection, or API might not be responding at the moment. Please wait for a while and try again...", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
 }

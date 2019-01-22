@@ -41,6 +41,16 @@ class PhotoCell: UICollectionViewCell {
         return label
     }()
     
+    // these two variables will not be shown on cells,
+    // but will be used for postcard
+    var rover: String = {
+        return ""
+    }()
+    
+    var date: String = {
+        return ""
+    }()
+    
     func setupViews() {
         backgroundColor = UIColor.white
         addSubview(imageView)
@@ -68,5 +78,4 @@ class PhotoCell: UICollectionViewCell {
     
 
 }
-
 

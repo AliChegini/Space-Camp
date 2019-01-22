@@ -14,7 +14,8 @@ enum SpaceCampError: Error {
     case invalidData
     case jsonConversionFailure
     case invalidURL
-    case noInternetConnection
     case couldNotConstructUrl
+    case notConnectedToInternet
+    case networkConnectionLost
 }
 

@@ -20,8 +20,7 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
     
-    
-    var photo: UIImage?
+    var photoObject: ReadyToUseRoverPhotoObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +29,12 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
         
         postCardButton.roundButton()
         
-        guard let photo = photo else {
+        guard let photoObject = photoObject else {
             print("photo object is empty")
             return
         }
         
-
-        imageView.image = photo
+        imageView.image = photoObject.image
         imageView.sizeToFit()
         scrollView.contentSize = imageView.bounds.size
         updateZoomScale()
@@ -48,7 +46,7 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "postCardSegue" {
             if let navController = segue.destination as? UINavigationController, let postCardController = navController.topViewController as?  PostCardController {
-                postCardController.postCardImage = photo
+                postCardController.photoObject = photoObject
             }
         }
     }

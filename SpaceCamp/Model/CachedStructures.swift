@@ -9,7 +9,7 @@
 import UIKit
 
 
-// Ready Object to keep in cache
+// Ready Mars Rover Object to keep in cache
 // This object will be used to setup cells in collection view, and to construct poster
 struct ReadyToUseRoverPhotoObject {
     let image: UIImage

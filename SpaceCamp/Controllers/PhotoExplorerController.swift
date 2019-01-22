@@ -68,9 +68,12 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoSegue" {
-            if let cell = sender as? PhotoCell, let indexPath = collectionView.indexPath(for: cell), let photoZoomController = segue.destination as? PhotoZoomController {
-                photoZoomController.photo = cell.imageView.image
-                // TODO: think about a way to send other infos like camera name and rover name and date for the poster
+            if let cell = sender as? PhotoCell, let photoZoomController = segue.destination as? PhotoZoomController {
+                
+                if let image = cell.imageView.image, let camera = cell.cameraLabel.text {
+                    let photoObject = ReadyToUseRoverPhotoObject(image: image , camera: camera, rover: cell.rover, date: cell.date)
+                    photoZoomController.photoObject = photoObject
+                }
             }
         }
     }

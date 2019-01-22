@@ -29,6 +29,10 @@ class NasaAPIClient {
         
         let request = URLRequest(url: url)
         let task = downloader.jsonDownloader(with: request) { (data, error) in
+            if let error = error {
+                completion(nil, error)
+            }
+            
             if let data = data {
                 completion(data, nil)
             }

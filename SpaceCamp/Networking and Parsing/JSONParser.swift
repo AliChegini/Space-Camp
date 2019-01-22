@@ -15,12 +15,16 @@ class JSONParser {
     // function to parse json response and prepare ready to use Apod object
     func parseApod(completionHandler completion: @escaping (Apod?, SpaceCampError?) -> Void) {
         client.getData(from: client.apodUrl) { (data, error) in
-            let decoder = JSONDecoder()
+            if let error = error {
+                completion(nil, error)
+            }
+            
             guard let data = data else {
                 completion(nil, SpaceCampError.invalidData)
                 return
             }
             
+            let decoder = JSONDecoder()
             if let readyApod = try? decoder.decode(Apod.self, from: data) {
                 completion(readyApod, nil)
             }
@@ -34,12 +38,16 @@ class JSONParser {
         // Constructing a url to retrieve Manifest Object
         let urlString = "\(client.baseManifestUrl)\(rover)?\(client.apiKeyWithPrefix)"
         client.getData(from: urlString) { (data, error) in
-            let decoder = JSONDecoder()
+            if let error = error {
+                completion(nil, error)
+            }
+            
             guard let data = data else {
                 completion(nil, SpaceCampError.invalidData)
                 return
             }
             
+            let decoder = JSONDecoder()
             if let readyManifest = try? decoder.decode(RoverManifest.self, from: data) {
                 completion(readyManifest, nil)
             }
@@ -53,12 +61,16 @@ class JSONParser {
         // Constructing a url to retrieve MarsRover photos
         let urlString = "\(client.baseMarsRoverUrl)\(roverName)\(client.earthDateWithPrefix)\(date)&page=1&\(client.apiKeyWithPrefix)"
         client.getData(from: urlString) { (data, error) in
-            let decoder = JSONDecoder()
+            if let error = error {
+                completion(nil, error)
+            }
+            
             guard let data = data else {
                 completion(nil, SpaceCampError.invalidData)
                 return
             }
             
+            let decoder = JSONDecoder()
             if let readyPhotos = try? decoder.decode(MarsRoverPhotos.self, from: data) {
                 completion(readyPhotos, nil)
             }

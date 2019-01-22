@@ -76,15 +76,6 @@ extension UIViewController {
 }
 
 
-// extension to alert the user for connection related errors from JSONDownloader
-extension UIAlertController {
-    func presentInOwnWindow(animated: Bool, completion: (() -> Void)?) {
-        guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else { return }
-        rootVC.present(self, animated: animated, completion: completion)
-    }
-}
-
-
 extension UIButton {
     func roundButton() {
         self.layer.cornerRadius = 10

@@ -35,8 +35,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zq5-Qk-J5c">
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-Uz-oLy">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-Uz-oLy">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="24"/>
                                                 <state key="normal" title="Astronomy Picture of the Day">
@@ -47,7 +47,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="aof-pt-Vmg">
-                                                <rect key="frame" x="0.0" y="151" width="375" height="150.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Rockwell-BoldItalic" family="Rockwell" pointSize="28"/>
                                                 <state key="normal" title="About Developer">
@@ -86,14 +86,14 @@
             <objects>
                 <viewController id="uEy-r6-2q5" customClass="DeveloperController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LST-mq-FOU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdU-IL-RnY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="936"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1186"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW3-ah-k4u">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="asL-D1-tpj">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
@@ -111,23 +111,23 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-kU-kew">
-                                                <rect key="frame" x="20" y="410" width="335" height="300"/>
+                                                <rect key="frame" x="20" y="600" width="335" height="250"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="ujp-YH-Pdx"/>
+                                                    <constraint firstAttribute="height" constant="250" id="ujp-YH-Pdx"/>
                                                 </constraints>
-                                                <mutableString key="text">I made SpaceCamp as a minimum viable product (MVP) from scratch to demonstrate my skill level in Swift language. My technical competencies and educations are listed as follows:  ● Languages: Swift, Python, HTML,CSS ● Operating Systems: iOS, macOS ● Architecture: Model View Controller ● IDE: Xcode ● Test Framework: XCTest ● Version Control: Git ● Cloud Computing: AWS, Heroku ● Future Agenda: Server-Side Swift</mutableString>
+                                                <string key="text">My technical competencies and educations are listed as follows:  ● Languages: Swift, Python, HTML,CSS ● Operating Systems: iOS, macOS ● Architecture: Model View Controller ● IDE: Xcode ● Test Framework: XCTest ● Version Control: Git ● Cloud Computing: AWS, Heroku ● Future Agenda: Server-Side Swift</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treehouse" translatesAutoresizingMaskIntoConstraints="NO" id="fQC-8f-toQ">
-                                                <rect key="frame" x="20" y="860" width="80" height="80"/>
+                                                <rect key="frame" x="20" y="1010" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="M9n-m5-nQf"/>
                                                     <constraint firstAttribute="height" constant="80" id="bja-l9-0pT"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technical University of Denmark Master of Computer Science and Engineering" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enj-0v-xkC">
-                                                <rect key="frame" x="120" y="760" width="235" height="80"/>
+                                                <rect key="frame" x="120" y="910" width="235" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="v3x-BF-Slc"/>
                                                 </constraints>
@@ -136,7 +136,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Treehouse iOS Development Techdegree" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-gz-R5u">
-                                                <rect key="frame" x="120" y="860" width="235" height="80"/>
+                                                <rect key="frame" x="120" y="1010" width="235" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="mNR-2e-Gvi"/>
                                                 </constraints>
@@ -145,7 +145,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Education" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPq-jv-5ww">
-                                                <rect key="frame" x="20" y="720" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="870" width="335" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="osI-LH-whC"/>
                                                 </constraints>
@@ -154,37 +154,78 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DTU" translatesAutoresizingMaskIntoConstraints="NO" id="G8u-qz-Udv">
-                                                <rect key="frame" x="20" y="760" width="80" height="80"/>
+                                                <rect key="frame" x="20" y="910" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="b72-As-yI6"/>
                                                     <constraint firstAttribute="width" constant="80" id="bDV-2f-Zef"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-bL-Ew1">
+                                                <rect key="frame" x="20" y="410" width="335" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="kLu-DR-c4E"/>
+                                                </constraints>
+                                                <string key="text">I made SpaceCamp as a minimum viable product (MVP) from scratch to demonstrate my skill level in Swift language. If you enjoy the App, don't feel shy and hit the rate button!</string>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vUG-lf-D2d">
+                                                <rect key="frame" x="60" y="540" width="255" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Ecs-ID-oA2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Rate my App"/>
+                                                <connections>
+                                                    <action selector="rateMyApp:" destination="uEy-r6-2q5" eventType="touchUpInside" id="WhZ-zu-H99"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback and suggestions SpaceCamp@gmail.com" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-e6-oRH">
+                                                <rect key="frame" x="40" y="1120" width="295" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="VhJ-xa-mZF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="r0E-e6-oRH" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="40" id="4ZX-ml-T7c"/>
                                             <constraint firstAttribute="trailing" secondItem="enj-0v-xkC" secondAttribute="trailing" constant="20" id="4r8-PX-3GL"/>
+                                            <constraint firstAttribute="trailing" secondItem="z1a-bL-Ew1" secondAttribute="trailing" constant="20" id="62L-xt-Etm"/>
                                             <constraint firstItem="enj-0v-xkC" firstAttribute="leading" secondItem="G8u-qz-Udv" secondAttribute="trailing" constant="20" id="8gB-3S-a0A"/>
                                             <constraint firstItem="SNe-gz-R5u" firstAttribute="leading" secondItem="fQC-8f-toQ" secondAttribute="trailing" constant="20" id="9da-xx-Tgy"/>
                                             <constraint firstAttribute="trailing" secondItem="hbb-kU-kew" secondAttribute="trailing" constant="20" id="9is-Ba-B9H"/>
-                                            <constraint firstItem="fPq-jv-5ww" firstAttribute="top" secondItem="hbb-kU-kew" secondAttribute="bottom" constant="10" id="Be6-Fb-KEK"/>
+                                            <constraint firstItem="fPq-jv-5ww" firstAttribute="top" secondItem="hbb-kU-kew" secondAttribute="bottom" constant="20" id="Be6-Fb-KEK"/>
                                             <constraint firstAttribute="trailing" secondItem="asL-D1-tpj" secondAttribute="trailing" id="Hch-8d-agq"/>
                                             <constraint firstItem="fQC-8f-toQ" firstAttribute="top" secondItem="G8u-qz-Udv" secondAttribute="bottom" constant="20" id="I3I-ZQ-okz"/>
                                             <constraint firstItem="Zeg-2C-NfZ" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="10" id="Iph-gf-Uxp"/>
+                                            <constraint firstItem="r0E-e6-oRH" firstAttribute="top" secondItem="SNe-gz-R5u" secondAttribute="bottom" constant="30" id="JFi-7y-roa"/>
                                             <constraint firstItem="fPq-jv-5ww" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="KCI-fR-66o"/>
                                             <constraint firstItem="enj-0v-xkC" firstAttribute="top" secondItem="fPq-jv-5ww" secondAttribute="bottom" constant="10" id="Ko5-0Z-qqY"/>
                                             <constraint firstAttribute="trailing" secondItem="SNe-gz-R5u" secondAttribute="trailing" constant="20" id="LE0-PG-m6g"/>
+                                            <constraint firstAttribute="trailing" secondItem="r0E-e6-oRH" secondAttribute="trailing" constant="40" id="M8H-IA-UZS"/>
                                             <constraint firstAttribute="trailing" secondItem="Zeg-2C-NfZ" secondAttribute="trailing" constant="10" id="Nqw-EP-k8g"/>
                                             <constraint firstItem="asL-D1-tpj" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" id="Rmc-OH-fTo"/>
                                             <constraint firstItem="Zeg-2C-NfZ" firstAttribute="top" secondItem="asL-D1-tpj" secondAttribute="bottom" constant="20" id="Vls-qj-AQx"/>
-                                            <constraint firstItem="hbb-kU-kew" firstAttribute="top" secondItem="Zeg-2C-NfZ" secondAttribute="bottom" constant="10" id="eaM-HJ-YvH"/>
+                                            <constraint firstItem="z1a-bL-Ew1" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="adD-1A-aXY"/>
                                             <constraint firstItem="G8u-qz-Udv" firstAttribute="top" secondItem="fPq-jv-5ww" secondAttribute="bottom" constant="10" id="fXr-4p-WpM"/>
                                             <constraint firstAttribute="trailing" secondItem="fPq-jv-5ww" secondAttribute="trailing" constant="20" id="fcF-Fm-1lC"/>
                                             <constraint firstItem="asL-D1-tpj" firstAttribute="top" secondItem="eW3-ah-k4u" secondAttribute="top" id="ffz-lN-3kw"/>
+                                            <constraint firstItem="vUG-lf-D2d" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="60" id="fih-JW-tMC"/>
+                                            <constraint firstItem="z1a-bL-Ew1" firstAttribute="top" secondItem="Zeg-2C-NfZ" secondAttribute="bottom" constant="10" id="ikN-U4-xIv"/>
                                             <constraint firstItem="hbb-kU-kew" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="jSK-22-f0D"/>
                                             <constraint firstItem="SNe-gz-R5u" firstAttribute="top" secondItem="enj-0v-xkC" secondAttribute="bottom" constant="20" id="n1L-RI-Npn"/>
                                             <constraint firstItem="G8u-qz-Udv" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="oNW-UL-79v"/>
-                                            <constraint firstAttribute="height" constant="1000" id="soL-F6-wnG"/>
+                                            <constraint firstItem="hbb-kU-kew" firstAttribute="top" secondItem="vUG-lf-D2d" secondAttribute="bottom" constant="20" id="peu-Mr-KQD"/>
+                                            <constraint firstAttribute="height" constant="1250" id="soL-F6-wnG"/>
+                                            <constraint firstItem="vUG-lf-D2d" firstAttribute="top" secondItem="z1a-bL-Ew1" secondAttribute="bottom" constant="20" id="tt0-Fk-rO9"/>
+                                            <constraint firstAttribute="trailing" secondItem="vUG-lf-D2d" secondAttribute="trailing" constant="60" id="x4c-6u-jXw"/>
                                             <constraint firstItem="fQC-8f-toQ" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="ykI-dN-FJ6"/>
                                         </constraints>
                                     </view>
@@ -207,8 +248,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jmf-Hy-yG7"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="1250"/>
                     <connections>
+                        <outlet property="button" destination="vUG-lf-D2d" id="No2-aT-W6I"/>
+                        <outlet property="detailLabel" destination="z1a-bL-Ew1" id="wfV-Nm-ygl"/>
                         <outlet property="imageView" destination="asL-D1-tpj" id="u8M-0P-ocE"/>
                         <outlet property="techLabel" destination="hbb-kU-kew" id="NEk-Du-f1u"/>
                         <outlet property="titleLabel" destination="Zeg-2C-NfZ" id="L8L-jG-jRq"/>
@@ -216,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ie5-KV-wbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1039" y="1073"/>
+            <point key="canvasLocation" x="1042" y="1303"/>
         </scene>
         <!--Apod Controller-->
         <scene sceneID="W51-wx-fge">
@@ -674,24 +717,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WUK-Lp-xK7">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="q3N-I8-hyI"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WUK-Lp-xK7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="229.5"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert your text to put on PostCard..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DbJ-YE-ckV">
-                                <rect key="frame" x="40" y="384" width="295" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert your text to put on PostCard" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DbJ-YE-ckV">
+                                <rect key="frame" x="30" y="313.5" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Q5r-8h-v3T"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gK9-20-1JH">
-                                <rect key="frame" x="40" y="444" width="295" height="40"/>
+                                <rect key="frame" x="40" y="373.5" width="295" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JCd-AA-6bA"/>
@@ -710,7 +750,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLg-bo-60K">
                                 <rect key="frame" x="30" y="587" width="315" height="40"/>
@@ -731,13 +771,14 @@
                             <constraint firstItem="dEo-9o-n8l" firstAttribute="trailing" secondItem="WUK-Lp-xK7" secondAttribute="trailing" id="0X3-rb-LUg"/>
                             <constraint firstItem="dEo-9o-n8l" firstAttribute="trailing" secondItem="nLg-bo-60K" secondAttribute="trailing" constant="30" id="4bH-DE-IS4"/>
                             <constraint firstItem="nLg-bo-60K" firstAttribute="top" secondItem="20W-tZ-LfE" secondAttribute="bottom" constant="10" id="Abf-Sh-vZC"/>
+                            <constraint firstItem="DbJ-YE-ckV" firstAttribute="centerY" secondItem="yaK-dZ-1Ie" secondAttribute="centerY" id="CKO-pw-kjk"/>
                             <constraint firstItem="WUK-Lp-xK7" firstAttribute="top" secondItem="dEo-9o-n8l" secondAttribute="top" id="EFQ-hd-V92"/>
                             <constraint firstItem="gK9-20-1JH" firstAttribute="leading" secondItem="dEo-9o-n8l" secondAttribute="leading" constant="40" id="FRO-L4-gFA"/>
                             <constraint firstItem="nLg-bo-60K" firstAttribute="leading" secondItem="dEo-9o-n8l" secondAttribute="leading" constant="30" id="Ga7-eh-NLH"/>
                             <constraint firstItem="DbJ-YE-ckV" firstAttribute="top" secondItem="WUK-Lp-xK7" secondAttribute="bottom" constant="20" id="M4d-LC-952"/>
-                            <constraint firstItem="dEo-9o-n8l" firstAttribute="trailing" secondItem="DbJ-YE-ckV" secondAttribute="trailing" constant="40" id="P0Q-vf-uHo"/>
+                            <constraint firstItem="dEo-9o-n8l" firstAttribute="trailing" secondItem="DbJ-YE-ckV" secondAttribute="trailing" constant="30" id="P0Q-vf-uHo"/>
                             <constraint firstItem="dEo-9o-n8l" firstAttribute="bottom" secondItem="nLg-bo-60K" secondAttribute="bottom" constant="40" id="PdI-rh-oLo"/>
-                            <constraint firstItem="DbJ-YE-ckV" firstAttribute="leading" secondItem="dEo-9o-n8l" secondAttribute="leading" constant="40" id="aXN-lD-oS0"/>
+                            <constraint firstItem="DbJ-YE-ckV" firstAttribute="leading" secondItem="dEo-9o-n8l" secondAttribute="leading" constant="30" id="aXN-lD-oS0"/>
                             <constraint firstItem="20W-tZ-LfE" firstAttribute="leading" secondItem="dEo-9o-n8l" secondAttribute="leading" constant="30" id="adX-8D-iua"/>
                             <constraint firstItem="gK9-20-1JH" firstAttribute="top" secondItem="DbJ-YE-ckV" secondAttribute="bottom" constant="20" id="eSJ-hg-k7N"/>
                             <constraint firstItem="dEo-9o-n8l" firstAttribute="trailing" secondItem="20W-tZ-LfE" secondAttribute="trailing" constant="30" id="i8M-Qm-Y76"/>
