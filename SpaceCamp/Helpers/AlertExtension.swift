@@ -32,7 +32,7 @@ extension UIViewController {
     func stopActivityIndicator(completion: @escaping () -> Void) {
         print("Stop Activity indicator gets called -----------------------")
         StaticProperties.isActivityIndicatorOn = false
-        dismiss(animated: true)
+        dismiss(animated: true, completion: completion)
     }
     
 
