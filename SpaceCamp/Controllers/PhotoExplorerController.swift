@@ -24,23 +24,42 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // if user is not online, show alert pop the view back to main
+        if StaticProperties.isUserOnline == false {
+            notConnectedToInternetAlert {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        
+        // timer to keep track of activity indicator for slow connection users
+        // progress bar should not block user for more than 15 seconds
+        Timer.scheduledTimer(withTimeInterval: StaticProperties.timeOutDuration, repeats: false) { timer in
+            if StaticProperties.isActivityIndicatorOn == true {
+                self.stopActivityIndicator {
+                    // show time out feedback
+                    self.timeOutFeedback()
+                }
+            }
+        }
+        
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
         
         if let roverName = roverName, let date = date {
             // start activity indicator
             startActivityIndicator()
-            // timer to keep track of activity indicator for slow connection users
-            // progress bar should not block user for more than 15 seconds
-            Timer.scheduledTimer(withTimeInterval: 15, repeats: false) { timer in
-                if StaticProperties.isActivityIndicatorOn == true {
-                    self.stopActivityIndicator {
-                        // show time out feedback
-                        self.timeOutFeedback()
+            
+            separator.prepareReadyPhotoArray(roverName: roverName, date: date) { (data, error) in
+                if let error = error {
+                    switch error {
+                    case .responseUnsuccessful:
+                        DispatchQueue.main.sync {
+                            self.apiLimitAlert()
+                        }
+                    default:
+                        break
                     }
                 }
-            }
-            
-            separator.prepareReadyArray(roverName: roverName, date: date) { (data, error) in
+                
                 if let data = data {
                     for item in data {
                         self.finalArray.append(item)
@@ -62,7 +81,6 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                 }
             }
         }
-        
         
     }
     
@@ -120,4 +138,3 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     }
     
 }
-

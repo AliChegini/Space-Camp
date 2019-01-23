@@ -20,8 +20,8 @@ class JSONDownloader {
         self.init(configuration: .default)
     }
     
-    // function to download and return data to memory
-    // returned data will be consumed by functions in client class
+    // function to download and return dataTask
+    // returned dataTask will be used by functions in client class
     func jsonDownloader(with request: URLRequest, completionHandler completion: @escaping (Data?, SpaceCampError?) -> Void) -> URLSessionDataTask {
         let task = session.dataTask(with: request) { (data, response, error) in
             
@@ -29,12 +29,17 @@ class JSONDownloader {
             if let error = error as? URLError {
                 switch error.code {
                 case .notConnectedToInternet:
-                    completion(nil, SpaceCampError.notConnectedToInternet)
+                    StaticProperties.isUserOnline = false
+                    completion(nil, .notConnectedToInternet)
                 case .networkConnectionLost:
-                    completion(nil, SpaceCampError.networkConnectionLost)
+                    StaticProperties.isUserOnline = false
+                    completion(nil, .networkConnectionLost)
                 default:
                     break
                 }
+            } else {
+                // if there is no error user is online
+                StaticProperties.isUserOnline = true
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
@@ -44,10 +49,7 @@ class JSONDownloader {
             
             if httpResponse.statusCode == 200 {
                 if let data = data {
-                    //print(httpResponse.allHeaderFields.debugDescription)
                     completion(data, nil)
-                } else {
-                    completion(nil, .invalidData)
                 }
             } else {
                 completion(nil, .responseUnsuccessful)

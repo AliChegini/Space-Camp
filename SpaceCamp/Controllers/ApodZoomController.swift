@@ -21,7 +21,6 @@ class ApodZoomController: UIViewController, UIScrollViewDelegate {
     
     var hdPhoto: UIImage!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +33,7 @@ class ApodZoomController: UIViewController, UIScrollViewDelegate {
         view.backgroundColor = UIColor.black
         
     }
+    
     
     var minZoomScale: CGFloat {
         let viewSize = view.bounds.size
@@ -50,7 +50,7 @@ class ApodZoomController: UIViewController, UIScrollViewDelegate {
     
     func updateZoomScale() {
         scrollView.minimumZoomScale = minZoomScale
-        scrollView.maximumZoomScale = 1.5
+        scrollView.maximumZoomScale = StaticProperties.maximumZoomScale
         scrollView.zoomScale = minZoomScale
     }
     
@@ -68,10 +68,10 @@ class ApodZoomController: UIViewController, UIScrollViewDelegate {
     
     
     
-    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
+    
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         updateConstraintsForSize(view.bounds.size)
@@ -80,7 +80,6 @@ class ApodZoomController: UIViewController, UIScrollViewDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
-    
     
     
 }

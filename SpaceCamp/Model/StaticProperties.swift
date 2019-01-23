@@ -35,12 +35,21 @@ struct StaticProperties {
     static let opportunityRoverSound = "Opportunity"
     static let curiosityRoverSound = "Curiosity"
     static let spiritRoverSound = "Spirit"
+    
     static let secondsToWaitForReview = 240.0
     
     static var isActivityIndicatorOn: Bool = false
     
-    // will be used to cache apod object if available
+    static var isUserOnline: Bool = true
+    
+    static let timeOutDuration = 15.0
+    
+    static let maximumZoomScale: CGFloat = 1.5
+    
+    // postCardScale will be used for sizing the font and text position on the postcard
+    static let postCardScale: CGFloat = 20.0
+    
+    // will be used to cache (only) apod object if available
     static var cacheObject = NSCache<AnyObject, AnyObject>()
     
 }
-

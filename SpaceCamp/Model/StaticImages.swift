@@ -12,8 +12,8 @@ import UIKit
 
 class StaticImages {
     private static let landingPageImages = ["SpLanding1", "CurLanding2", "CurLanding", "OppLanding1", "OppLanding2"]
-    
     private static let developerImages = ["pic1", "pic2", "pic3"]
+    
     
     typealias LandingImageFunction = () -> UIImage
     // function to return next image for landing page

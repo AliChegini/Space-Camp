@@ -176,7 +176,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Ecs-ID-oA2"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="19"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Rate my App"/>
                                                 <connections>
@@ -184,9 +184,9 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback and suggestions SpaceCamp@gmail.com" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-e6-oRH">
-                                                <rect key="frame" x="40" y="1120" width="295" height="60"/>
+                                                <rect key="frame" x="73" y="1140" width="229" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="VhJ-xa-mZF"/>
+                                                    <constraint firstAttribute="height" constant="50" id="VhJ-xa-mZF"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -195,7 +195,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="r0E-e6-oRH" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="40" id="4ZX-ml-T7c"/>
                                             <constraint firstAttribute="trailing" secondItem="enj-0v-xkC" secondAttribute="trailing" constant="20" id="4r8-PX-3GL"/>
                                             <constraint firstAttribute="trailing" secondItem="z1a-bL-Ew1" secondAttribute="trailing" constant="20" id="62L-xt-Etm"/>
                                             <constraint firstItem="enj-0v-xkC" firstAttribute="leading" secondItem="G8u-qz-Udv" secondAttribute="trailing" constant="20" id="8gB-3S-a0A"/>
@@ -205,11 +204,10 @@
                                             <constraint firstAttribute="trailing" secondItem="asL-D1-tpj" secondAttribute="trailing" id="Hch-8d-agq"/>
                                             <constraint firstItem="fQC-8f-toQ" firstAttribute="top" secondItem="G8u-qz-Udv" secondAttribute="bottom" constant="20" id="I3I-ZQ-okz"/>
                                             <constraint firstItem="Zeg-2C-NfZ" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="10" id="Iph-gf-Uxp"/>
-                                            <constraint firstItem="r0E-e6-oRH" firstAttribute="top" secondItem="SNe-gz-R5u" secondAttribute="bottom" constant="30" id="JFi-7y-roa"/>
                                             <constraint firstItem="fPq-jv-5ww" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="KCI-fR-66o"/>
                                             <constraint firstItem="enj-0v-xkC" firstAttribute="top" secondItem="fPq-jv-5ww" secondAttribute="bottom" constant="10" id="Ko5-0Z-qqY"/>
                                             <constraint firstAttribute="trailing" secondItem="SNe-gz-R5u" secondAttribute="trailing" constant="20" id="LE0-PG-m6g"/>
-                                            <constraint firstAttribute="trailing" secondItem="r0E-e6-oRH" secondAttribute="trailing" constant="40" id="M8H-IA-UZS"/>
+                                            <constraint firstItem="r0E-e6-oRH" firstAttribute="centerX" secondItem="eW3-ah-k4u" secondAttribute="centerX" id="Mq4-Eg-tmI"/>
                                             <constraint firstAttribute="trailing" secondItem="Zeg-2C-NfZ" secondAttribute="trailing" constant="10" id="Nqw-EP-k8g"/>
                                             <constraint firstItem="asL-D1-tpj" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" id="Rmc-OH-fTo"/>
                                             <constraint firstItem="Zeg-2C-NfZ" firstAttribute="top" secondItem="asL-D1-tpj" secondAttribute="bottom" constant="20" id="Vls-qj-AQx"/>
@@ -222,6 +220,7 @@
                                             <constraint firstItem="hbb-kU-kew" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="jSK-22-f0D"/>
                                             <constraint firstItem="SNe-gz-R5u" firstAttribute="top" secondItem="enj-0v-xkC" secondAttribute="bottom" constant="20" id="n1L-RI-Npn"/>
                                             <constraint firstItem="G8u-qz-Udv" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="oNW-UL-79v"/>
+                                            <constraint firstAttribute="bottom" secondItem="r0E-e6-oRH" secondAttribute="bottom" constant="60" id="pBc-ke-NLa"/>
                                             <constraint firstItem="hbb-kU-kew" firstAttribute="top" secondItem="vUG-lf-D2d" secondAttribute="bottom" constant="20" id="peu-Mr-KQD"/>
                                             <constraint firstAttribute="height" constant="1250" id="soL-F6-wnG"/>
                                             <constraint firstItem="vUG-lf-D2d" firstAttribute="top" secondItem="z1a-bL-Ew1" secondAttribute="bottom" constant="20" id="tt0-Fk-rO9"/>

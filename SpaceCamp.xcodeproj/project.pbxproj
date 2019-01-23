@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		7C2A2A5221F5F15C005B3040 /* Beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A2A5121F5F15C005B3040 /* Beep.mp3 */; };
 		7C2A2A5421F63D87005B3040 /* CachedStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A2A5321F63D87005B3040 /* CachedStructures.swift */; };
+		7C2DFFE321F8790600E36664 /* PostCardControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DFFE221F8790600E36664 /* PostCardControllerExtension.swift */; };
 		7C3262A121F7468300A2CA2A /* Curiosity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C3262A021F7468300A2CA2A /* Curiosity.mp3 */; };
 		7C3262A421F748C100A2CA2A /* Spirit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C3262A221F748C100A2CA2A /* Spirit.mp3 */; };
 		7C3262A521F748C100A2CA2A /* Opportunity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C3262A321F748C100A2CA2A /* Opportunity.mp3 */; };
-		7C34353D21F3764700C601FE /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34353C21F3764700C601FE /* AlertExtension.swift */; };
-		7C34353F21F376C100C601FE /* CellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34353E21F376C100C601FE /* CellExtension.swift */; };
+		7C34353D21F3764700C601FE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34353C21F3764700C601FE /* UIViewControllerExtension.swift */; };
 		7C350DE721EF947500E62F72 /* PhotoZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C350DE621EF947500E62F72 /* PhotoZoomController.swift */; };
 		7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886421E207FD00C08F0D /* JSONDownloader.swift */; };
 		7C35886721E23EEC00C08F0D /* SpaceCampError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35886621E23EEC00C08F0D /* SpaceCampError.swift */; };
@@ -25,14 +25,15 @@
 		7C35D1CF21E3CF490093D13A /* MarsRoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */; };
 		7C35DA6C21F0980E00964CF2 /* ApodZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35DA6B21F0980E00964CF2 /* ApodZoomController.swift */; };
 		7C35DA6E21F0A11600964CF2 /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C35DA6D21F0A11600964CF2 /* DeveloperController.swift */; };
-		7C35DA7421F0B78800964CF2 /* ChangeRover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C35DA7121F0B78800964CF2 /* ChangeRover.mp3 */; };
 		7C35DA7521F0B78800964CF2 /* AppLaunch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C35DA7221F0B78800964CF2 /* AppLaunch.mp3 */; };
 		7C35DA7721F0FA3900964CF2 /* PianoIntro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C35DA7621F0FA3900964CF2 /* PianoIntro.mp3 */; };
 		7C36B32621E6373E0060CD79 /* ManifestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32521E6373E0060CD79 /* ManifestController.swift */; };
 		7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B32721E661460060CD79 /* StaticProperties.swift */; };
 		7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */; };
-		7C386B2621ECB100007B6D84 /* GeneralExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2521ECB100007B6D84 /* GeneralExtension.swift */; };
+		7C386B2621ECB100007B6D84 /* ManifestControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2521ECB100007B6D84 /* ManifestControllerExtension.swift */; };
 		7C386B2E21ECF160007B6D84 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C386B2D21ECF160007B6D84 /* PhotoCell.swift */; };
+		7C4B983E21F8A0A0002E097A /* SpaceCampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4B983D21F8A0A0002E097A /* SpaceCampTests.swift */; };
+		7C4B984621F9201D002E097A /* PhotoExplorerControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4B984521F9201D002E097A /* PhotoExplorerControllerExtension.swift */; };
 		7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */; };
 		7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE49521DF59DE00D3B650 /* MainViewController.swift */; };
 		7C5AE49921DF59DE00D3B650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5AE49721DF59DE00D3B650 /* Main.storyboard */; };
@@ -42,14 +43,24 @@
 		7C637F4721E87C890011AB87 /* PhotoExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C637F4621E87C890011AB87 /* PhotoExplorerController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7C4B984021F8A0A0002E097A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C5AE48821DF59DE00D3B650 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C5AE48F21DF59DE00D3B650;
+			remoteInfo = SpaceCamp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		7C2A2A5121F5F15C005B3040 /* Beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep.mp3; sourceTree = "<group>"; };
 		7C2A2A5321F63D87005B3040 /* CachedStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedStructures.swift; sourceTree = "<group>"; };
+		7C2DFFE221F8790600E36664 /* PostCardControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardControllerExtension.swift; sourceTree = "<group>"; };
 		7C3262A021F7468300A2CA2A /* Curiosity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Curiosity.mp3; sourceTree = "<group>"; };
 		7C3262A221F748C100A2CA2A /* Spirit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Spirit.mp3; sourceTree = "<group>"; };
 		7C3262A321F748C100A2CA2A /* Opportunity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Opportunity.mp3; sourceTree = "<group>"; };
-		7C34353C21F3764700C601FE /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
-		7C34353E21F376C100C601FE /* CellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExtension.swift; sourceTree = "<group>"; };
+		7C34353C21F3764700C601FE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		7C350DE621EF947500E62F72 /* PhotoZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomController.swift; sourceTree = "<group>"; };
 		7C35886421E207FD00C08F0D /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		7C35886621E23EEC00C08F0D /* SpaceCampError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCampError.swift; sourceTree = "<group>"; };
@@ -61,14 +72,17 @@
 		7C35D1CE21E3CF490093D13A /* MarsRoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverController.swift; sourceTree = "<group>"; };
 		7C35DA6B21F0980E00964CF2 /* ApodZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodZoomController.swift; sourceTree = "<group>"; };
 		7C35DA6D21F0A11600964CF2 /* DeveloperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperController.swift; sourceTree = "<group>"; };
-		7C35DA7121F0B78800964CF2 /* ChangeRover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ChangeRover.mp3; sourceTree = "<group>"; };
 		7C35DA7221F0B78800964CF2 /* AppLaunch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AppLaunch.mp3; sourceTree = "<group>"; };
 		7C35DA7621F0FA3900964CF2 /* PianoIntro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PianoIntro.mp3; sourceTree = "<group>"; };
 		7C36B32521E6373E0060CD79 /* ManifestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestController.swift; sourceTree = "<group>"; };
 		7C36B32721E661460060CD79 /* StaticProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticProperties.swift; sourceTree = "<group>"; };
 		7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSeparator.swift; sourceTree = "<group>"; };
-		7C386B2521ECB100007B6D84 /* GeneralExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtension.swift; sourceTree = "<group>"; };
+		7C386B2521ECB100007B6D84 /* ManifestControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestControllerExtension.swift; sourceTree = "<group>"; };
 		7C386B2D21ECF160007B6D84 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		7C4B983B21F8A09F002E097A /* SpaceCampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceCampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C4B983D21F8A0A0002E097A /* SpaceCampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCampTests.swift; sourceTree = "<group>"; };
+		7C4B983F21F8A0A0002E097A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C4B984521F9201D002E097A /* PhotoExplorerControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoExplorerControllerExtension.swift; sourceTree = "<group>"; };
 		7C5AE49021DF59DE00D3B650 /* SpaceCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5AE49321DF59DE00D3B650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5AE49521DF59DE00D3B650 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +95,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7C4B983821F8A09F002E097A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7C5AE48D21DF59DE00D3B650 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,7 +120,6 @@
 				7C3262A321F748C100A2CA2A /* Opportunity.mp3 */,
 				7C3262A221F748C100A2CA2A /* Spirit.mp3 */,
 				7C3262A021F7468300A2CA2A /* Curiosity.mp3 */,
-				7C35DA7121F0B78800964CF2 /* ChangeRover.mp3 */,
 				7C35DA7621F0FA3900964CF2 /* PianoIntro.mp3 */,
 			);
 			path = Sounds;
@@ -124,7 +144,6 @@
 		7C386B2821ECB1C7007B6D84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */,
 				7C35C75621E4E10C009663EB /* StaticImages.swift */,
 				7C36B32721E661460060CD79 /* StaticProperties.swift */,
 				7C2A2A5321F63D87005B3040 /* CachedStructures.swift */,
@@ -139,6 +158,7 @@
 				7C35D1CA21E352B20093D13A /* NasaAPIClient.swift */,
 				7C35D1CC21E36F0C0093D13A /* JSONParser.swift */,
 				7C35C75221E4B6C8009663EB /* JSONStructures.swift */,
+				7C3727FA21E9E39B00482BC4 /* PhotoSeparator.swift */,
 				7C35886621E23EEC00C08F0D /* SpaceCampError.swift */,
 			);
 			path = "Networking and Parsing";
@@ -147,9 +167,10 @@
 		7C386B2A21ECB3C0007B6D84 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7C34353C21F3764700C601FE /* AlertExtension.swift */,
-				7C34353E21F376C100C601FE /* CellExtension.swift */,
-				7C386B2521ECB100007B6D84 /* GeneralExtension.swift */,
+				7C34353C21F3764700C601FE /* UIViewControllerExtension.swift */,
+				7C386B2521ECB100007B6D84 /* ManifestControllerExtension.swift */,
+				7C2DFFE221F8790600E36664 /* PostCardControllerExtension.swift */,
+				7C4B984521F9201D002E097A /* PhotoExplorerControllerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -162,10 +183,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7C4B983C21F8A0A0002E097A /* SpaceCampTests */ = {
+			isa = PBXGroup;
+			children = (
+				7C4B983D21F8A0A0002E097A /* SpaceCampTests.swift */,
+				7C4B983F21F8A0A0002E097A /* Info.plist */,
+			);
+			path = SpaceCampTests;
+			sourceTree = "<group>";
+		};
 		7C5AE48721DF59DE00D3B650 = {
 			isa = PBXGroup;
 			children = (
 				7C5AE49221DF59DE00D3B650 /* SpaceCamp */,
+				7C4B983C21F8A0A0002E097A /* SpaceCampTests */,
 				7C5AE49121DF59DE00D3B650 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				7C5AE49021DF59DE00D3B650 /* SpaceCamp.app */,
+				7C4B983B21F8A09F002E097A /* SpaceCampTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +231,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7C4B983A21F8A09F002E097A /* SpaceCampTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C4B984221F8A0A0002E097A /* Build configuration list for PBXNativeTarget "SpaceCampTests" */;
+			buildPhases = (
+				7C4B983721F8A09F002E097A /* Sources */,
+				7C4B983821F8A09F002E097A /* Frameworks */,
+				7C4B983921F8A09F002E097A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C4B984121F8A0A0002E097A /* PBXTargetDependency */,
+			);
+			name = SpaceCampTests;
+			productName = SpaceCampTests;
+			productReference = 7C4B983B21F8A09F002E097A /* SpaceCampTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7C5AE48F21DF59DE00D3B650 /* SpaceCamp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C5AE4A221DF59DF00D3B650 /* Build configuration list for PBXNativeTarget "SpaceCamp" */;
@@ -226,6 +276,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Ali C";
 				TargetAttributes = {
+					7C4B983A21F8A09F002E097A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7C5AE48F21DF59DE00D3B650;
+					};
 					7C5AE48F21DF59DE00D3B650 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -245,11 +299,19 @@
 			projectRoot = "";
 			targets = (
 				7C5AE48F21DF59DE00D3B650 /* SpaceCamp */,
+				7C4B983A21F8A09F002E097A /* SpaceCampTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7C4B983921F8A09F002E097A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7C5AE48E21DF59DE00D3B650 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,7 +323,6 @@
 				7C3262A421F748C100A2CA2A /* Spirit.mp3 in Resources */,
 				7C35DA7721F0FA3900964CF2 /* PianoIntro.mp3 in Resources */,
 				7C3262A521F748C100A2CA2A /* Opportunity.mp3 in Resources */,
-				7C35DA7421F0B78800964CF2 /* ChangeRover.mp3 in Resources */,
 				7C3262A121F7468300A2CA2A /* Curiosity.mp3 in Resources */,
 				7C35DA7521F0B78800964CF2 /* AppLaunch.mp3 in Resources */,
 			);
@@ -270,6 +331,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7C4B983721F8A09F002E097A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4B983E21F8A0A0002E097A /* SpaceCampTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7C5AE48C21DF59DE00D3B650 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,13 +356,14 @@
 				7C350DE721EF947500E62F72 /* PhotoZoomController.swift in Sources */,
 				7C3727FB21E9E39B00482BC4 /* PhotoSeparator.swift in Sources */,
 				7C35886521E207FD00C08F0D /* JSONDownloader.swift in Sources */,
-				7C34353F21F376C100C601FE /* CellExtension.swift in Sources */,
-				7C34353D21F3764700C601FE /* AlertExtension.swift in Sources */,
-				7C386B2621ECB100007B6D84 /* GeneralExtension.swift in Sources */,
+				7C34353D21F3764700C601FE /* UIViewControllerExtension.swift in Sources */,
+				7C2DFFE321F8790600E36664 /* PostCardControllerExtension.swift in Sources */,
+				7C386B2621ECB100007B6D84 /* ManifestControllerExtension.swift in Sources */,
 				7C5AE49621DF59DE00D3B650 /* MainViewController.swift in Sources */,
 				7C5AE49421DF59DE00D3B650 /* AppDelegate.swift in Sources */,
 				7C36B32821E661460060CD79 /* StaticProperties.swift in Sources */,
 				7C35DA6C21F0980E00964CF2 /* ApodZoomController.swift in Sources */,
+				7C4B984621F9201D002E097A /* PhotoExplorerControllerExtension.swift in Sources */,
 				7C2A2A5421F63D87005B3040 /* CachedStructures.swift in Sources */,
 				7C5AE4A621DF774B00D3B650 /* ApodController.swift in Sources */,
 				7C5C56FC21F299EF00D64A55 /* PostCardController.swift in Sources */,
@@ -301,6 +371,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7C4B984121F8A0A0002E097A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C5AE48F21DF59DE00D3B650 /* SpaceCamp */;
+			targetProxy = 7C4B984021F8A0A0002E097A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7C5AE49721DF59DE00D3B650 /* Main.storyboard */ = {
@@ -322,6 +400,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7C4B984321F8A0A0002E097A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPZ6V3E8L9;
+				INFOPLIST_FILE = SpaceCampTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ali-Inc.SpaceCampTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceCamp.app/SpaceCamp";
+			};
+			name = Debug;
+		};
+		7C4B984421F8A0A0002E097A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPZ6V3E8L9;
+				INFOPLIST_FILE = SpaceCampTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ali-Inc.SpaceCampTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceCamp.app/SpaceCamp";
+			};
+			name = Release;
+		};
 		7C5AE4A021DF59DF00D3B650 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -477,6 +595,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7C4B984221F8A0A0002E097A /* Build configuration list for PBXNativeTarget "SpaceCampTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C4B984321F8A0A0002E097A /* Debug */,
+				7C4B984421F8A0A0002E097A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7C5AE48B21DF59DE00D3B650 /* Build configuration list for PBXProject "SpaceCamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

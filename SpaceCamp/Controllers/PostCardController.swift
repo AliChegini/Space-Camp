@@ -105,7 +105,7 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
         if let newText = postCardField.text {
             if let unwrappedPhotoObject = self.photoObject {
                 UIView.transition(with: imageView, duration: 0.6, options: .transitionFlipFromBottom, animations: {
-                    self.imageView.image = self.textOverImage(text: newText, image: unwrappedPhotoObject.image, at: CGPoint(x: 40, y: 40))
+                    self.imageView.image = self.textOverImage(text: newText, image: unwrappedPhotoObject.image, at: CGPoint(x: unwrappedPhotoObject.image.size.width / StaticProperties.postCardScale, y: unwrappedPhotoObject.image.size.height / StaticProperties.postCardScale))
                 }, completion: nil)
                 
                 UIView.transition(with: downloadButton, duration: 1.0, options: .transitionFlipFromBottom, animations: {
@@ -132,7 +132,7 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
     // function to write text over image
     func textOverImage(text: String, image: UIImage, at point: CGPoint) -> UIImage {
         let textColor = UIColor.white
-        guard let textFont = UIFont(name: "Noteworthy", size: (image.size.width/20.0)) else {
+        guard let textFont = UIFont(name: "Noteworthy", size: (image.size.width / StaticProperties.postCardScale)) else {
             return UIImage()
         }
         
@@ -153,7 +153,7 @@ class PostCardController: UIViewController, UITextFieldDelegate, MFMailComposeVi
         }
         
         // construct final text by including rover name, date, camera name
-        let finalText = "\(text)\n\n\(unwrappedPhotoObject.date)\nMars Rover: \(unwrappedPhotoObject.rover.capitalized)\n\(unwrappedPhotoObject.camera)\nSpaceCamp"
+        let finalText = "\(text)\n\n\(unwrappedPhotoObject.date)\nMars Rover: \(unwrappedPhotoObject.rover.capitalized)\nCamera: \(unwrappedPhotoObject.camera)\nSpaceCamp"
         
         finalText.draw(in: rect, withAttributes: textFontAttributes)
         guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else {

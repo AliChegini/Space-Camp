@@ -20,7 +20,6 @@ class JSONParser {
             }
             
             guard let data = data else {
-                completion(nil, SpaceCampError.invalidData)
                 return
             }
             
@@ -43,7 +42,6 @@ class JSONParser {
             }
             
             guard let data = data else {
-                completion(nil, SpaceCampError.invalidData)
                 return
             }
             
@@ -66,7 +64,6 @@ class JSONParser {
             }
             
             guard let data = data else {
-                completion(nil, SpaceCampError.invalidData)
                 return
             }
             
@@ -78,4 +75,3 @@ class JSONParser {
     }
     
 }
-

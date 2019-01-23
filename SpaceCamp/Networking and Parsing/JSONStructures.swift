@@ -18,7 +18,7 @@ struct Apod: Decodable {
 }
 
 
-// ---- Structs for MarsRover Objects
+// ---- Structs for MarsRover Objects ----
 
 struct Camera: Decodable {
     let name: String?
@@ -39,7 +39,7 @@ struct MarsRoverPhotos: Decodable {
 
 
 
-// ---- Structs for Mission Manifests
+// ---- Structs for Mission Manifests ----
 
 // struct to hold a manifest object
 struct Manifest: Decodable {
@@ -54,5 +54,4 @@ struct Manifest: Decodable {
 struct RoverManifest: Decodable {
     let photo_manifest: Manifest
 }
-
 

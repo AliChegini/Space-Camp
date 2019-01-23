@@ -11,7 +11,6 @@ import UIKit
 class PhotoZoomController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var postCardButton: UIButton!
     
@@ -67,7 +66,7 @@ class PhotoZoomController: UIViewController, UIScrollViewDelegate {
 
     func updateZoomScale() {
         scrollView.minimumZoomScale = minZoomScale
-        scrollView.maximumZoomScale = 1.5
+        scrollView.maximumZoomScale = StaticProperties.maximumZoomScale
         scrollView.zoomScale = minZoomScale
     }
     

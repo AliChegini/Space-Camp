@@ -11,11 +11,8 @@ import Foundation
 enum SpaceCampError: Error {
     case requestFailed
     case responseUnsuccessful
-    case invalidData
-    case jsonConversionFailure
     case invalidURL
     case couldNotConstructUrl
     case notConnectedToInternet
     case networkConnectionLost
 }
-

@@ -1,8 +1,8 @@
 //
-//  CellExtension.swift
+//  PhotoExplorerControllerExtension.swift
 //  SpaceCamp
 //
-//  Created by Ehsan on 19/01/2019.
+//  Created by Ehsan on 23/01/2019.
 //  Copyright © 2019 Ali C. All rights reserved.
 //
 
@@ -53,5 +53,22 @@ extension PhotoExplorerController {
         }
         
         return cell
+    }
+}
+
+
+
+extension PhotoExplorerController {
+    // function to alert for no photos
+    func showNoPhotoAlert() {
+        let alert = UIAlertController(title: "No Photos for this Date", message: "Mars Rover did not take any photos on your chosen date\nPlease try another date", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 }

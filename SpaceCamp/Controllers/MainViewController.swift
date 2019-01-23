@@ -6,8 +6,6 @@
 //  Copyright © 2019 Ali C. All rights reserved.
 //
 
-// API Key : auLEKaiKVBCr8tO6ZIrWDfBFnj6NQWFrEjrQyQN0
-
 import UIKit
 import Foundation
 import StoreKit
@@ -60,6 +58,28 @@ class MainViewController: UIViewController {
         // hiding apod button until API respond
         apodButton.isHidden = true
         
+    }
+
+    
+    @objc func changeImage() {
+        UIView.transition(with: marsRoverButton, duration: 0.7, options: .transitionFlipFromBottom, animations: {
+            self.marsRoverButton.setBackgroundImage(self.nextLandingImage(), for: .normal)
+        }, completion: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "apodSegue" {
+            if let apodController = segue.destination as? ApodController, let readyApodUnwrapped = readyApod {
+                apodController.readyApod = readyApodUnwrapped
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // validating timer coming back to this view
+        landingImagesTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+        
         // check the cache if APOD object is available use it
         if let readyToUseApodObject = StaticProperties.cacheObject.object(forKey: "APOD" as AnyObject) as? ReadyToUseApodObject {
             readyApod = readyToUseApodObject
@@ -68,12 +88,16 @@ class MainViewController: UIViewController {
             // if APOD object is not cached fire networking call
             parser.parseApod { apod, error in
                 if let error = error {
+                    print(error)
                     DispatchQueue.main.sync {
                         switch error {
                         case .notConnectedToInternet:
-                            self.notConnectedToInternetAlert()
+                            // alert the user about connection
+                            self.notConnectedToInternetAlert{ }
                         case .networkConnectionLost:
-                            self.timeOutFeedback()
+                            self.notConnectedToInternetAlert{ }
+                        case .responseUnsuccessful:
+                            self.apiLimitAlert()
                         default:
                             break
                         }
@@ -107,28 +131,6 @@ class MainViewController: UIViewController {
                 }
             }
         }
-        
-    }
-
-    
-    @objc func changeImage() {
-        UIView.transition(with: marsRoverButton, duration: 0.7, options: .transitionFlipFromBottom, animations: {
-            self.marsRoverButton.setBackgroundImage(self.nextLandingImage(), for: .normal)
-        }, completion: nil)
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "apodSegue" {
-            if let apodController = segue.destination as? ApodController, let readyApodUnwrapped = readyApod {
-                apodController.readyApod = readyApodUnwrapped
-            }
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // validating timer coming back to this view
-        landingImagesTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

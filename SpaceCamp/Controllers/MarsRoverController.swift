@@ -14,10 +14,15 @@ class MarsRoverController: UIViewController {
     var roverName: String?
     var player: AVAudioPlayer?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // if user is not online, show alert pop the view back to main
+        if StaticProperties.isUserOnline == false {
+            notConnectedToInternetAlert {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         
     }
     
@@ -53,6 +58,7 @@ class MarsRoverController: UIViewController {
         performSegue(withIdentifier: "manifestSegue", sender: self)
     }
     
+    
     @IBAction func opportunity(_ sender: UIButton) {
         
         // play sound
@@ -72,6 +78,7 @@ class MarsRoverController: UIViewController {
         roverName = Rovers.Opportunity.rawValue.lowercased()
         performSegue(withIdentifier: "manifestSegue", sender: self)
     }
+    
     
     @IBAction func Spirit(_ sender: UIButton) {
         
@@ -95,4 +102,3 @@ class MarsRoverController: UIViewController {
     
 
 }
-
