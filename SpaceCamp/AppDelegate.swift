@@ -6,6 +6,9 @@
 //  Copyright © 2019 Ali C. All rights reserved.
 //
 
+// Performance testing is done for memory usage
+// Networking test is done for varieties of speeds, such as Very bad network, edge, 3g and DSL
+
 import UIKit
 
 @UIApplicationMain
