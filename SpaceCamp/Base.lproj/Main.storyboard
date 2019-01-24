@@ -86,14 +86,14 @@
             <objects>
                 <viewController id="uEy-r6-2q5" customClass="DeveloperController" customModule="SpaceCamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LST-mq-FOU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdU-IL-RnY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1186"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW3-ah-k4u">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="asL-D1-tpj">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
@@ -111,7 +111,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-kU-kew">
-                                                <rect key="frame" x="20" y="600" width="335" height="250"/>
+                                                <rect key="frame" x="20" y="610" width="335" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="ujp-YH-Pdx"/>
                                                 </constraints>
@@ -120,14 +120,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treehouse" translatesAutoresizingMaskIntoConstraints="NO" id="fQC-8f-toQ">
-                                                <rect key="frame" x="20" y="1010" width="80" height="80"/>
+                                                <rect key="frame" x="20" y="1020" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="M9n-m5-nQf"/>
                                                     <constraint firstAttribute="height" constant="80" id="bja-l9-0pT"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technical University of Denmark Master of Computer Science and Engineering" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enj-0v-xkC">
-                                                <rect key="frame" x="120" y="910" width="235" height="80"/>
+                                                <rect key="frame" x="120" y="920" width="235" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="v3x-BF-Slc"/>
                                                 </constraints>
@@ -136,7 +136,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Treehouse iOS Development Techdegree" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-gz-R5u">
-                                                <rect key="frame" x="120" y="1010" width="235" height="80"/>
+                                                <rect key="frame" x="120" y="1020" width="235" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="mNR-2e-Gvi"/>
                                                 </constraints>
@@ -145,7 +145,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Education" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPq-jv-5ww">
-                                                <rect key="frame" x="20" y="870" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="880" width="335" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="osI-LH-whC"/>
                                                 </constraints>
@@ -154,16 +154,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DTU" translatesAutoresizingMaskIntoConstraints="NO" id="G8u-qz-Udv">
-                                                <rect key="frame" x="20" y="910" width="80" height="80"/>
+                                                <rect key="frame" x="20" y="920" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="b72-As-yI6"/>
                                                     <constraint firstAttribute="width" constant="80" id="bDV-2f-Zef"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1a-bL-Ew1">
-                                                <rect key="frame" x="20" y="410" width="335" height="110"/>
+                                                <rect key="frame" x="20" y="410" width="335" height="120"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="110" id="kLu-DR-c4E"/>
+                                                    <constraint firstAttribute="height" constant="120" id="kLu-DR-c4E"/>
                                                 </constraints>
                                                 <string key="text">I made SpaceCamp as a minimum viable product (MVP) from scratch to demonstrate my skill level in Swift language. If you enjoy the App, don't feel shy and hit the rate button!</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -171,7 +171,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vUG-lf-D2d">
-                                                <rect key="frame" x="60" y="540" width="255" height="40"/>
+                                                <rect key="frame" x="60" y="550" width="255" height="40"/>
                                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Ecs-ID-oA2"/>
@@ -183,13 +183,12 @@
                                                     <action selector="rateMyApp:" destination="uEy-r6-2q5" eventType="touchUpInside" id="WhZ-zu-H99"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback and suggestions SpaceCamp@gmail.com" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-e6-oRH">
-                                                <rect key="frame" x="73" y="1140" width="229" height="50"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali.Space.Camp@gmail.com" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0E-e6-oRH">
+                                                <rect key="frame" x="56.5" y="1120" width="262" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VhJ-xa-mZF"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -220,9 +219,9 @@
                                             <constraint firstItem="hbb-kU-kew" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="jSK-22-f0D"/>
                                             <constraint firstItem="SNe-gz-R5u" firstAttribute="top" secondItem="enj-0v-xkC" secondAttribute="bottom" constant="20" id="n1L-RI-Npn"/>
                                             <constraint firstItem="G8u-qz-Udv" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="oNW-UL-79v"/>
-                                            <constraint firstAttribute="bottom" secondItem="r0E-e6-oRH" secondAttribute="bottom" constant="60" id="pBc-ke-NLa"/>
+                                            <constraint firstAttribute="bottom" secondItem="r0E-e6-oRH" secondAttribute="bottom" constant="30" id="pBc-ke-NLa"/>
                                             <constraint firstItem="hbb-kU-kew" firstAttribute="top" secondItem="vUG-lf-D2d" secondAttribute="bottom" constant="20" id="peu-Mr-KQD"/>
-                                            <constraint firstAttribute="height" constant="1250" id="soL-F6-wnG"/>
+                                            <constraint firstAttribute="height" constant="1200" id="soL-F6-wnG"/>
                                             <constraint firstItem="vUG-lf-D2d" firstAttribute="top" secondItem="z1a-bL-Ew1" secondAttribute="bottom" constant="20" id="tt0-Fk-rO9"/>
                                             <constraint firstAttribute="trailing" secondItem="vUG-lf-D2d" secondAttribute="trailing" constant="60" id="x4c-6u-jXw"/>
                                             <constraint firstItem="fQC-8f-toQ" firstAttribute="leading" secondItem="eW3-ah-k4u" secondAttribute="leading" constant="20" id="ykI-dN-FJ6"/>
@@ -247,7 +246,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jmf-Hy-yG7"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1250"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="button" destination="vUG-lf-D2d" id="No2-aT-W6I"/>
                         <outlet property="detailLabel" destination="z1a-bL-Ew1" id="wfV-Nm-ygl"/>
