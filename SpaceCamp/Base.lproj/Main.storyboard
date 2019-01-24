@@ -115,7 +115,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="ujp-YH-Pdx"/>
                                                 </constraints>
-                                                <string key="text">My technical competencies and educations are listed as follows:  ● Languages: Swift, Python, HTML,CSS ● Operating Systems: iOS, macOS ● Architecture: Model View Controller ● IDE: Xcode ● Test Framework: XCTest ● Version Control: Git ● Cloud Computing: AWS, Heroku ● Future Agenda: Server-Side Swift</string>
+                                                <mutableString key="text">My technical competencies and educations are shortlisted as follows:  ● Languages: Swift, Python, HTML,CSS ● Operating Systems: iOS, macOS ● Architecture: Model View Controller ● IDE: Xcode ● Test Framework: XCTest ● Version Control: Git ● Cloud Computing: AWS, Heroku ● Future Agenda: Server-Side Swift</mutableString>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
