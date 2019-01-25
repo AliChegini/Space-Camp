@@ -42,7 +42,7 @@ struct StaticProperties {
     
     static var isUserOnline: Bool = true
     
-    static let timeOutDuration = 15.0
+    static let timeOutDuration = 10.0
     
     static let maximumZoomScale: CGFloat = 1.5
     

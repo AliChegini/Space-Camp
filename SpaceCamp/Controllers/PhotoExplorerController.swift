@@ -19,6 +19,9 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
     var roverName: String?
     var date: String?
     
+    // timer to keep track of activity indicator
+    var timer = Timer()
+    
     var finalArray: [ReadyPhotoObject] = []
     
     override func viewDidLoad() {
@@ -31,25 +34,26 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
             }
         }
         
-        // timer to keep track of activity indicator for slow connection users
-        // progress bar should not block user for more than 15 seconds
-        Timer.scheduledTimer(withTimeInterval: StaticProperties.timeOutDuration, repeats: false) { timer in
-            if StaticProperties.isActivityIndicatorOn == true {
-                self.stopActivityIndicator {
-                    // show time out feedback
-                    self.timeOutFeedback()
-                }
-            }
-        }
-        
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "cell")
         
         if let roverName = roverName, let date = date {
+            // timer to keep track of activity indicator for slow connection users
+            // progress bar should not block user for more than 15 seconds
+            timer = Timer.scheduledTimer(withTimeInterval: StaticProperties.timeOutDuration, repeats: false) { timer in
+                if StaticProperties.isActivityIndicatorOn == true {
+                    self.stopActivityIndicator {
+                        // show time out feedback
+                        self.timeOutFeedback()
+                    }
+                }
+            }
+            
             // start activity indicator
             startActivityIndicator()
             
-            separator.prepareReadyPhotoArray(roverName: roverName, date: date) { (data, error) in
+            separator.prepareReadyPhotoArray(roverName: roverName, date: date) { data, error in
                 if let error = error {
+                    print("Error occured inside prepareReadyPhotoArray \(error)")
                     switch error {
                     case .responseUnsuccessful:
                         DispatchQueue.main.sync {
@@ -94,6 +98,11 @@ class PhotoExplorerController: UICollectionViewController, UICollectionViewDeleg
                 }
             }
         }
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
     
     

@@ -24,6 +24,8 @@ class ManifestController: UIViewController {
     
     var roverName: String?
     
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +38,7 @@ class ManifestController: UIViewController {
         
         // timer to keep track of activity indicator for slow connection users
         // progress bar should not block user for more than 15 seconds
-        Timer.scheduledTimer(withTimeInterval: StaticProperties.timeOutDuration, repeats: false) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: StaticProperties.timeOutDuration, repeats: false) { timer in
             if StaticProperties.isActivityIndicatorOn == true {
                 self.stopActivityIndicator {
                     // show time out feedback
@@ -44,8 +46,8 @@ class ManifestController: UIViewController {
                 }
             }
         }
-        startActivityIndicator()
         
+        startActivityIndicator()
         
         button.roundButton()
         button.isHidden = true
@@ -57,6 +59,9 @@ class ManifestController: UIViewController {
         }
         // network call 
         parser.parseManifest(for: roverName) { data, error in
+            if let error = error {
+                print("Error occured inside parseManifest \(error)")
+            }
             
             if let data = data {
                 // Unwapping all the properties from manifest and populating labels
@@ -135,6 +140,11 @@ class ManifestController: UIViewController {
     
     @IBAction func userPickedDate(_ sender: UIDatePicker) {
         print("from action method \(convertDateToString(date: sender.date))")
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
     
 }

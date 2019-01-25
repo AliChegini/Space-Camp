@@ -88,7 +88,6 @@ class MainViewController: UIViewController {
             // if APOD object is not cached fire networking call
             parser.parseApod { apod, error in
                 if let error = error {
-                    print(error)
                     DispatchQueue.main.sync {
                         switch error {
                         case .notConnectedToInternet:
